@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Personne" syncable="YES">
+        <attribute name="personne_email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personne_id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="personne_nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personne_password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personne_prenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personne_type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="typepersonne" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TypePersonne" inverseName="personne" inverseEntity="TypePersonne" syncable="YES"/>
+    </entity>
+    <entity name="TypePersonne" syncable="YES">
+        <attribute name="typepers_id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="typepers_statut" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="personne" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Personne" inverseName="typepersonne" inverseEntity="Personne" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Personne" positionX="-63" positionY="-103" width="128" height="148"/>
+        <element name="TypePersonne" positionX="340" positionY="2" width="128" height="88"/>
+    </elements>
+</model>

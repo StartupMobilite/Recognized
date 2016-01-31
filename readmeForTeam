@@ -1,0 +1,15 @@
+Installation de lavable avec Composer : 
+	-> Follow the tuto and skip step 4 	
+https://medium.com/@kunalnagar/install-laravel-5-on-os-x-23f3578386f1#.5bhucuszj
+
+Installation cocoapods:
+http://www.raywenderlich.com/97014/use-cocoapods-with-swift
+
+PHALCON 
+http://www.extreme-creations.co.uk/blog/how-to-install-phalcon-php-framework-with-mamp-on-osx/
+
+PHALCON-REST 
+http://www.phalcon-rest.org/docs/concepts/services.html
+
+curl -i -X POST -d '{"nom»: « C-3PO », »prnom » » »droid","year":1977}'
+    http://localhost/my-rest-api/api/robots

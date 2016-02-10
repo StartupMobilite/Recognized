@@ -14,10 +14,11 @@
 		926286561C0F32B200485451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926286541C0F32B200485451 /* LaunchScreen.storyboard */; };
 		926286611C0F32B200485451 /* RecognizedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926286601C0F32B200485451 /* RecognizedTests.swift */; };
 		9262866C1C0F32B200485451 /* RecognizedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262866B1C0F32B200485451 /* RecognizedUITests.swift */; };
-		9262867A1C0F472B00485451 /* shopping_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = 926286791C0F472B00485451 /* shopping_bag.png */; settings = {ASSET_TAGS = (); }; };
-		9262867D1C0F4A9500485451 /* panier_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9262867C1C0F4A9500485451 /* panier_icon.png */; settings = {ASSET_TAGS = (); }; };
-		9262867F1C0F4B7600485451 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9262867E1C0F4B7600485451 /* heart.png */; settings = {ASSET_TAGS = (); }; };
-		926286831C0F4C2400485451 /* categorie.png in Resources */ = {isa = PBXBuildFile; fileRef = 926286821C0F4C2400485451 /* categorie.png */; settings = {ASSET_TAGS = (); }; };
+		92B68EE61C6537E9008FAF9E /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EE51C6537E9008FAF9E /* MoreViewController.swift */; };
+		92B68EE81C653972008FAF9E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EE71C653972008FAF9E /* CategoryViewController.swift */; };
+		92B68EEA1C653996008FAF9E /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EE91C653996008FAF9E /* HeartViewController.swift */; };
+		92B68EEC1C6539B6008FAF9E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EEB1C6539B6008FAF9E /* NewsViewController.swift */; };
+		92B68EEE1C6539CD008FAF9E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EED1C6539CD008FAF9E /* ShopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		926286671C0F32B200485451 /* RecognizedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecognizedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9262866B1C0F32B200485451 /* RecognizedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedUITests.swift; sourceTree = "<group>"; };
 		9262866D1C0F32B200485451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		926286791C0F472B00485451 /* shopping_bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shopping_bag.png; path = Recognized/shopping_bag.png; sourceTree = "<group>"; };
-		9262867C1C0F4A9500485451 /* panier_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panier_icon.png; path = Recognized/panier_icon.png; sourceTree = "<group>"; };
-		9262867E1C0F4B7600485451 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = Recognized/heart.png; sourceTree = "<group>"; };
-		926286821C0F4C2400485451 /* categorie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = categorie.png; path = Recognized/categorie.png; sourceTree = "<group>"; };
+		92B68EE51C6537E9008FAF9E /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = ../MoreViewController.swift; sourceTree = "<group>"; };
+		92B68EE71C653972008FAF9E /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		92B68EE91C653996008FAF9E /* HeartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartViewController.swift; sourceTree = "<group>"; };
+		92B68EEB1C6539B6008FAF9E /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		92B68EED1C6539CD008FAF9E /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 		9262863F1C0F32B200485451 = {
 			isa = PBXGroup;
 			children = (
-				9262867B1C0F47A700485451 /* ImageTabItem */,
 				9262864A1C0F32B200485451 /* Recognized */,
 				9262865F1C0F32B200485451 /* RecognizedTests */,
 				9262866A1C0F32B200485451 /* RecognizedUITests */,
@@ -106,9 +107,14 @@
 		9262864A1C0F32B200485451 /* Recognized */ = {
 			isa = PBXGroup;
 			children = (
+				92B68EE51C6537E9008FAF9E /* MoreViewController.swift */,
+				92B68EE71C653972008FAF9E /* CategoryViewController.swift */,
+				92B68EE91C653996008FAF9E /* HeartViewController.swift */,
 				9262864B1C0F32B200485451 /* AppDelegate.swift */,
 				9262864D1C0F32B200485451 /* ViewController.swift */,
 				9262864F1C0F32B200485451 /* Main.storyboard */,
+				92B68EEB1C6539B6008FAF9E /* NewsViewController.swift */,
+				92B68EED1C6539CD008FAF9E /* ShopViewController.swift */,
 				926286521C0F32B200485451 /* Assets.xcassets */,
 				926286541C0F32B200485451 /* LaunchScreen.storyboard */,
 				926286571C0F32B200485451 /* Info.plist */,
@@ -132,17 +138,6 @@
 				9262866D1C0F32B200485451 /* Info.plist */,
 			);
 			path = RecognizedUITests;
-			sourceTree = "<group>";
-		};
-		9262867B1C0F47A700485451 /* ImageTabItem */ = {
-			isa = PBXGroup;
-			children = (
-				926286791C0F472B00485451 /* shopping_bag.png */,
-				9262867E1C0F4B7600485451 /* heart.png */,
-				926286821C0F4C2400485451 /* categorie.png */,
-				9262867C1C0F4A9500485451 /* panier_icon.png */,
-			);
-			name = ImageTabItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +207,7 @@
 				TargetAttributes = {
 					926286471C0F32B200485451 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = HK8R6METL6;
 					};
 					9262865B1C0F32B200485451 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -248,12 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9262867A1C0F472B00485451 /* shopping_bag.png in Resources */,
-				926286831C0F4C2400485451 /* categorie.png in Resources */,
 				926286561C0F32B200485451 /* LaunchScreen.storyboard in Resources */,
 				926286531C0F32B200485451 /* Assets.xcassets in Resources */,
-				9262867D1C0F4A9500485451 /* panier_icon.png in Resources */,
-				9262867F1C0F4B7600485451 /* heart.png in Resources */,
 				926286511C0F32B200485451 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B68EE81C653972008FAF9E /* CategoryViewController.swift in Sources */,
+				92B68EE61C6537E9008FAF9E /* MoreViewController.swift in Sources */,
 				9262864E1C0F32B200485451 /* ViewController.swift in Sources */,
+				92B68EEC1C6539B6008FAF9E /* NewsViewController.swift in Sources */,
+				92B68EEA1C653996008FAF9E /* HeartViewController.swift in Sources */,
+				92B68EEE1C6539CD008FAF9E /* ShopViewController.swift in Sources */,
 				9262864C1C0F32B200485451 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,10 +419,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Recognized/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Projet.Recognized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -433,10 +434,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Recognized/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Projet.Recognized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -507,6 +512,7 @@
 				926286721C0F32B200485451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		926286731C0F32B200485451 /* Build configuration list for PBXNativeTarget "RecognizedTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				926286751C0F32B200485451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		926286761C0F32B200485451 /* Build configuration list for PBXNativeTarget "RecognizedUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +530,7 @@
 				926286781C0F32B200485451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

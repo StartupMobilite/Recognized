@@ -1,2 +1,5 @@
 .DS_Store
 Recognized/.DS_Store
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj

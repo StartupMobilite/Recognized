@@ -23,6 +23,9 @@
 		92B68EEA1C653996008FAF9E /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EE91C653996008FAF9E /* HeartViewController.swift */; };
 		92B68EEC1C6539B6008FAF9E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EEB1C6539B6008FAF9E /* NewsViewController.swift */; };
 		92B68EEE1C6539CD008FAF9E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B68EED1C6539CD008FAF9E /* ShopViewController.swift */; };
+		DD27ACA71C6B43DB00D1BBF9 /* ClientRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27ACA61C6B43DB00D1BBF9 /* ClientRegistrationViewController.swift */; };
+		DD27ACA91C6B440400D1BBF9 /* DesignerRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27ACA81C6B440400D1BBF9 /* DesignerRegistrationViewController.swift */; };
+		DD27ACAB1C6B93D600D1BBF9 /* InscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27ACAA1C6B93D600D1BBF9 /* InscriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		92B68EE91C653996008FAF9E /* HeartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartViewController.swift; sourceTree = "<group>"; };
 		92B68EEB1C6539B6008FAF9E /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		92B68EED1C6539CD008FAF9E /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		DD27ACA61C6B43DB00D1BBF9 /* ClientRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientRegistrationViewController.swift; sourceTree = "<group>"; };
+		DD27ACA81C6B440400D1BBF9 /* DesignerRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerRegistrationViewController.swift; sourceTree = "<group>"; };
+		DD27ACAA1C6B93D600D1BBF9 /* InscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InscriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,11 +151,15 @@
 		9262864A1C0F32B200485451 /* Recognized */ = {
 			isa = PBXGroup;
 			children = (
+				92B68EE51C6537E9008FAF9E /* MoreViewController.swift */,
+				DD27ACAA1C6B93D600D1BBF9 /* InscriptionViewController.swift */,
 				92B68EE71C653972008FAF9E /* CategoryViewController.swift */,
 				92B68EE91C653996008FAF9E /* HeartViewController.swift */,
 				9262864B1C0F32B200485451 /* AppDelegate.swift */,
 				9262864D1C0F32B200485451 /* ViewController.swift */,
 				9262864F1C0F32B200485451 /* Main.storyboard */,
+				DD27ACA81C6B440400D1BBF9 /* DesignerRegistrationViewController.swift */,
+				DD27ACA61C6B43DB00D1BBF9 /* ClientRegistrationViewController.swift */,
 				92B68EEB1C6539B6008FAF9E /* NewsViewController.swift */,
 				92B68EED1C6539CD008FAF9E /* ShopViewController.swift */,
 				926286521C0F32B200485451 /* Assets.xcassets */,
@@ -309,6 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B68EE81C653972008FAF9E /* CategoryViewController.swift in Sources */,
+				DD27ACAB1C6B93D600D1BBF9 /* InscriptionViewController.swift in Sources */,
+				DD27ACA91C6B440400D1BBF9 /* DesignerRegistrationViewController.swift in Sources */,
+				92B68EE61C6537E9008FAF9E /* MoreViewController.swift in Sources */,
+				DD27ACA71C6B43DB00D1BBF9 /* ClientRegistrationViewController.swift in Sources */,
 				9262864E1C0F32B200485451 /* ViewController.swift in Sources */,
 				924E26031C6B55C400A68DAF /* Personne.swift in Sources */,
 				92B68EEC1C6539B6008FAF9E /* NewsViewController.swift in Sources */,

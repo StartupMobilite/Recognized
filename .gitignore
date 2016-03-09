@@ -4,3 +4,4 @@ Recognized/.DS_Store
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 Recognized/Recognized.xcodeproj/project.xcworkspace/
+*.xcuserstate

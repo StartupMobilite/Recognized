@@ -24,10 +24,15 @@ class ViewController: UIViewController  {
     let moc = DataController().managedObjectContext
     
     let personne = [
-        1 : ["Ben", "Nikiema", "sidbey", "040888", 1],
-        2 : ["Janany", "Perinparajah", "janany23", "Thamay31", 1],
-        3 : ["Karine", "Ould", "karine19", "melon", 1],
-        4 : ["client", "client", "client", "client", 0],
+            ["firstname":"Ben",
+             "lastname":"Nikiema",
+             "pseudo":"sidbey",
+             "password":"040888",
+             "isAdmin" : 1],
+        
+//        2 : ["Janany", "Perinparajah", "janany23", "Thamay31", 1],
+//        3 : ["Karine", "Ould", "karine19", "melon", 1],
+//        4 : ["client", "client", "client", "client", 0],
     ]
     
     let defaut = NSUserDefaults.standardUserDefaults()
@@ -39,7 +44,7 @@ class ViewController: UIViewController  {
         do{
             let fetchPerson = try moc.executeFetchRequest(personFetch) as! [Personne]
             
-            print(fetchPerson.first!.firstname)
+            print(fetchPerson)
             print(fetchPerson.first!.lastname)
         
         }catch{
@@ -58,11 +63,11 @@ class ViewController: UIViewController  {
         entity.setValue("melon", forKey: "password")
         entity.setValue(1, forKey: "isadmin")
         
-        for (index, element) in personne.enumerate() {
-            
-           print("Item \(index): \(element)")
-//            for(i,userData) in index.
-        }
+//        for (__, element) in personne.enumerate() {
+//            for (cle, valeur) in element {
+//                print(cle + " - " + valeur)
+//            }
+//        }
         
         do {
             try moc.save()

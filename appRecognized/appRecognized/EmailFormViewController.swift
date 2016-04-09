@@ -23,10 +23,11 @@ extension String {
 class EmailFormViewController: UIViewController, UITextFieldDelegate {
 
     //MARK - Passing Data 
-    var email = String()
-    var nom = String()
-    var prenom = String()
-    var password = String()
+    var dataUser = User()
+//    var email = String()
+//    var nom = String()
+//    var prenom = String()
+//    var password = String()
     
 
     
@@ -57,8 +58,8 @@ class EmailFormViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(animated: Bool) {
         
-        if (!email.isEmpty){
-            emailTextField.text = email
+        if (!(dataUser.email?.isEmpty)!){
+            emailTextField.text = dataUser.email
         }
         
         toggleButtonNext()
@@ -136,10 +137,12 @@ class EmailFormViewController: UIViewController, UITextFieldDelegate {
             
             let destViewController : NameFormViewController = segue.destinationViewController as! NameFormViewController
             
-            destViewController.email = emailTextField.text!
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.password = password
+            dataUser.email = emailTextField.text!
+            destViewController.dataUser = dataUser
+//            destViewController.email = emailTextField.text!
+//            destViewController.nom = nom
+//            destViewController.prenom = prenom
+//            destViewController.password = password
             
         }
     

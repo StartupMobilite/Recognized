@@ -11,13 +11,8 @@ import UIKit
 class TypeFormViewController: UIViewController {
 
     //MARK - Passing Data
-    var email = String()
-    var nom = String()
-    var prenom = String()
-    var password = String()
-    var status = String()
-    
-    
+    var dataUser = User()
+
     // MARK - IBOutlet
     
    
@@ -44,33 +39,28 @@ class TypeFormViewController: UIViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        
+        
         print(segue.identifier)
         if ( segue.identifier == "goCreateurForm"){
             let destViewController : CreateurFormViewController = segue.destinationViewController as! CreateurFormViewController
             
-            destViewController.email = email
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.password = password
-            destViewController.status = "createur"
-            
+            dataUser.status = "createur"
+            destViewController.dataUser = dataUser
+        
             
         }else if (segue.identifier == "goClientForm"){
             let destViewController : ClientFormViewController = segue.destinationViewController as! ClientFormViewController
             
-            destViewController.email = email
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.password = password
-            destViewController.status = "client"
+            dataUser.status = "client"
+//            destViewController.dataUser = dataUser
+           
             
         }else if (segue.identifier == "goBackPasswordForm"){
             let destViewController : PasswordFormViewController = segue.destinationViewController as! PasswordFormViewController
             
-            destViewController.email = email
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.password = password
+            destViewController.dataUser = dataUser
+           
         }
         
     }

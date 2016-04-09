@@ -11,6 +11,8 @@ import UIKit
 class CreateurFormViewController: UIViewController, UITextViewDelegate {
 
     //MARK - Passing Data
+    var dataUser = User()
+    var dataUserCreateur = Createur()
     var email = String()
     var nom = String()
     var prenom = String()
@@ -123,11 +125,10 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
         if ( segue.identifier == "goLogoForm"){
             let destViewController : PasswordFormViewController = segue.destinationViewController as! PasswordFormViewController
             
-            destViewController.email = email
-            destViewController.password = password
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-//            destViewController.status = status
+            dataUserCreateur = Createur(userData: dataUser)
+        
+//            destViewController.dataUserCreateur = dataUserCreateur
+
 //            destViewController.nameMarque = nameMarqueTextTield.text!
 //            destViewController.descriptionMarque = descriptionMarqueTextView.text!
             
@@ -136,11 +137,7 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
         }else if (segue.identifier == "backTypeForm"){
             let destViewController : TypeFormViewController = segue.destinationViewController as! TypeFormViewController
             
-            destViewController.email = email
-            destViewController.password = password
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.status = status
+            destViewController.dataUser = dataUser
 //            destViewController.nameMarque = nameMarqueTextTield.text!
 //            destViewController.descriptionMarque = descriptionMarqueTextView.text!
             

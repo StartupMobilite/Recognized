@@ -21,10 +21,11 @@ extension String {
 class NameFormViewController: UIViewController {
 
     //MARK - Passing Data
-    var email = String()
-    var nom = String()
-    var prenom = String()
-    var password = String()
+    var dataUser = User()
+//    var email = String()
+//    var nom = String()
+//    var prenom = String()
+//    var password = String()
     
     
     // MARK - IBOutlet
@@ -52,6 +53,8 @@ class NameFormViewController: UIViewController {
         nextButton.layer.cornerRadius = 7.0
         nextButton.clipsToBounds = true
         
+        print(dataUser.email)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,11 +63,11 @@ class NameFormViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        if (!nom.isEmpty){
-            nomTextField.text = nom
+        if (!(dataUser.nom?.isEmpty)!){
+            nomTextField.text = dataUser.nom
         }
-        if (!prenom.isEmpty){
-            prenomTextField.text = prenom
+        if (!(dataUser.prenom?.isEmpty)!){
+            prenomTextField.text = dataUser.prenom
         }
         
         toggleButtonNext()
@@ -133,25 +136,19 @@ class NameFormViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         
+        dataUser.nom = nomTextField.text!
+        dataUser.prenom = prenomTextField.text!
+        
         if ( segue.identifier == "goPasswordForm"){
             let destViewController : PasswordFormViewController = segue.destinationViewController as! PasswordFormViewController
             
-            destViewController.email = email
-            destViewController.password = password
-            destViewController.nom = nomTextField.text!
-            destViewController.prenom = prenomTextField.text!
-            
-            
+            destViewController.dataUser = dataUser
             
         }else if (segue.identifier == "backEmailForm"){
             let destViewController : EmailFormViewController = segue.destinationViewController as! EmailFormViewController
 
-            destViewController.email = email
-            destViewController.password = password
-            destViewController.nom = nomTextField.text!
-            destViewController.prenom = prenomTextField.text!
-            
-        
+            destViewController.dataUser = dataUser
+
         }
         
         

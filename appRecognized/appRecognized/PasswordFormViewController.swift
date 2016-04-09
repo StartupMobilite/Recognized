@@ -21,11 +21,8 @@ extension String {
 class PasswordFormViewController: UIViewController {
     
     
-    //MARK - Passing Data
-    var email = String()
-    var nom = String()
-    var prenom = String()
-    var password = String()
+    //MARK - Passvar Data
+    var dataUser = User()
     
     // MARK - IBOutlet
     
@@ -58,6 +55,9 @@ class PasswordFormViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        if (!(dataUser.password?.isEmpty)!){
+            passwordTextField.text = dataUser.password
+        }
         toggleButtonNext()
     }
 
@@ -121,25 +121,20 @@ class PasswordFormViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        dataUser.password = passwordTextField.text!
+        
         print(segue.identifier)
         if ( segue.identifier == "goTypeForm"){
             let destViewController : TypeFormViewController = segue.destinationViewController as! TypeFormViewController
             
-            destViewController.email = email
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.password = passwordTextField.text!
+            destViewController.dataUser = dataUser
             
             
         }else if (segue.identifier == "backNameForm"){
             let destViewController : NameFormViewController = segue.destinationViewController as! NameFormViewController
             
-            destViewController.email = email
-            destViewController.nom = nom
-            destViewController.prenom = prenom
-            destViewController.password = passwordTextField.text!
-    
-            
+            destViewController.dataUser = dataUser
+
         }
 
     }

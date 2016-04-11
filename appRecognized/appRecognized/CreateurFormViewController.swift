@@ -62,11 +62,13 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        if (!nameMarque.isEmpty){
-            nameMarqueTextTield.text = nom
+        if (!dataUserCreateur.nomMarque!.isEmpty){
+            nameMarqueTextTield.text = dataUserCreateur.nomMarque
         }
-        if (!descriptionMarque.isEmpty){
-            descriptionMarqueTextView.text = descriptionMarque
+        if (!dataUserCreateur.description!.isEmpty){
+            descriptionMarqueTextView.textColor = UIColor(red: 134.0/255.0, green: 11.0/255.0, blue: 65.0/255.0, alpha: 1.0)
+
+            descriptionMarqueTextView.text = dataUserCreateur.description
         }
         
         toggleButtonNext()
@@ -123,11 +125,12 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
         
         
         if ( segue.identifier == "goLogoForm"){
-            let destViewController : PasswordFormViewController = segue.destinationViewController as! PasswordFormViewController
+            let destViewController : LogoFormViewController = segue.destinationViewController as! LogoFormViewController
             
-            dataUserCreateur = Createur(userData: dataUser)
-        
-//            destViewController.dataUserCreateur = dataUserCreateur
+            dataUserCreateur.nomMarque = nameMarqueTextTield.text!
+            dataUserCreateur.description = descriptionMarqueTextView.text!
+            destViewController.dataUser = dataUser
+            destViewController.dataUserCreateur = dataUserCreateur
 
 //            destViewController.nameMarque = nameMarqueTextTield.text!
 //            destViewController.descriptionMarque = descriptionMarqueTextView.text!

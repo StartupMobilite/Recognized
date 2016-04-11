@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		694C2EB74A959EE3320BA0C6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E5D74013D230B7B7F15CF1 /* Pods.framework */; };
 		924C94511CB94DD7009AF4AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C94501CB94DD7009AF4AA /* User.swift */; };
+		924C94541CB96E71009AF4AA /* LogoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C94531CB96E71009AF4AA /* LogoFormViewController.swift */; };
 		92766D191CA9B3A4009A91E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92766D181CA9B3A4009A91E5 /* AppDelegate.swift */; };
 		92766D1E1CA9B3A4009A91E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92766D1C1CA9B3A4009A91E5 /* Main.storyboard */; };
 		92766D211CA9B3A4009A91E5 /* appRecognized.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92766D1F1CA9B3A4009A91E5 /* appRecognized.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 		92A6694E1CB5A08A003BE657 /* CreateurFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6694D1CB5A08A003BE657 /* CreateurFormViewController.swift */; };
 		92A669561CB5A0F3003BE657 /* ClientFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669551CB5A0F3003BE657 /* ClientFormViewController.swift */; };
 		92A6695A1CB5A9BF003BE657 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669591CB5A9BF003BE657 /* Checkbox.swift */; };
+		92BBAC701CBAF9DC00F30728 /* ConnexionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBAC6F1CBAF9DC00F30728 /* ConnexionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,7 @@
 		7CFB3E70CF0C7F788966ECCE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7E8BEA48652306A3BD0456A3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		924C94501CB94DD7009AF4AA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		924C94531CB96E71009AF4AA /* LogoFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoFormViewController.swift; sourceTree = "<group>"; };
 		92766D151CA9B3A4009A91E5 /* appRecognized.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appRecognized.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92766D181CA9B3A4009A91E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92766D1D1CA9B3A4009A91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		92A6694D1CB5A08A003BE657 /* CreateurFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateurFormViewController.swift; sourceTree = "<group>"; };
 		92A669551CB5A0F3003BE657 /* ClientFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientFormViewController.swift; sourceTree = "<group>"; };
 		92A669591CB5A9BF003BE657 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		92BBAC6F1CBAF9DC00F30728 /* ConnexionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		924C94521CB96B1B009AF4AA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				924C94501CB94DD7009AF4AA /* User.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -119,7 +124,6 @@
 		92766D171CA9B3A4009A91E5 /* appRecognized */ = {
 			isa = PBXGroup;
 			children = (
-				924C94501CB94DD7009AF4AA /* User.swift */,
 				924C94521CB96B1B009AF4AA /* Class */,
 				92A669351CB1EDA8003BE657 /* wrongControllers */,
 				92766D181CA9B3A4009A91E5 /* AppDelegate.swift */,
@@ -164,6 +168,7 @@
 		92A669261CB19ACE003BE657 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				924C94531CB96E71009AF4AA /* LogoFormViewController.swift */,
 				92A669551CB5A0F3003BE657 /* ClientFormViewController.swift */,
 				92A6694D1CB5A08A003BE657 /* CreateurFormViewController.swift */,
 				92A669481CB31C3B003BE657 /* TypeFormViewController.swift */,
@@ -172,6 +177,7 @@
 				92A669301CB1D874003BE657 /* ConditionGenraleViewController.swift */,
 				92A669281CB1C015003BE657 /* EmailFormViewController.swift */,
 				92A669241CB19AC6003BE657 /* StartAppViewController.swift */,
+				92BBAC6F1CBAF9DC00F30728 /* ConnexionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				92766D341CA9C5CD009A91E5 /* Personnes+CoreDataProperties.swift in Sources */,
 				92A669561CB5A0F3003BE657 /* ClientFormViewController.swift in Sources */,
 				92A669311CB1D874003BE657 /* ConditionGenraleViewController.swift in Sources */,
+				924C94541CB96E71009AF4AA /* LogoFormViewController.swift in Sources */,
 				92A669401CB2F064003BE657 /* NameFormViewController.swift in Sources */,
 				92A669251CB19AC6003BE657 /* StartAppViewController.swift in Sources */,
 				92A669491CB31C3B003BE657 /* TypeFormViewController.swift in Sources */,
@@ -337,6 +344,7 @@
 				92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */,
 				92A669141CAF548C003BE657 /* MainVC.swift in Sources */,
 				924C94511CB94DD7009AF4AA /* User.swift in Sources */,
+				92BBAC701CBAF9DC00F30728 /* ConnexionViewController.swift in Sources */,
 				92A669421CB2F6DB003BE657 /* PasswordFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

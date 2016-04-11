@@ -20,15 +20,6 @@ class StartAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-//        UIGraphicsBeginImageContext(self.view.frame.size);
-//        [[UIImage imageNamed:"MainBackground"], drawInRect:self.view.bounds];
-//        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        
-//        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-        
-        
         //Initialize background 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "MainBackground")!)
 

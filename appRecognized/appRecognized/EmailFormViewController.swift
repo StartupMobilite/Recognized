@@ -23,12 +23,7 @@ extension String {
 class EmailFormViewController: UIViewController, UITextFieldDelegate {
 
     //MARK - Passing Data 
-    var dataUser = User()
-//    var email = String()
-//    var nom = String()
-//    var prenom = String()
-//    var password = String()
-    
+    var dataUser = User()    
 
     
     // MARK - IBOutlet
@@ -139,10 +134,6 @@ class EmailFormViewController: UIViewController, UITextFieldDelegate {
             
             dataUser.email = emailTextField.text!
             destViewController.dataUser = dataUser
-//            destViewController.email = emailTextField.text!
-//            destViewController.nom = nom
-//            destViewController.prenom = prenom
-//            destViewController.password = password
             
         }
     

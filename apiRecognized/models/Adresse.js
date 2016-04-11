@@ -4,18 +4,19 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Adresse = sequelize.define('Adresse', {
-        id: {
+    var Adresse;
+    Adresse = sequelize.define('Adresse', {
+        id_Adresse: {
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
-        numeroVoie: DataTypes.INTEGER,
-        nomVoie: DataTypes.STRING,
-        codePostal: DataTypes.INTEGER,
-        ville: DataTypes.STRING,
-        pays: DataTypes.STRING
+        numero_Adresse: DataTypes.INTEGER,
+        rue_Adresse: DataTypes.STRING,
+        codePostal_Adresse: DataTypes.INTEGER,
+        ville_Adresse: DataTypes.STRING,
+        pays_Adresse: DataTypes.STRING
     });
     return Adresse;
 };

@@ -4,22 +4,16 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Produit = sequelize.define('Produit', {
-        id: {
+    var Produit;
+    Produit = sequelize.define('Produit', {
+        id_Produit: {
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
-        reference: DataTypes.STRING,
-        libelle: DataTypes.STRING,
-        description: DataTypes.INTEGER,
-        prix: DataTypes.FLOAT,
-        quantite: DataTypes.INTEGER,
-        marque: DataTypes.INTEGER,
-        categorie: DataTypes.INTEGER,
-        personne: DataTypes.INTEGER,
-        pays: DataTypes.STRING
+        id_Categorie: DataTypes.INTEGER,
+        value_Produit: DataTypes.STRING
     });
     return Produit;
 };

@@ -4,8 +4,9 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Personne;
-    Personne = sequelize.define('Personne', {
+
+    var Personne = sequelize.define('Personne', {
+
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -21,9 +22,10 @@ module.exports = function(sequelize, DataTypes) {
         telephone: DataTypes.INTEGER,
         statut: {
             type: DataTypes.ENUM,
-            values: ['client', 'createur'],
+            values: ['client', 'createur', 'admin'],
             allowNull: false
         }
     });
+
     return Personne;
 };

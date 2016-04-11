@@ -4,8 +4,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-    var Produit;
-    Produit = sequelize.define('Produit', {
+    var Produit = sequelize.define('Produit', {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,

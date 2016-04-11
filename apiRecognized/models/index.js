@@ -8,10 +8,10 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
-if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.developpement]);
+if (config.development) {
+    var sequelize = new Sequelize(process.env[config.development]);
 } else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
+    var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 fs
@@ -20,6 +20,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(function(file) {
+    console.log(path.join(__dirname, file));
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });

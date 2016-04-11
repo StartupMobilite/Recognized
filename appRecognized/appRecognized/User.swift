@@ -123,7 +123,7 @@ class User {
         return predicateTest
     }
     
-    internal func findByEmailAndPassword (entityName: String, email: String, password: String)-> NSDictionary{//->  NSFetchedResultsController
+    internal func findOneByEmailAndPassword (entityName: String, email: String, password: String)-> NSDictionary{//->  NSFetchedResultsController
         
         var data = Dictionary<String, String>()
         

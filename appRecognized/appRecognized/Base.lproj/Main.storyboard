@@ -306,7 +306,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfU-K3-Q6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424" y="2975"/>
+            <point key="canvasLocation" x="206" y="3168"/>
         </scene>
         <!--Inscription-->
         <scene sceneID="kSw-Aq-LEa">
@@ -653,7 +653,7 @@
         <!--Connexion -->
         <scene sceneID="DAf-MZ-0wc">
             <objects>
-                <viewController title="Connexion " id="fin-wV-v1d" customClass="ConnexionViewController" customModule="appRecognized" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnexionViewController" title="Connexion " id="fin-wV-v1d" customClass="ConnexionViewController" customModule="appRecognized" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D6I-OO-cRg"/>
                         <viewControllerLayoutGuide type="bottom" id="Cyu-1i-WS5"/>
@@ -714,26 +714,33 @@
                                             <action selector="connexionAction:" destination="fin-wV-v1d" eventType="touchUpInside" id="Lcj-fl-dty"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoFull" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-Pl-n6F">
-                                        <rect key="frame" x="35" y="145" width="254" height="76"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recognized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXv-BC-Tjs">
+                                        <rect key="frame" x="41" y="162" width="239" height="79"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="254" id="1RA-LN-Ao6"/>
-                                            <constraint firstAttribute="height" constant="76" id="m8p-Os-ccc"/>
+                                            <constraint firstAttribute="height" constant="79" id="oB5-re-Jv9"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="40"/>
+                                        <color key="textColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="GZs-lp-h5N" firstAttribute="top" secondItem="bXv-BC-Tjs" secondAttribute="bottom" constant="41" id="3QD-Pp-oFJ"/>
                                     <constraint firstAttribute="trailing" secondItem="GZs-lp-h5N" secondAttribute="trailing" constant="15" id="Hmq-c9-ANb"/>
-                                    <constraint firstItem="LOU-Pl-n6F" firstAttribute="centerX" secondItem="0uq-yQ-LDz" secondAttribute="centerX" constant="2" id="MGK-1P-dnV"/>
-                                    <constraint firstItem="GZs-lp-h5N" firstAttribute="top" secondItem="LOU-Pl-n6F" secondAttribute="bottom" constant="61" id="TvM-pd-ECi"/>
+                                    <constraint firstItem="bXv-BC-Tjs" firstAttribute="centerX" secondItem="0uq-yQ-LDz" secondAttribute="centerX" id="Nbc-SA-hjC"/>
                                     <constraint firstItem="0Dm-Zd-JMn" firstAttribute="top" secondItem="GZs-lp-h5N" secondAttribute="bottom" constant="53" id="Wa9-ZE-c0G"/>
                                     <constraint firstAttribute="trailing" secondItem="0Dm-Zd-JMn" secondAttribute="trailing" constant="15" id="eE2-VK-9ax"/>
-                                    <constraint firstItem="LOU-Pl-n6F" firstAttribute="top" secondItem="0uq-yQ-LDz" secondAttribute="top" constant="145" id="exD-5P-GDg"/>
                                     <constraint firstItem="GZs-lp-h5N" firstAttribute="leading" secondItem="0uq-yQ-LDz" secondAttribute="leading" constant="20" id="gDN-6F-Wvm"/>
+                                    <constraint firstItem="bXv-BC-Tjs" firstAttribute="top" secondItem="0uq-yQ-LDz" secondAttribute="top" constant="162" id="hVG-PC-WT6"/>
+                                    <constraint firstItem="bXv-BC-Tjs" firstAttribute="leading" secondItem="0uq-yQ-LDz" secondAttribute="leading" constant="41" id="iMG-l6-aTy"/>
                                     <constraint firstItem="GZs-lp-h5N" firstAttribute="centerX" secondItem="0uq-yQ-LDz" secondAttribute="centerX" constant="2.5" id="j1A-gQ-phH"/>
                                     <constraint firstItem="0Dm-Zd-JMn" firstAttribute="leading" secondItem="0uq-yQ-LDz" secondAttribute="leadingMargin" constant="12" id="s52-Fj-gJz"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kNz-HB-51T" appends="YES" id="eBa-kI-DnT"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -754,64 +761,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8M-5K-DzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1083" y="1048"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="ViH-2w-8pD">
-            <objects>
-                <viewController id="RrB-gh-kiY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="q4a-yB-raQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Q0P-jg-FKK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CHb-uQ-T7x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Xai-AQ-KKP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rKo-D7-nzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="699" y="2474"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="D6k-81-eRq">
-            <objects>
-                <viewController id="8LM-mv-M4d" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jL8-hy-EuZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="L8e-qj-Hui"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e2m-vd-WXd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="cMh-1A-JLa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gIr-Jl-4Zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1189" y="2474"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="74V-Bt-Bif">
-            <objects>
-                <tabBarController id="lCm-0u-oBR" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="c5P-dX-ZcM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                <swipeGestureRecognizer direction="right" id="kNz-HB-51T">
                     <connections>
-                        <segue destination="8LM-mv-M4d" kind="relationship" relationship="viewControllers" id="1uc-wv-vKs"/>
-                        <segue destination="RrB-gh-kiY" kind="relationship" relationship="viewControllers" id="hEy-xc-6I0"/>
+                        <segue destination="01Z-UD-G7c" kind="push" identifier="backStartApp" customClass="SegueFromLeft" customModule="appRecognized" customModuleProvider="target" id="g3B-fT-6to"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uci-02-uVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1083" y="1722"/>
+            <point key="canvasLocation" x="1057" y="1070"/>
         </scene>
         <!--ConditionGeneral-->
         <scene sceneID="c9B-Wo-xG5">
@@ -1469,7 +1425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TzQ-en-GHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3508" y="1020"/>
+            <point key="canvasLocation" x="3088" y="1048"/>
         </scene>
         <!--Createur Form View Controller-->
         <scene sceneID="jZ1-Ob-92U">
@@ -1769,6 +1725,63 @@
             </objects>
             <point key="canvasLocation" x="3989" y="266"/>
         </scene>
+        <!--Catalogue-->
+        <scene sceneID="aD3-yD-MB9">
+            <objects>
+                <viewController id="RVM-h2-FW4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iVi-3b-4dz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nk1-wc-gU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ACh-Wn-EAw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Catalogue" image="categorie" id="6uM-GW-CxH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGo-DC-B7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="2428"/>
+        </scene>
+        <!--messagerie-->
+        <scene sceneID="w0U-fG-wZn">
+            <objects>
+                <viewController id="iUV-NW-M3N" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DeN-Pk-58a"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ywl-4Z-V6A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sOA-Gf-GyW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="messagerie" image="people" id="zO3-dS-vyv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndj-kE-IX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="2428"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="21C-EW-475">
+            <objects>
+                <viewController id="Akb-nk-jGy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Xc-Za-hZ6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zwd-m2-Aoi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yry-et-OaG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profil" image="people" id="Bed-AJ-Lu4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T55-ea-Co1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="2428"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="boO-Lt-PHw">
             <objects>
@@ -1790,7 +1803,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sej-ge-kDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397" y="1638"/>
+            <point key="canvasLocation" x="2576" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jUQ-0K-WbE">
@@ -1810,25 +1823,65 @@
             </objects>
             <point key="canvasLocation" x="671" y="260"/>
         </scene>
+        <!--Mes articles-->
+        <scene sceneID="u4G-jJ-UGK">
+            <objects>
+                <viewController id="neN-81-jKb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yY7-6V-ZKo"/>
+                        <viewControllerLayoutGuide type="bottom" id="kQJ-gS-lNs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YxM-Ba-F8C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mes articles" image="people" id="jgA-ew-gX2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbW-Hs-kWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="2428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dWr-oh-j4t">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarCreateur" automaticallyAdjustsScrollViewInsets="NO" id="H4m-Hp-KNz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="C9j-H1-Z8s">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RVM-h2-FW4" kind="relationship" relationship="viewControllers" id="s1i-dp-6T0"/>
+                        <segue destination="iUV-NW-M3N" kind="relationship" relationship="viewControllers" id="OFs-xR-bkr"/>
+                        <segue destination="Akb-nk-jGy" kind="relationship" relationship="viewControllers" id="1Az-Mj-snk"/>
+                        <segue destination="neN-81-jKb" kind="relationship" relationship="viewControllers" id="6au-ev-Y4c"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUv-D3-KiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650" y="1689"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DressDraw" width="964" height="1074"/>
         <image name="Image" width="210" height="220"/>
-        <image name="LogoFull" width="394" height="130"/>
         <image name="R-52" width="52" height="52"/>
         <image name="ShoppinBag" width="550" height="322"/>
+        <image name="categorie" width="30" height="30"/>
         <image name="clientLogo" width="210" height="220"/>
         <image name="heart" width="30" height="30"/>
         <image name="logoEmplacement" width="87" height="87"/>
         <image name="logoRecognized" width="320" height="480"/>
+        <image name="people" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qlm-wK-e8u"/>
-        <segue reference="jvv-yS-wPu"/>
-        <segue reference="l0Y-Ul-ZKq"/>
-        <segue reference="FpQ-69-coo"/>
-        <segue reference="yrc-ER-wUV"/>
-        <segue reference="Thj-Kp-dMx"/>
         <segue reference="CzZ-o2-GSQ"/>
+        <segue reference="FpQ-69-coo"/>
+        <segue reference="l0Y-Ul-ZKq"/>
+        <segue reference="yrc-ER-wUV"/>
+        <segue reference="M1D-13-8MG"/>
+        <segue reference="Thj-Kp-dMx"/>
+        <segue reference="g3B-fT-6to"/>
+        <segue reference="qlm-wK-e8u"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,13 +13,6 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     //MARK - Passing Data
     var dataUser = User()
     var dataUserCreateur = Createur()
-    var email = String()
-    var nom = String()
-    var prenom = String()
-    var password = String()
-    var status = String()
-    var nameMarque = String()
-    var descriptionMarque = String()
 
 
     // MARK - IBOutlet

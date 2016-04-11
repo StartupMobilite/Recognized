@@ -12,42 +12,6 @@ import Alamofire
 
 class ConnexionViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
-//    // Retreive the managedObjectContext from AppDelegate
-//    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-//    
-//    var frc : NSFetchedResultsController = NSFetchedResultsController()
-//    
-//    func fetchRequest(entityName: String) -> NSFetchRequest {
-//        
-//        let fetchRequest = NSFetchRequest(entityName: entityName)
-//        let sortDescriptor = NSSortDescriptor(key: "nom", ascending: true)
-//        fetchRequest.predicate = predicateByEmailAndPassword("k@k.fr", password: "melon93")
-//        fetchRequest.sortDescriptors = [sortDescriptor]
-//        return fetchRequest
-//    }
-//    
-//    func predicateByEmailAndPassword(email: String!, password: String!) -> NSPredicate{
-//        let predicateTest = NSPredicate(format: "email == %@ AND password == %@",email, password)
-//        
-//        return predicateTest
-//    }
-//    
-//    func getFRC () {//->  NSFetchedResultsController
-//        
-//        do {
-//            let personneResult = try moc.executeFetchRequest(fetchRequest("Personnes")) as! [Personnes]
-//            
-//            print("Result : \(personneResult.count)")
-//            
-//            personneResult.forEach({ (name) in
-//                print(name.email)
-//                print(name.password)
-//            })
-//            
-//        } catch {
-//            fatalError("Failed to fetch employees: \(error)")
-//        }
-//    }
     
     // MARK - IBOutlet
     
@@ -70,6 +34,9 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ConnexionViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         //Initialize background
         MainView.backgroundColor = UIColor(patternImage: UIImage(named: "MainBackground")!)
@@ -79,15 +46,13 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
         self.navigationController?.navigationBarHidden = true
         
         // Corner Raduis Img
-        connexionButton.layer.cornerRadius = 8.8
+        connexionButton.layer.cornerRadius = 8.95
         connexionButton.clipsToBounds = true
     }
     
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-//        self.navigationController?.navigationBarHidden = true
-        self.userdata.findByEmailAndPassword("Personnes", email: "k@k.fr", password: "melon93")
 //        let personneTest = frc.fetchedObjects?.count
 //        print(personneTest)
     }
@@ -101,17 +66,59 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     @IBAction func connexionAction(sender: AnyObject) {
         
         
+        let user = self.userdata.findOneByEmailAndPassword("Personnes", email: emailTextField.text!, password: passwordTextField.text!)
+        if ((user["email"]) != nil){
+            
+            print(user)
+            let tabBarCreateur = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarCreateur") as! UITabBarController
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = tabBarCreateur
+
+            
+        }else{
+            // create the alert
+            let alert = UIAlertController(title: "Login failed", message: "Email ou password incorrect!", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            // show the alert
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        
     }
     
-    /*
+    //MARK - function 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    
+
+   
      // MARK: - Navigation
-     
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+        
+        if (identifier == "goConnexion"){
+            
+            return true
+            
+        }else if ( identifier == "backCreateurForm"){
+            return true
+        }
+        
+        return false
+    }
+
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
-     */
+    
 
     
     

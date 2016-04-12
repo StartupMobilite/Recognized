@@ -9,19 +9,19 @@ exports.createUserAdmin = function(req, res, next){
     console.log(req.body);
     
     var newUser = {
-        nom: req.body.nom,
-        prenom: req.body.prenom,
-        email: req.body.email,
-        password: req.body.password,
-        statut: 'admin'
+        nom_User: req.body.nom,
+        prenom_User: req.body.prenom,
+        email_User: req.body.email,
+        password_User: req.body.password,
+        status_User: 'admin'
     };
 
-    models.Personne.create(newUser).then(function(user){
+    models.User.create(newUser).then(function(User){
 
         var result = false;
 
-        if (user.get('id')){
-            result = user.get();
+        if (User.get('id_User')){
+            result = User.get();
 
         }else{
             result = 'error insert user';
@@ -32,4 +32,29 @@ exports.createUserAdmin = function(req, res, next){
 
 
 };
+
+exports.createUser = function(req, res, next) {
+    console.log(req.body);
+
+    var newUser = {
+        nom_User: req.body.nom,
+        prenom_User: req.body.prenom,
+        email_User: req.body.email,
+        password_User: req.body.password,
+        status_User: req.body.status,
+    };
+
+    models.User.create(newUser).then(function(User) {
+        var result = false;
+
+        if (User.get('id_User')) {
+            result = User.get();
+        } else {
+            result = 'error insert user';
+        }
+
+        res.send(result);
+    });
+
+}
 

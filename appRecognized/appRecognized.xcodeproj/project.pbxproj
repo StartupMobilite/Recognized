@@ -36,6 +36,8 @@
 		92A669561CB5A0F3003BE657 /* ClientFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669551CB5A0F3003BE657 /* ClientFormViewController.swift */; };
 		92A6695A1CB5A9BF003BE657 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669591CB5A9BF003BE657 /* Checkbox.swift */; };
 		92BBAC701CBAF9DC00F30728 /* ConnexionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BBAC6F1CBAF9DC00F30728 /* ConnexionViewController.swift */; };
+		DDCF9C3B1CBC5FDB003844A4 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF9C3A1CBC5FDB003844A4 /* Article.swift */; };
+		DDCF9C3D1CBC713F003844A4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF9C3C1CBC713F003844A4 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		92A669551CB5A0F3003BE657 /* ClientFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientFormViewController.swift; sourceTree = "<group>"; };
 		92A669591CB5A9BF003BE657 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		92BBAC6F1CBAF9DC00F30728 /* ConnexionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionViewController.swift; sourceTree = "<group>"; };
+		DDCF9C3A1CBC5FDB003844A4 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		DDCF9C3C1CBC713F003844A4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				924C94501CB94DD7009AF4AA /* User.swift */,
+				DDCF9C3A1CBC5FDB003844A4 /* Article.swift */,
+				DDCF9C3C1CBC713F003844A4 /* Message.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCF9C3B1CBC5FDB003844A4 /* Article.swift in Sources */,
 				92A669231CB06C8E003BE657 /* SignUpCreateurTVC.swift in Sources */,
 				92A669291CB1C015003BE657 /* EmailFormViewController.swift in Sources */,
 				92A6695A1CB5A9BF003BE657 /* Checkbox.swift in Sources */,
@@ -355,6 +362,7 @@
 				927A7DA61CBD39B0003CE9EA /* Createurs.swift in Sources */,
 				92766D191CA9B3A4009A91E5 /* AppDelegate.swift in Sources */,
 				927A7DA71CBD39B0003CE9EA /* Users+CoreDataProperties.swift in Sources */,
+				DDCF9C3D1CBC713F003844A4 /* Message.swift in Sources */,
 				92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */,
 				92A669141CAF548C003BE657 /* MainVC.swift in Sources */,
 				924C94511CB94DD7009AF4AA /* User.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  Personnes+CoreDataProperties.swift
+//  Users+CoreDataProperties.swift
 //  appRecognized
 //
-//  Created by Karine Ould on 28/03/2016.
+//  Created by Karine Ould on 12/04/2016.
 //  Copyright © 2016 Karine Ould. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,17 +12,13 @@
 import Foundation
 import CoreData
 
-extension Personnes {
+extension Users {
 
-    @NSManaged var id: String?
+    @NSManaged var id: NSNumber?
     @NSManaged var nom: String?
     @NSManaged var prenom: String?
     @NSManaged var email: String?
     @NSManaged var password: String?
-    @NSManaged var descriptions: String?
-    @NSManaged var address: String?
-    @NSManaged var telephone: String?
     @NSManaged var status: String?
-    @NSManaged var image: NSData?
 
 }

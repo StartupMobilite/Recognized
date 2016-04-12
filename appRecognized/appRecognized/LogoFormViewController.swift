@@ -12,7 +12,7 @@ import CoreData
 class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK - Core Data 
-    var personnes : Personnes? = nil
+    var users : Users? = nil
     let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     //MARK - Passing Data
@@ -97,17 +97,17 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
-    func createNewPersonne(dataUser : User){
+    func createNewUserInCoreData(dataUser : User){
         
         let entityDescritpion = NSEntityDescription.entityForName("Personnes", inManagedObjectContext: moc)
         
-        let personne = Personnes(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
+        let user = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
         
-        personne.nom = dataUser.nom
-        personne.prenom = dataUser.prenom
-        personne.email = dataUser.email
-        personne.password = dataUser.password
-        personne.status = dataUser.status
+        user.nom = dataUser.nom
+        user.prenom = dataUser.prenom
+        user.email = dataUser.email
+        user.password = dataUser.password
+        user.status = dataUser.status
         
         do{
             try moc.save()
@@ -138,7 +138,8 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
         
         print(segue.identifier)
         if (segue.identifier == "goConnexion"){
-            createNewPersonne(dataUser)
+            createNewUserInCoreData(dataUser)
+            
 //            let destViewController : ConnexionViewController = segue.destinationViewController as! ConnexionViewController
             
 //            destViewController.dataCre = dataUser

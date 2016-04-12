@@ -125,15 +125,15 @@ class User {
     
     internal func findOneByEmailAndPassword (entityName: String, email: String, password: String)-> NSDictionary{//->  NSFetchedResultsController
         
-        var data = Dictionary<String, String>()
+        var data = Dictionary<String, AnyObject>()
         
         do {
-            let personneResult = try moc.executeFetchRequest(fetchRequest(entityName, email: email, password: password)) as! [Personnes]
+            let personneResult = try moc.executeFetchRequest(fetchRequest(entityName, email: email, password: password)) as! [Users]
             
             print("Result : \(personneResult.count)")
             
             if (personneResult.count == 1){
-                data["id"] = personneResult.first?.id
+                data["id"] = (personneResult.first?.id)! as NSNumber
                 data["nom"] = personneResult.first?.nom
                 data["prenom"] = personneResult.first?.prenom
                 data["email"] = personneResult.first?.email

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TD2-FN-M8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TD2-FN-M8i">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1187,7 +1187,7 @@
                                             <action selector="passwordDidEndEditing:" destination="FcL-Z6-OKe" eventType="editingDidEnd" id="0bn-mR-WfG"/>
                                         </connections>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" scrollEnabled="NO" editable="NO" text="Saisissez une combinaison d'au moins 6 chiffres, lettres, et signes de ponctuation (tel que ! et &amp;)." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-mh-fV1" userLabel="Description Text View">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" scrollEnabled="NO" editable="NO" text="Saisissez une combinaison d'au moins 6 caractères (chiffres, lettres, et signes de ponctuation tels que ! et &amp;)." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-mh-fV1" userLabel="Description Text View">
                                         <rect key="frame" x="30" y="222" width="261" height="44"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
@@ -1875,13 +1875,13 @@
         <image name="people" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CzZ-o2-GSQ"/>
-        <segue reference="FpQ-69-coo"/>
-        <segue reference="l0Y-Ul-ZKq"/>
         <segue reference="yrc-ER-wUV"/>
         <segue reference="M1D-13-8MG"/>
-        <segue reference="Thj-Kp-dMx"/>
+        <segue reference="umG-PA-Sjc"/>
+        <segue reference="KfS-5A-Scn"/>
+        <segue reference="FpQ-69-coo"/>
         <segue reference="g3B-fT-6to"/>
         <segue reference="qlm-wK-e8u"/>
+        <segue reference="CzZ-o2-GSQ"/>
     </inferredMetricsTieBreakers>
 </document>

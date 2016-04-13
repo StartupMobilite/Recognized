@@ -4,6 +4,12 @@
 
 var models  = require('../models');
 
+
+var sendJsonResponse = function (res, status, content) {
+    res.status(status);
+    res.json(content);
+};
+
 exports.createUserAdmin = function(req, res, next){
 
     console.log(req.body);
@@ -81,14 +87,6 @@ exports.createUser = function(req, res, next) {
             });
         }
 
-
-        //if (user.get('id_User')) {
-        //    result = user.get();
-        //} else {
-        //    result = 'error insert user';
-        //}
-        //
-        //res.send(result);
     });
 }
 
@@ -96,7 +94,7 @@ exports.createUser = function(req, res, next) {
 exports.findAll = function(req, res, next) {
     models.User.findAll().then(function(users){
         console.log(users);
-        return res.end(JSON.stringify(users));
-        //res.send(users.array(models.User));
+        sendJsonResponse(res, 200, users);
+        return;
     });
 }

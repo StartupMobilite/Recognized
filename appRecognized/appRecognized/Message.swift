@@ -11,7 +11,7 @@ import CoreData
 
 class Message {
     
-    var conversation: Conversation?
+    var conversation: String?//Conversation?
     //        {
     //        get{
     //            if self.conversation == nil { return nil}
@@ -21,7 +21,7 @@ class Message {
     ////            self.conversation = newValue
     ////        }
     //    }
-    var expediteur: User?
+    var expediteur: String?//User?
     //        {
     //        get{
     //            if self.expediteur == nil { return nil}
@@ -31,7 +31,7 @@ class Message {
     ////            self.expediteur = newValue
     ////        }
     //    }
-    var destinataire: User?
+    var destinataire: String?//User?
     //        {
     //        get{
     //            if self.destinataire == nil { return nil}
@@ -63,43 +63,44 @@ class Message {
     //    }
 }
 
-class Conversation {
-    
-    var id: String?
-    //        {
-    //        get{
-    //            if self.id == nil { return nil}
-    //            return self.id
-    //        }
-    ////        set(newValue){
-    ////            self.id = newValue
-    ////        }
-    //    }
-    var user1: User?
-    //        {
-    //        get{
-    //            if self.user1 == nil { return nil}
-    //            return self.user1
-    //        }
-    ////        set(newValue){
-    ////            self.user1 = newValue
-    ////        }
-    //    }
-    var user2: User?
-    //        {
-    //        get{
-    //            if self.user2 == nil { return nil}
-    //            return self.user2
-    //        }
-    ////        set(newValue){
-    ////            self.user2 = newValue
-    ////        }
-    //    }
-}
+//class Conversation {
+//    
+//    var id: String?
+//    //        {
+//    //        get{
+//    //            if self.id == nil { return nil}
+//    //            return self.id
+//    //        }
+//    ////        set(newValue){
+//    ////            self.id = newValue
+//    ////        }
+//    //    }
+//    var user1: String?//User?
+//    //        {
+//    //        get{
+//    //            if self.user1 == nil { return nil}
+//    //            return self.user1
+//    //        }
+//    ////        set(newValue){
+//    ////            self.user1 = newValue
+//    ////        }
+//    //    }
+//    var user2: String//User?
+//    //        {
+//    //        get{
+//    //            if self.user2 == nil { return nil}
+//    //            return self.user2
+//    //        }
+//    ////        set(newValue){
+//    ////            self.user2 = newValue
+//    ////        }
+//    //    }
+//}
 
-class Commentaire {
+
+class CoupDeCoeur {
     
-    var article: Article?
+    var article: String?//Article?
     //        {
     //        get{
     //            if self.article == nil { return nil}
@@ -109,7 +110,56 @@ class Commentaire {
     ////            self.article = newValue
     ////        }
     //    }
-    var user: User?
+    var user: String?//User?
+    //        {
+    //        get{
+    //            if self.user == nil { return nil}
+    //            return self.user
+    //        }
+    ////        set(newValue){
+    ////            self.user = newValue
+    ////        }
+    //    }
+}
+
+class Interest {
+    
+    var client: String?//Client?
+    //        {
+    //        get{
+    //            if self.client == nil { return nil}
+    //            return self.client
+    //        }
+    ////        set(newValue){
+    ////            self.client = newValue
+    ////        }
+    //    }
+    var univers: String?//Univers?
+    //        {
+    //        get{
+    //            if self.univers == nil { return nil}
+    //            return self.univers
+    //        }
+    ////        set(newValue){
+    ////            self.univers = newValue
+    ////        }
+    //    }
+
+}
+
+class Commentaire {
+    
+    var article: String?//Article?
+    //        {
+    //        get{
+    //            if self.article == nil { return nil}
+    //            return self.article
+    //        }
+    ////        set(newValue){
+    ////            self.article = newValue
+    ////        }
+    //    }
+    var user: String?//User?
     //        {
     //        get{
     //            if self.user == nil { return nil}
@@ -129,55 +179,6 @@ class Commentaire {
     ////            self.value = newValue
     ////        }
     //    }
-}
-
-class CoupDeCoeur {
-    
-    var article: Article?
-    //        {
-    //        get{
-    //            if self.article == nil { return nil}
-    //            return self.article
-    //        }
-    ////        set(newValue){
-    ////            self.article = newValue
-    ////        }
-    //    }
-    var user: User?
-    //        {
-    //        get{
-    //            if self.user == nil { return nil}
-    //            return self.user
-    //        }
-    ////        set(newValue){
-    ////            self.user = newValue
-    ////        }
-    //    }
-}
-
-class Commentaire {
-    
-    var client: Client?
-    //        {
-    //        get{
-    //            if self.client == nil { return nil}
-    //            return self.client
-    //        }
-    ////        set(newValue){
-    ////            self.client = newValue
-    ////        }
-    //    }
-    var univers: Univers?
-    //        {
-    //        get{
-    //            if self.univers == nil { return nil}
-    //            return self.univers
-    //        }
-    ////        set(newValue){
-    ////            self.univers = newValue
-    ////        }
-    //    }
-
 }
 
 class Adresse {

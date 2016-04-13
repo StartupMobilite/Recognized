@@ -8,10 +8,14 @@
 
 import UIKit
 import CoreData
-
+import Alamofire
 
 class User {
     
+    // Retreive the managedObjectContext from AppDelegate
+    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    var frc : NSFetchedResultsController = NSFetchedResultsController()
     
     var id: String?
 //        {
@@ -24,55 +28,11 @@ class User {
 ////        }
 //    }
     var nom: String?
-//        {
-//        get{
-//            if self.nom == nil { return nil}
-//            return self.nom
-//        }
-////        set(newValue){
-////            self.nom = newValue
-////        }
-//    }
     var prenom: String?
-//        {
-//        get{
-//            if self.prenom == nil { return nil}
-//            return self.prenom
-//        }
-////        set(newValue){
-////            self.prenom = newValue
-////        }
-//    }
     var email: String?
-//        {
-//        get{
-//            if self.email == nil { return nil}
-//            return self.email
-//        }
-////        set(newValue){
-////            self.email = newValue
-////        }
-//    }
     var password: String?
-//        {
-//        get{
-//            if self.password == nil { return nil}
-//            return self.password
-//        }
-////        set(newValue){
-////            self.password = newValue
-////        }
-//    }
     var status: String?
-//    {
-//        get{
-//            if self.status == nil { return nil}
-//            return self.status
-//        }
-////        set(newValue){
-////            self.status = newValue
-////        }
-//    }
+
     
     init(id: String, nom: String,
          prenom: String,email: String, password: String, status: String) {
@@ -102,11 +62,9 @@ class User {
         self.status = user.status
     }
     
-    
-    // Retreive the managedObjectContext from AppDelegate
-    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    var frc : NSFetchedResultsController = NSFetchedResultsController()
+    func className()->String{
+        return "User"
+    }
     
     func fetchRequest(entityName: String, email: String, password: String) -> NSFetchRequest {
         
@@ -160,8 +118,64 @@ class User {
             fatalError("Failed to fetch employees: \(error)")
         }
     }
+    
+    
+    internal func insertNewUserInCoreData(dataUser : User){
+        
+        
+        let entityDescritpion = NSEntityDescription.entityForName("Users", inManagedObjectContext: moc)
+        
+        let user = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
+        
+//        let dataUserApi = insertNewUserInApi(dataUser)
+        user.id = Int(dataUser.id!)
+        user.nom = dataUser.nom
+        user.prenom = dataUser.prenom
+        user.email = dataUser.email
+        user.password = dataUser.password
+        user.status = dataUser.status
+        
+        do{
+            try moc.save()
+            
+        }catch{
+            return
+        }
+    }
+    
+    func insertNewUserInApi(indicator: UIActivityIndicatorView, completionHandler: (NSDictionary?, NSError?) -> ()) {
+        
+        let parameters = [ "nom": self.nom as String!,
+                           "prenom": self.prenom as String!,
+                           "email": self.email as String!,
+                           "password": self.password as String!,
+                           "status": self.status as String!
+        ]
+        
+       indicator.startAnimating()
+       Alamofire.request(.POST, "http://localhost:3000/createUser", parameters: parameters, encoding: .JSON)
+            .responseJSON {
+                response in switch response.result {
+                case .Success(let JSON):
+//                    print("Success with JSON: \(JSON)")
+                    
+                    let response = JSON as! NSDictionary
+                    
+                    if ((response["id"]) != nil && (response["email"]?.isEqual(self.email))!)
+                    {
+                        completionHandler(JSON as? NSDictionary, nil)
+                
+                    }
+                case .Failure(let error):
+                    
+//                    print("Request failed with error: \(error)")
+                    completionHandler(nil, error)
 
-
+                }
+                indicator.stopAnimating()
+    
+        }
+    }
 }
 
 
@@ -211,6 +225,9 @@ class Createur : User {
         self.logo = nil
     }
     
+    override func className()->String{
+        return "Createur"
+    }
 //    func loadUser(userData: User) -> User{
 //        return userData
 //    }
@@ -235,6 +252,9 @@ class Client: User {
         self.interest = NSArray()
         super.init(user : userData)
     }
-
+    
+    override func className()->String{
+        return "Client"
+    }
 }
 

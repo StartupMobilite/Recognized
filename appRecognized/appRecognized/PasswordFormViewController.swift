@@ -103,7 +103,7 @@ class PasswordFormViewController: UIViewController {
             
             // Validation Password
             
-            if (passwordTextField.text!.isPassword() == true){
+            if ((passwordTextField.text!.characters.count) > 5){//isPassword()
                 return true
             }else{
                 nextButton.hidden = true

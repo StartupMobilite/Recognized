@@ -42,7 +42,7 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate {
     func getFRC () {//->  NSFetchedResultsController
         
         do {
-            let personneResult = try moc.executeFetchRequest(fetchRequest()) as! [Personnes]
+            let personneResult = try moc.executeFetchRequest(fetchRequest()) as! [Users]
             
             personneResult.forEach({ (name) in
                 print(name.nom)

@@ -22,7 +22,7 @@ class Article {
     ////            self.id = newValue
     ////        }
     //    }
-    var createur: Createur?
+    var createur: String?//Createur?
     //        {
     //        get{
     //            if self.createur == nil { return nil}
@@ -52,7 +52,7 @@ class Article {
     ////            self.description = newValue
     ////        }
     //    }
-    var univers: Univers?
+    var univers: String?//Univers?
     //        {
     //        get{
     //            if self.univers == nil { return nil}
@@ -62,37 +62,6 @@ class Article {
     ////            self.univers = newValue
     ////        }
     //    }
-    var univers: Categorie?
-    //        {
-    //        get{
-    //            if self.categorie == nil { return nil}
-    //            return self.categorie
-    //        }
-    ////        set(newValue){
-    ////            self.categorie = newValue
-    ////        }
-    //    }
-    var produit: Produit?
-    //        {
-    //        get{
-    //            if self.produit == nil { return nil}
-    //            return self.produit
-    //        }
-    ////        set(newValue){
-    ////            self.produit = newValue
-    ////        }
-    //    }
-    var taille: Taille?
-    //        {
-    //        get{
-    //            if self.taille == nil { return nil}
-    //            return self.taille
-    //        }
-    ////        set(newValue){
-    ////            self.taille = newValue
-    ////        }
-    //    }
-    
 }
 
 class Univers {
@@ -119,6 +88,8 @@ class Univers {
     //    }
     
 }
+
+
 
 class Categorie {
     
@@ -154,7 +125,7 @@ class Categorie {
     //    }
 }
 
-class Categorie {
+class Produit {
     
     var id: String?
     //        {
@@ -166,40 +137,7 @@ class Categorie {
     ////            self.id = newValue
     ////        }
     //    }
-    var univers: Univers?
-    //        {
-    //        get{
-    //            if self.univers == nil { return nil}
-    //            return self.univers
-    //        }
-    ////        set(newValue){
-    ////            self.univers = newValue
-    ////        }
-    //    }
-    var value: String?
-    //        {
-    //        get{
-    //            if self.value == nil { return nil}
-    //            return self.value
-    //        }
-    ////        set(newValue){
-    ////            self.value = newValue
-    ////        }
-    //    }
-}
-
-class Produit {
-    var id: String?
-    //        {
-    //        get{
-    //            if self.id == nil { return nil}
-    //            return self.id
-    //        }
-    ////        set(newValue){
-    ////            self.id = newValue
-    ////        }
-    //    }
-    var categorie: Categorie?
+    var categorie: String?//Categorie?
     //        {
     //        get{
     //            if self.categorie == nil { return nil}
@@ -222,41 +160,10 @@ class Produit {
 
 }
 
-class Produit {
-    var id: String?
-    //        {
-    //        get{
-    //            if self.id == nil { return nil}
-    //            return self.id
-    //        }
-    ////        set(newValue){
-    ////            self.id = newValue
-    ////        }
-    //    }
-    var categorie: Categorie?
-    //        {
-    //        get{
-    //            if self.categorie == nil { return nil}
-    //            return self.categorie
-    //        }
-    ////        set(newValue){
-    ////            self.categorie = newValue
-    ////        }
-    //    }
-    var value: String?
-    //        {
-    //        get{
-    //            if self.value == nil { return nil}
-    //            return self.value
-    //        }
-    ////        set(newValue){
-    ////            self.value = newValue
-    ////        }
-    //    }
-    
-}
+
 
 class Taille {
+    
     var id: String?
     //        {
     //        get{
@@ -267,7 +174,7 @@ class Taille {
     ////            self.id = newValue
     ////        }
     //    }
-    var produit: Produit?
+    var produit: String?//Produit?
     //        {
     //        get{
     //            if self.produit == nil { return nil}
@@ -289,3 +196,4 @@ class Taille {
     //    }
     
 }
+

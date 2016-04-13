@@ -44,7 +44,10 @@ exports.createUser = function(req, res, next) {
         status_User: req.body.status,
     };
 
+    console.log(newUser);
+
     models.User.create(newUser).then(function(user) {
+
         var result = false;
 
         if(user.get('status_User')=='createur'){

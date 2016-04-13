@@ -12,8 +12,8 @@ import CoreData
 class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK - Core Data 
-    var personnes : Personnes? = nil
-    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var users : Users? = nil
+//    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     //MARK - Passing Data
     var dataUser = User()
@@ -29,6 +29,8 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     @IBOutlet weak var descriptionTextView: UITextView!
+    
+    @IBOutlet weak var loaderIndicator: UIActivityIndicatorView!
     
     // MARK - Override View
     override func viewDidLoad() {
@@ -73,6 +75,11 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
 
+    @IBAction func gofinishingSubscription(sender: AnyObject) {
+        
+        shouldPerformSegueWithIdentifier("goFinishSubscription", sender: sender)
+    }
+    
     @IBAction func backCreateurForm(sender: AnyObject) {
         shouldPerformSegueWithIdentifier("backCreateurForm", sender: sender)
     }
@@ -97,34 +104,14 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
-    func createNewPersonne(dataUser : User){
-        
-        let entityDescritpion = NSEntityDescription.entityForName("Personnes", inManagedObjectContext: moc)
-        
-        let personne = Personnes(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
-        
-        personne.nom = dataUser.nom
-        personne.prenom = dataUser.prenom
-        personne.email = dataUser.email
-        personne.password = dataUser.password
-        personne.status = dataUser.status
-        
-        do{
-            try moc.save()
-            
-        }catch{
-            return
-        }
-    }
+
 
 
     
     // MARK: - Navigation
-    
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         
-        if (identifier == "goConnexion"){
-            
+        if (identifier == "goFinishSubscription"){
             return true 
             
         }else if ( identifier == "backCreateurForm"){
@@ -136,18 +123,20 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        dataUserCreateur.logo = UIImagePNGRepresentation(logoImageView.image!)
+        
         print(segue.identifier)
-        if (segue.identifier == "goConnexion"){
-            createNewPersonne(dataUser)
-//            let destViewController : ConnexionViewController = segue.destinationViewController as! ConnexionViewController
+        if (segue.identifier == "goFinishSubscription"){
             
-//            destViewController.dataCre = dataUser
+            let destViewController : FinishingSubscriptionViewController = segue.destinationViewController as! FinishingSubscriptionViewController
+            
+            destViewController.dataUser = dataUser
+            destViewController.dataCreateur = dataUserCreateur
             
         }else if (segue.identifier == "backCreateurForm"){
             
             let destViewController : CreateurFormViewController = segue.destinationViewController as! CreateurFormViewController
             
-            dataUserCreateur.logo = UIImagePNGRepresentation(logoImageView.image!)
             destViewController.dataUserCreateur = dataUserCreateur
             
             

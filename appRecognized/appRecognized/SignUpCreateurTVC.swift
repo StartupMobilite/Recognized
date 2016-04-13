@@ -11,7 +11,7 @@ import CoreData
 
 class SignUpCreateurTVC: UITableViewController, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate {
 
-    var personnes : Personnes? = nil
+    var personnes : Users? = nil
     
     @IBOutlet weak var nom: UITextField!
     
@@ -58,9 +58,9 @@ class SignUpCreateurTVC: UITableViewController, NSFetchedResultsControllerDelega
     
     func createNewPersonne(){
         
-        let entityDescritpion = NSEntityDescription.entityForName("Personnes", inManagedObjectContext: moc)
+        let entityDescritpion = NSEntityDescription.entityForName("Users", inManagedObjectContext: moc)
 //        
-        let personne = Personnes(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
+        let personne = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
 //
 //        personne.nom = personneNom.text
 //        personne.prenom = personnePrenom.text

@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
         status_User: {
             type: DataTypes.ENUM,
             values: ['client', 'createur','admin'],
-            allowNull: false
+            // allowNull: false
         }
     });
     return User;

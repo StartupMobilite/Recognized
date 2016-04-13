@@ -15,8 +15,14 @@
 		92766D211CA9B3A4009A91E5 /* appRecognized.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92766D1F1CA9B3A4009A91E5 /* appRecognized.xcdatamodeld */; };
 		92766D261CA9B3A4009A91E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92766D241CA9B3A4009A91E5 /* LaunchScreen.storyboard */; };
 		92766D2F1CA9B637009A91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92766D2E1CA9B637009A91E5 /* Assets.xcassets */; };
-		92766D341CA9C5CD009A91E5 /* Personnes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92766D321CA9C5CD009A91E5 /* Personnes+CoreDataProperties.swift */; };
-		92766D351CA9C5CD009A91E5 /* Personnes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92766D331CA9C5CD009A91E5 /* Personnes.swift */; };
+		927A7DA51CBD39B0003CE9EA /* Createurs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7D9F1CBD39B0003CE9EA /* Createurs+CoreDataProperties.swift */; };
+		927A7DA61CBD39B0003CE9EA /* Createurs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DA01CBD39B0003CE9EA /* Createurs.swift */; };
+		927A7DA71CBD39B0003CE9EA /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DA11CBD39B0003CE9EA /* Users+CoreDataProperties.swift */; };
+		927A7DA81CBD39B0003CE9EA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DA21CBD39B0003CE9EA /* Users.swift */; };
+		927A7DA91CBD39B0003CE9EA /* Clients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DA31CBD39B0003CE9EA /* Clients+CoreDataProperties.swift */; };
+		927A7DAA1CBD39B0003CE9EA /* Clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DA41CBD39B0003CE9EA /* Clients.swift */; };
+		927A7DAC1CBDBE07003CE9EA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DAB1CBDBE07003CE9EA /* Api.swift */; };
+		927A7DAE1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */; };
 		92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6690B1CAF42F3003BE657 /* SignUpClientViewController.swift */; };
 		92A669141CAF548C003BE657 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669131CAF548C003BE657 /* MainVC.swift */; };
 		92A669191CAFE2EF003BE657 /* TestTVTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669181CAFE2EF003BE657 /* TestTVTab.swift */; };
@@ -49,8 +55,14 @@
 		92766D251CA9B3A4009A91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92766D271CA9B3A4009A91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92766D2E1CA9B637009A91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		92766D321CA9C5CD009A91E5 /* Personnes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Personnes+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		92766D331CA9C5CD009A91E5 /* Personnes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Personnes.swift; sourceTree = "<group>"; };
+		927A7D9F1CBD39B0003CE9EA /* Createurs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Createurs+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		927A7DA01CBD39B0003CE9EA /* Createurs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Createurs.swift; sourceTree = "<group>"; };
+		927A7DA11CBD39B0003CE9EA /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		927A7DA21CBD39B0003CE9EA /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		927A7DA31CBD39B0003CE9EA /* Clients+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Clients+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		927A7DA41CBD39B0003CE9EA /* Clients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clients.swift; sourceTree = "<group>"; };
+		927A7DAB1CBDBE07003CE9EA /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishingSubscriptionViewController.swift; sourceTree = "<group>"; };
 		92A6690B1CAF42F3003BE657 /* SignUpClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpClientViewController.swift; sourceTree = "<group>"; };
 		92A669131CAF548C003BE657 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		92A669181CAFE2EF003BE657 /* TestTVTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTVTab.swift; sourceTree = "<group>"; };
@@ -102,6 +114,7 @@
 		924C94521CB96B1B009AF4AA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				927A7DAB1CBDBE07003CE9EA /* Api.swift */,
 				924C94501CB94DD7009AF4AA /* User.swift */,
 				DDCF9C3A1CBC5FDB003844A4 /* Article.swift */,
 				DDCF9C3C1CBC713F003844A4 /* Message.swift */,
@@ -155,8 +168,12 @@
 		92766D371CA9C60F009A91E5 /* class */ = {
 			isa = PBXGroup;
 			children = (
-				92766D321CA9C5CD009A91E5 /* Personnes+CoreDataProperties.swift */,
-				92766D331CA9C5CD009A91E5 /* Personnes.swift */,
+				927A7D9F1CBD39B0003CE9EA /* Createurs+CoreDataProperties.swift */,
+				927A7DA01CBD39B0003CE9EA /* Createurs.swift */,
+				927A7DA11CBD39B0003CE9EA /* Users+CoreDataProperties.swift */,
+				927A7DA21CBD39B0003CE9EA /* Users.swift */,
+				927A7DA31CBD39B0003CE9EA /* Clients+CoreDataProperties.swift */,
+				927A7DA41CBD39B0003CE9EA /* Clients.swift */,
 			);
 			name = class;
 			path = ..;
@@ -174,6 +191,7 @@
 		92A669261CB19ACE003BE657 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */,
 				924C94531CB96E71009AF4AA /* LogoFormViewController.swift */,
 				92A669551CB5A0F3003BE657 /* ClientFormViewController.swift */,
 				92A6694D1CB5A08A003BE657 /* CreateurFormViewController.swift */,
@@ -335,25 +353,31 @@
 				92A669231CB06C8E003BE657 /* SignUpCreateurTVC.swift in Sources */,
 				92A669291CB1C015003BE657 /* EmailFormViewController.swift in Sources */,
 				92A6695A1CB5A9BF003BE657 /* Checkbox.swift in Sources */,
+				927A7DAA1CBD39B0003CE9EA /* Clients.swift in Sources */,
 				92A6694E1CB5A08A003BE657 /* CreateurFormViewController.swift in Sources */,
 				92A669441CB31431003BE657 /* SegueFromLeft.swift in Sources */,
-				92766D351CA9C5CD009A91E5 /* Personnes.swift in Sources */,
 				92766D211CA9B3A4009A91E5 /* appRecognized.xcdatamodeld in Sources */,
+				927A7DA51CBD39B0003CE9EA /* Createurs+CoreDataProperties.swift in Sources */,
 				92A669191CAFE2EF003BE657 /* TestTVTab.swift in Sources */,
-				92766D341CA9C5CD009A91E5 /* Personnes+CoreDataProperties.swift in Sources */,
 				92A669561CB5A0F3003BE657 /* ClientFormViewController.swift in Sources */,
 				92A669311CB1D874003BE657 /* ConditionGenraleViewController.swift in Sources */,
 				924C94541CB96E71009AF4AA /* LogoFormViewController.swift in Sources */,
 				92A669401CB2F064003BE657 /* NameFormViewController.swift in Sources */,
 				92A669251CB19AC6003BE657 /* StartAppViewController.swift in Sources */,
 				92A669491CB31C3B003BE657 /* TypeFormViewController.swift in Sources */,
+				927A7DA61CBD39B0003CE9EA /* Createurs.swift in Sources */,
 				92766D191CA9B3A4009A91E5 /* AppDelegate.swift in Sources */,
+				927A7DA71CBD39B0003CE9EA /* Users+CoreDataProperties.swift in Sources */,
 				DDCF9C3D1CBC713F003844A4 /* Message.swift in Sources */,
 				92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */,
 				92A669141CAF548C003BE657 /* MainVC.swift in Sources */,
 				924C94511CB94DD7009AF4AA /* User.swift in Sources */,
+				927A7DA91CBD39B0003CE9EA /* Clients+CoreDataProperties.swift in Sources */,
 				92BBAC701CBAF9DC00F30728 /* ConnexionViewController.swift in Sources */,
 				92A669421CB2F6DB003BE657 /* PasswordFormViewController.swift in Sources */,
+				927A7DAE1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift in Sources */,
+				927A7DAC1CBDBE07003CE9EA /* Api.swift in Sources */,
+				927A7DA81CBD39B0003CE9EA /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,7 +62,7 @@ class Article {
     ////            self.univers = newValue
     ////        }
     //    }
-    var univers: Categorie?
+    //var univers: Categorie?
     //        {
     //        get{
     //            if self.categorie == nil { return nil}
@@ -72,7 +72,7 @@ class Article {
     ////            self.categorie = newValue
     ////        }
     //    }
-    var produit: Produit?
+   // var produit: Produit?
     //        {
     //        get{
     //            if self.produit == nil { return nil}
@@ -154,39 +154,6 @@ class Categorie {
     //    }
 }
 
-class Categorie {
-    
-    var id: String?
-    //        {
-    //        get{
-    //            if self.id == nil { return nil}
-    //            return self.id
-    //        }
-    ////        set(newValue){
-    ////            self.id = newValue
-    ////        }
-    //    }
-    var univers: Univers?
-    //        {
-    //        get{
-    //            if self.univers == nil { return nil}
-    //            return self.univers
-    //        }
-    ////        set(newValue){
-    ////            self.univers = newValue
-    ////        }
-    //    }
-    var value: String?
-    //        {
-    //        get{
-    //            if self.value == nil { return nil}
-    //            return self.value
-    //        }
-    ////        set(newValue){
-    ////            self.value = newValue
-    ////        }
-    //    }
-}
 
 class Produit {
     var id: String?
@@ -222,39 +189,39 @@ class Produit {
 
 }
 
-class Produit {
-    var id: String?
-    //        {
-    //        get{
-    //            if self.id == nil { return nil}
-    //            return self.id
-    //        }
-    ////        set(newValue){
-    ////            self.id = newValue
-    ////        }
-    //    }
-    var categorie: Categorie?
-    //        {
-    //        get{
-    //            if self.categorie == nil { return nil}
-    //            return self.categorie
-    //        }
-    ////        set(newValue){
-    ////            self.categorie = newValue
-    ////        }
-    //    }
-    var value: String?
-    //        {
-    //        get{
-    //            if self.value == nil { return nil}
-    //            return self.value
-    //        }
-    ////        set(newValue){
-    ////            self.value = newValue
-    ////        }
-    //    }
-    
-}
+//class Produit {
+//    var id: String?
+//    //        {
+//    //        get{
+//    //            if self.id == nil { return nil}
+//    //            return self.id
+//    //        }
+//    ////        set(newValue){
+//    ////            self.id = newValue
+//    ////        }
+//    //    }
+//    var categorie: Categorie?
+//    //        {
+//    //        get{
+//    //            if self.categorie == nil { return nil}
+//    //            return self.categorie
+//    //        }
+//    ////        set(newValue){
+//    ////            self.categorie = newValue
+//    ////        }
+//    //    }
+//    var value: String?
+//    //        {
+//    //        get{
+//    //            if self.value == nil { return nil}
+//    //            return self.value
+//    //        }
+//    ////        set(newValue){
+//    ////            self.value = newValue
+//    ////        }
+//    //    }
+//    
+//}
 
 class Taille {
     var id: String?

@@ -155,30 +155,30 @@ class CoupDeCoeur {
     //    }
 }
 
-class Commentaire {
-    
-    var client: Client?
-    //        {
-    //        get{
-    //            if self.client == nil { return nil}
-    //            return self.client
-    //        }
-    ////        set(newValue){
-    ////            self.client = newValue
-    ////        }
-    //    }
-    var univers: Univers?
-    //        {
-    //        get{
-    //            if self.univers == nil { return nil}
-    //            return self.univers
-    //        }
-    ////        set(newValue){
-    ////            self.univers = newValue
-    ////        }
-    //    }
-
-}
+//class Commentaire {
+//    
+//    var client: Client?
+//    //        {
+//    //        get{
+//    //            if self.client == nil { return nil}
+//    //            return self.client
+//    //        }
+//    ////        set(newValue){
+//    ////            self.client = newValue
+//    ////        }
+//    //    }
+//    var univers: Univers?
+//    //        {
+//    //        get{
+//    //            if self.univers == nil { return nil}
+//    //            return self.univers
+//    //        }
+//    ////        set(newValue){
+//    ////            self.univers = newValue
+//    ////        }
+//    //    }
+//
+//}
 
 class Adresse {
     

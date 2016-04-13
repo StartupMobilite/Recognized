@@ -668,7 +668,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-lp-h5N" userLabel="FormView">
                                         <rect key="frame" x="20" y="282" width="285" height="86"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mot de passe " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjb-gZ-mKZ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Mot de passe " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjb-gZ-mKZ">
                                                 <rect key="frame" x="0.0" y="44" width="285" height="43"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -678,7 +678,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-g2-WVZ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-g2-WVZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="43"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1187,7 +1187,7 @@
                                             <action selector="passwordDidEndEditing:" destination="FcL-Z6-OKe" eventType="editingDidEnd" id="0bn-mR-WfG"/>
                                         </connections>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" scrollEnabled="NO" editable="NO" text="Saisissez une combinaison d'au moins 6 chiffres, lettres, et signes de ponctuation (tel que ! et &amp;)." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-mh-fV1" userLabel="Description Text View">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" scrollEnabled="NO" editable="NO" text="Saisissez une combinaison d'au moins 6 caractères (chiffres, lettres, et signes de ponctuation tels que ! et &amp;)." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-mh-fV1" userLabel="Description Text View">
                                         <rect key="frame" x="30" y="222" width="261" height="44"/>
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
@@ -1661,7 +1661,8 @@
                                             <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="0Ls-3X-Zgd"/>
                                             <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="dN1-40-swb"/>
                                             <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="ggs-m8-r7F"/>
-                                            <segue destination="fin-wV-v1d" kind="push" identifier="goConnexion" id="M1D-13-8MG"/>
+                                            <action selector="gofinishingSubscription:" destination="scQ-3m-SkW" eventType="touchUpInside" id="Q1M-ts-ieB"/>
+                                            <segue destination="bid-sZ-fK8" kind="push" identifier="goFinishSubscription" id="Z3i-6v-QFI"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" scrollEnabled="NO" editable="NO" text="En ajoutant un logo vous donnez à votre marque un moyen de la reconnaitre " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-9B-API" userLabel="Description clientText View">
@@ -1710,6 +1711,7 @@
                     <navigationItem key="navigationItem" id="fO0-vK-iCp"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="Y28-9B-API" id="Lgc-Xu-OdK"/>
+                        <outlet property="loaderIndicator" destination="pNJ-KF-9RL" id="TdQ-kW-06q"/>
                         <outlet property="logoImageView" destination="nKU-8x-vu6" id="MKv-yP-wwu"/>
                         <outlet property="nextButton" destination="SOI-NC-QaO" id="Haq-ap-gMK"/>
                         <outlet property="uploadButton" destination="4Re-Pe-Odo" id="0JP-4f-CLa"/>
@@ -1724,6 +1726,82 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3989" y="266"/>
+        </scene>
+        <!--Finishing Subscription View Controller-->
+        <scene sceneID="TpO-Y9-eYs">
+            <objects>
+                <viewController id="bid-sZ-fK8" customClass="FinishingSubscriptionViewController" customModule="appRecognized" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mXz-ef-QbM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eay-43-y3H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Xi-QE-QmM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pNJ-KF-9RL">
+                                <rect key="frame" x="142" y="187" width="37" height="37"/>
+                                <color key="color" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Création en cours..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4E-0b-q1p" userLabel="Titre Text View">
+                                <rect key="frame" x="30" y="109" width="261" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="wR9-04-dif"/>
+                                </constraints>
+                                <color key="textColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="ToR-au-I23">
+                                <rect key="frame" x="147" y="193" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="vXJ-TH-Db0"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUo-dC-Muy" userLabel="Next Button">
+                                <rect key="frame" x="30" y="279" width="261" height="36"/>
+                                <color key="backgroundColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="0Cr-4j-ESA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Connexion">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="73i-tf-4AX"/>
+                                    <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="LAz-7D-gig"/>
+                                    <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="hWs-N1-Wne"/>
+                                    <action selector="gofinishingSubscription:" destination="scQ-3m-SkW" eventType="touchUpInside" id="2fv-K2-7qm"/>
+                                    <segue destination="fin-wV-v1d" kind="modal" identifier="goConnexion" id="3xp-2g-pqs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eay-43-y3H" firstAttribute="top" secondItem="nUo-dC-Muy" secondAttribute="bottom" constant="253" id="89n-sz-m7E"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="leading" secondItem="9Xi-QE-QmM" secondAttribute="leadingMargin" constant="14" id="CZG-cI-vcy"/>
+                            <constraint firstItem="ToR-au-I23" firstAttribute="top" secondItem="V4E-0b-q1p" secondAttribute="bottom" constant="38" id="ImT-t1-Hc5"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="leading" secondItem="nUo-dC-Muy" secondAttribute="leading" id="Q6W-yX-vb5"/>
+                            <constraint firstItem="pNJ-KF-9RL" firstAttribute="top" secondItem="V4E-0b-q1p" secondAttribute="bottom" constant="32" id="R6z-gJ-ypg"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="centerX" secondItem="9Xi-QE-QmM" secondAttribute="centerX" id="WYm-ER-DGB"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="centerX" secondItem="ToR-au-I23" secondAttribute="centerX" id="XAX-6S-0Wb"/>
+                            <constraint firstItem="ToR-au-I23" firstAttribute="centerY" secondItem="pNJ-KF-9RL" secondAttribute="centerY" id="Xgi-mD-GFY"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="trailing" secondItem="nUo-dC-Muy" secondAttribute="trailing" id="a6w-nZ-snI"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="top" secondItem="mXz-ef-QbM" secondAttribute="bottom" constant="89" id="oIp-x3-vrT"/>
+                            <constraint firstItem="V4E-0b-q1p" firstAttribute="centerX" secondItem="pNJ-KF-9RL" secondAttribute="centerX" id="yaP-D9-Cuh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sdB-g2-CrQ"/>
+                    <connections>
+                        <outlet property="checkImg" destination="ToR-au-I23" id="cCC-9r-nbq"/>
+                        <outlet property="loaderIndicator" destination="pNJ-KF-9RL" id="1Az-Cm-jr3"/>
+                        <outlet property="nextButton" destination="nUo-dC-Muy" id="T8S-e8-cPH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="530-uq-Ykk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4406" y="266"/>
         </scene>
         <!--Catalogue-->
         <scene sceneID="aD3-yD-MB9">
@@ -1781,29 +1859,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T55-ea-Co1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2327" y="2428"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="boO-Lt-PHw">
-            <objects>
-                <viewController id="yty-JR-zuN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kpv-Y1-REr"/>
-                        <viewControllerLayoutGuide type="bottom" id="fVD-nP-r1R"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jqy-yh-1Dk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GXV-6T-4Gp">
-                                <rect key="frame" x="150" y="200" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sej-ge-kDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2576" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jUQ-0K-WbE">
@@ -1868,6 +1923,7 @@
         <image name="R-52" width="52" height="52"/>
         <image name="ShoppinBag" width="550" height="322"/>
         <image name="categorie" width="30" height="30"/>
+        <image name="circle" width="24" height="24"/>
         <image name="clientLogo" width="210" height="220"/>
         <image name="heart" width="30" height="30"/>
         <image name="logoEmplacement" width="87" height="87"/>
@@ -1875,13 +1931,13 @@
         <image name="people" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CzZ-o2-GSQ"/>
-        <segue reference="FpQ-69-coo"/>
-        <segue reference="l0Y-Ul-ZKq"/>
         <segue reference="yrc-ER-wUV"/>
-        <segue reference="M1D-13-8MG"/>
-        <segue reference="Thj-Kp-dMx"/>
+        <segue reference="3xp-2g-pqs"/>
         <segue reference="g3B-fT-6to"/>
         <segue reference="qlm-wK-e8u"/>
+        <segue reference="umG-PA-Sjc"/>
+        <segue reference="l0Y-Ul-ZKq"/>
+        <segue reference="FpQ-69-coo"/>
+        <segue reference="CzZ-o2-GSQ"/>
     </inferredMetricsTieBreakers>
 </document>

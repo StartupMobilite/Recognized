@@ -18,8 +18,8 @@ module.exports = function(sequelize, DataTypes) {
         password_User: DataTypes.STRING,
         status_User: {
             type: DataTypes.ENUM,
-            values: ['client', 'createur'],
-            allowNull: false
+            values: ['client', 'createur','admin'],
+            // allowNull: false
         }
     });
     return User;

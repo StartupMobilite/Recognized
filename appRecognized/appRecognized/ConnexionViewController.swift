@@ -55,6 +55,7 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
         super.viewWillAppear(animated)
 //        let personneTest = frc.fetchedObjects?.count
 //        print(personneTest)
+        
     }
     
     override func didReceiveMemoryWarning() {

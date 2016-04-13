@@ -10,7 +10,7 @@ import UIKit
 
 extension String {
     func isPassword() -> Bool {
-        let regex = try! NSRegularExpression(pattern: "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}$",
+        let regex = try! NSRegularExpression(pattern: "^(?=[^\\d_].*?\\d)\\w(\\w|[!@#$%]){5,20}",
                                              options: [.CaseInsensitive])
         
         return regex.firstMatchInString(self, options:[],
@@ -103,7 +103,7 @@ class PasswordFormViewController: UIViewController {
             
             // Validation Password
             
-            if (passwordTextField.text!.characters.count > 5){
+            if ((passwordTextField.text!.characters.count) > 5){//isPassword()
                 return true
             }else{
                 nextButton.hidden = true

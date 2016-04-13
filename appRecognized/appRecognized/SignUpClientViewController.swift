@@ -12,7 +12,7 @@ import CoreData
 class SignUpClientViewController: UIViewController, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate {
     
     
-    var personnes : Personnes? = nil
+    var personnes : Users? = nil
     
     @IBOutlet weak var personnePrenom: UITextField!
     @IBOutlet weak var personneNom: UITextField!
@@ -55,9 +55,9 @@ class SignUpClientViewController: UIViewController, NSFetchedResultsControllerDe
     
     func createNewPersonne(){
         
-        let entityDescritpion = NSEntityDescription.entityForName("Personnes", inManagedObjectContext: moc)
+        let entityDescritpion = NSEntityDescription.entityForName("Users", inManagedObjectContext: moc)
         
-        let personne = Personnes(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
+        let personne = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
         
         personne.nom = personneNom.text
         personne.prenom = personnePrenom.text

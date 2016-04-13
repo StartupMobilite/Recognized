@@ -668,7 +668,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-lp-h5N" userLabel="FormView">
                                         <rect key="frame" x="20" y="282" width="285" height="86"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mot de passe " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjb-gZ-mKZ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Mot de passe " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjb-gZ-mKZ">
                                                 <rect key="frame" x="0.0" y="44" width="285" height="43"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -678,7 +678,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-g2-WVZ">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-g2-WVZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="43"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1759,7 +1759,7 @@
                                 </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUo-dC-Muy" userLabel="Next Button">
-                                <rect key="frame" x="30" y="324" width="261" height="36"/>
+                                <rect key="frame" x="30" y="279" width="261" height="36"/>
                                 <color key="backgroundColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="0Cr-4j-ESA"/>
@@ -1773,12 +1773,13 @@
                                     <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="LAz-7D-gig"/>
                                     <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="hWs-N1-Wne"/>
                                     <action selector="gofinishingSubscription:" destination="scQ-3m-SkW" eventType="touchUpInside" id="2fv-K2-7qm"/>
+                                    <segue destination="fin-wV-v1d" kind="modal" identifier="goConnexion" id="3xp-2g-pqs"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Eay-43-y3H" firstAttribute="top" secondItem="nUo-dC-Muy" secondAttribute="bottom" constant="208" id="89n-sz-m7E"/>
+                            <constraint firstItem="Eay-43-y3H" firstAttribute="top" secondItem="nUo-dC-Muy" secondAttribute="bottom" constant="253" id="89n-sz-m7E"/>
                             <constraint firstItem="V4E-0b-q1p" firstAttribute="leading" secondItem="9Xi-QE-QmM" secondAttribute="leadingMargin" constant="14" id="CZG-cI-vcy"/>
                             <constraint firstItem="ToR-au-I23" firstAttribute="top" secondItem="V4E-0b-q1p" secondAttribute="bottom" constant="38" id="ImT-t1-Hc5"/>
                             <constraint firstItem="V4E-0b-q1p" firstAttribute="leading" secondItem="nUo-dC-Muy" secondAttribute="leading" id="Q6W-yX-vb5"/>
@@ -1859,29 +1860,6 @@
             </objects>
             <point key="canvasLocation" x="2327" y="2428"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="boO-Lt-PHw">
-            <objects>
-                <viewController id="yty-JR-zuN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kpv-Y1-REr"/>
-                        <viewControllerLayoutGuide type="bottom" id="fVD-nP-r1R"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jqy-yh-1Dk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GXV-6T-4Gp">
-                                <rect key="frame" x="150" y="200" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sej-ge-kDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2576" y="1063"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jUQ-0K-WbE">
             <objects>
@@ -1953,12 +1931,13 @@
         <image name="people" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qlm-wK-e8u"/>
+        <segue reference="yrc-ER-wUV"/>
+        <segue reference="3xp-2g-pqs"/>
         <segue reference="g3B-fT-6to"/>
+        <segue reference="qlm-wK-e8u"/>
         <segue reference="umG-PA-Sjc"/>
         <segue reference="l0Y-Ul-ZKq"/>
         <segue reference="FpQ-69-coo"/>
-        <segue reference="yrc-ER-wUV"/>
         <segue reference="CzZ-o2-GSQ"/>
     </inferredMetricsTieBreakers>
 </document>

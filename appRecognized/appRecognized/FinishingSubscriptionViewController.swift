@@ -37,14 +37,10 @@ class FinishingSubscriptionViewController: UIViewController {
         
         api.insertNewUserInApi(dataUser, dataType: dataCreateur, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton){ responseObject, error in
             
-            // use responseObject and error here
-            self.dataUser.id = responseObject?.valueForKey("id_User") as? String
               print(responseObject)
               print(error)
             
             }
-
-//        print(dataUser.id)
     }
     
 

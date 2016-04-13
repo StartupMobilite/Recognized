@@ -48,43 +48,58 @@ exports.createUser = function(req, res, next) {
 
     models.User.create(newUser).then(function(user) {
 
-        var result = false;
+        var result = { 'error' : false };
 
-        if(user.get('status_User')=='createur'){
+        result["user"] = user.get('id_User') ? user.get() : false;
+        
+        if(result["user"]["status_User"] == "createur"){
+
             console.log('Creation de créateur');
+
             var newCreateur = {
-                id_User: user.get('id_User'),
+                id_User: result["user"]["id_User"],
                 nom_Marque: req.body.marque,
                 description_Marque: req.body.description,
                 logo_Marque: req.body.logo
             };
-            models.Createur.create(newCreateur).then(function(createur) {
-                if (createur.get('id_User')) {
-                    result = createur.get();
-                } else {
-                    result = 'error insert user';
-                }
 
+            models.Createur.create(newCreateur).then(function(createur) {
+                
+                if (createur.get('id_Createur')) {
+
+                    result["createur"] = createur.get();
+
+                } else {
+
+                    result['error'] = 'error insert createur';
+                }
                 res.send(result);
             });
-        }
 
-        if(user.get('status_User')=='client'){
+        }else if(result["user"]["status_User"] == "client"){
+
+            console.log('Creation du client');
+
             var newClient = {
-                id_User: user.get('id_User')
+                id_User: result["user"]["id_User"]
             };
+
             models.Client.create(newClient).then(function(client) {
                 if (client.get('id_User')) {
-                    result = client.get();
-                } else {
-                    result = 'error insert user';
-                }
 
+                    result["client"] = client.get();
+
+                } else {
+                    result['error'] = 'error insert client';
+                }
                 res.send(result);
             });
+        }else {
+
+            result['error'] = 'type not defind'
         }
 
-
+        // res.send(result);
         //if (user.get('id_User')) {
         //    result = user.get();
         //} else {
@@ -93,7 +108,7 @@ exports.createUser = function(req, res, next) {
         //
         //res.send(result);
     });
-}
+};
 
 
 exports.findAll = function(req, res, next) {

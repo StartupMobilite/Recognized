@@ -51,7 +51,8 @@ class Api {
         //Loader start
         indicator.startAnimating()
         
-        Alamofire.request(.POST, "http://10.75.3.179:3000/createUser", parameters: paramUser, encoding: .JSON)
+        
+        Alamofire.request(.POST, "http://192.168.1.5:3000/createUser", parameters: paramUser, encoding: .JSON)
             .responseJSON {
                 response in switch response.result {
                 case .Success(let JSON):
@@ -60,6 +61,7 @@ class Api {
                     
                     if ((response["id"]) != nil && (response["email"]?.isEqual(dataUser.email))!)
                     {
+                        self.resultData = response
                         completionHandler(response, nil)
                     }
                     indicator.stopAnimating()
@@ -69,8 +71,10 @@ class Api {
                     
                 case .Failure(let error):
                     
+                    self.resultData = ["error" : "request failed : \(error)"]
                     completionHandler(nil, error)
                     indicator.stopAnimating()
+                    checkIcon.image = UIImage(named: "close")
                     checkIcon.hidden = false
                     nextButton.hidden = false
                     self.requestEnd = true

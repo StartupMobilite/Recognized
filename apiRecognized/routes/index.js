@@ -20,6 +20,8 @@ router.post('/createUserAdmin', AuthController.createUserAdmin );
 
 /* Create an user client or createur. */
 router.post('/createUser', AuthController.createUser );
-module.exports = router;
+
 
 router.get('/allUsers', AuthController.findAll );
+
+module.exports = router;

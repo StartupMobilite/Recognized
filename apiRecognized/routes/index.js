@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
     res.send('connected');
 });
 
+//router.get('/allUser', AuthController.findAllUser);
 
 
 /* Create main user Admin. */

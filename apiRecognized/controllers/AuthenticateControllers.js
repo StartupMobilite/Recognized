@@ -44,9 +44,8 @@ exports.createUser = function(req, res, next) {
         status_User: req.body.status,
     };
 
-    console.log(newUser);
-
-    models.User.create(newUser).then(function(user) {
+    models.User.create(newUser).then(function(User) {
+        var result = false;
 
         var result = { 'error' : false };
 
@@ -109,6 +108,7 @@ exports.createUser = function(req, res, next) {
         //res.send(result);
     });
 };
+
 
 
 exports.findAll = function(req, res, next) {

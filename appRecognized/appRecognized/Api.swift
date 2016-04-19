@@ -52,7 +52,7 @@ class Api {
         indicator.startAnimating()
         
         
-        Alamofire.request(.POST, "http://192.168.1.5:3000/createUser", parameters: paramUser, encoding: .JSON)
+        Alamofire.request(.POST, "http://10.75.3.179:3000/createUser", parameters: paramUser, encoding: .JSON)
             .responseJSON {
                 response in switch response.result {
                 case .Success(let JSON):

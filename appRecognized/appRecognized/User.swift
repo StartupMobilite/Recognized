@@ -143,39 +143,39 @@ class User {
         }
     }
     
-    func insertNewUserInApi(indicator: UIActivityIndicatorView, completionHandler: (NSDictionary?, NSError?) -> ()) {
-        
-        let parameters = [ "nom": self.nom as String!,
-                           "prenom": self.prenom as String!,
-                           "email": self.email as String!,
-                           "password": self.password as String!,
-                           "status": self.status as String!
-        ]
-        
-       indicator.startAnimating()
-       Alamofire.request(.POST, "http://localhost:3000/createUser", parameters: parameters, encoding: .JSON)
-            .responseJSON {
-                response in switch response.result {
-                case .Success(let JSON):
-//                    print("Success with JSON: \(JSON)")
-                    
-                    let response = JSON as! NSDictionary
-                    
-                    if ((response["id"]) != nil && (response["email"]?.isEqual(self.email))!)
-                    {
-                        completionHandler(JSON as? NSDictionary, nil)
-                
-                    }
-                case .Failure(let error):
-                    
-//                    print("Request failed with error: \(error)")
-                    completionHandler(nil, error)
-
-                }
-                indicator.stopAnimating()
-    
-        }
-    }
+//    func insertNewUserInApi(indicator: UIActivityIndicatorView, completionHandler: (NSDictionary?, NSError?) -> ()) {
+//        
+//        let parameters = [ "nom": self.nom as String!,
+//                           "prenom": self.prenom as String!,
+//                           "email": self.email as String!,
+//                           "password": self.password as String!,
+//                           "status": self.status as String!
+//        ]
+//        
+//       indicator.startAnimating()
+//       Alamofire.request(.POST, "http://localhost:3000/createUser", parameters: parameters, encoding: .JSON)
+//            .responseJSON {
+//                response in switch response.result {
+//                case .Success(let JSON):
+////                    print("Success with JSON: \(JSON)")
+//                    
+//                    let response = JSON as! NSDictionary
+//                    
+//                    if ((response["id"]) != nil && (response["email"]?.isEqual(self.email))!)
+//                    {
+//                        completionHandler(JSON as? NSDictionary, nil)
+//                
+//                    }
+//                case .Failure(let error):
+//                    
+////                    print("Request failed with error: \(error)")
+//                    completionHandler(nil, error)
+//
+//                }
+//                indicator.stopAnimating()
+//    
+//        }
+//    }
 }
 
 

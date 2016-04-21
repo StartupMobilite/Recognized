@@ -67,7 +67,9 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     @IBAction func connexionAction(sender: AnyObject) {
         
         
-        let user = self.userdata.findOneByEmailAndPassword("Personnes", email: emailTextField.text!, password: passwordTextField.text!)
+        let user = self.userdata.findOneByEmailAndPassword("Users", email: emailTextField.text!, password: passwordTextField.text!)
+        print(user)
+
         if ((user["email"]) != nil){
             
             print(user)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TD2-FN-M8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TD2-FN-M8i">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -577,12 +577,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Découvrez Recognized une application spécialement dédier aux nouveaux créateurs de mode" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJ0-D8-BHY">
-                                <rect key="frame" x="32" y="277" width="261" height="74"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffN-Fe-yyk">
                                 <rect key="frame" x="67" y="448" width="187" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -616,27 +610,32 @@
                                     <segue destination="AzT-gK-AuB" kind="push" id="qlm-wK-e8u"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Découvrez Recognized une application spécialement dédier aux nouveaux créateurs de mode" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJ0-D8-BHY">
+                                <rect key="frame" x="32" y="277" width="261" height="74"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="YIt-Yj-8Lm" secondAttribute="bottom" constant="136" id="0YH-XH-UgM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GJ0-D8-BHY" secondAttribute="trailing" constant="-20" id="2Nh-Vp-bFa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GJ0-D8-BHY" secondAttribute="trailing" constant="7" id="2Nh-Vp-bFa"/>
                             <constraint firstItem="YIt-Yj-8Lm" firstAttribute="top" secondItem="GJ0-D8-BHY" secondAttribute="bottom" constant="42" id="5g9-iM-Ood"/>
-                            <constraint firstItem="EcD-3x-4J0" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="-20" id="6yR-qv-FWz"/>
-                            <constraint firstItem="EcD-3x-4J0" firstAttribute="centerX" secondItem="ffN-Fe-yyk" secondAttribute="centerX" id="9R1-0G-wJH"/>
+                            <constraint firstItem="EcD-3x-4J0" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="12" id="6yR-qv-FWz"/>
+                            <constraint firstItem="EcD-3x-4J0" firstAttribute="centerX" secondItem="ffN-Fe-yyk" secondAttribute="centerX" constant="2" id="9R1-0G-wJH"/>
                             <constraint firstItem="ffN-Fe-yyk" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="47" id="AcY-YX-BeP"/>
                             <constraint firstItem="GJ0-D8-BHY" firstAttribute="top" secondItem="EcD-3x-4J0" secondAttribute="bottom" constant="8" symbolic="YES" id="B8w-zD-r8g"/>
                             <constraint firstItem="EcD-3x-4J0" firstAttribute="top" secondItem="NpJ-nG-fGI" secondAttribute="top" constant="207" id="G6W-gy-ITX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FNI-hh-Lk3" secondAttribute="trailing" constant="20" id="LEf-1k-l9N"/>
                             <constraint firstItem="EcD-3x-4J0" firstAttribute="trailing" secondItem="GJ0-D8-BHY" secondAttribute="trailing" id="OSm-w5-E2u"/>
                             <constraint firstItem="FNI-hh-Lk3" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="21" id="Pfh-NF-3ZB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GJ0-D8-BHY" secondAttribute="trailing" constant="-20" id="QAu-H4-5b3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GJ0-D8-BHY" secondAttribute="trailing" constant="7" id="QAu-H4-5b3"/>
                             <constraint firstItem="YIt-Yj-8Lm" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="47" id="SMq-7D-nuA"/>
                             <constraint firstItem="YIt-Yj-8Lm" firstAttribute="leading" secondItem="ffN-Fe-yyk" secondAttribute="leading" id="SmF-r7-QcQ"/>
                             <constraint firstItem="ffN-Fe-yyk" firstAttribute="top" secondItem="YIt-Yj-8Lm" secondAttribute="bottom" constant="16" id="Xhl-4w-xDM"/>
-                            <constraint firstItem="EcD-3x-4J0" firstAttribute="centerX" secondItem="YIt-Yj-8Lm" secondAttribute="centerX" id="ZNX-e9-nrj"/>
-                            <constraint firstItem="GJ0-D8-BHY" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="-20" id="b9N-Wi-FWn"/>
-                            <constraint firstItem="GJ0-D8-BHY" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="-20" id="euY-Zz-tPz"/>
+                            <constraint firstItem="EcD-3x-4J0" firstAttribute="centerX" secondItem="YIt-Yj-8Lm" secondAttribute="centerX" constant="2" id="ZNX-e9-nrj"/>
+                            <constraint firstItem="GJ0-D8-BHY" firstAttribute="leading" secondItem="NpJ-nG-fGI" secondAttribute="leadingMargin" constant="12" id="b9N-Wi-FWn"/>
                             <constraint firstItem="FNI-hh-Lk3" firstAttribute="top" secondItem="t9W-Xc-OTJ" secondAttribute="bottom" constant="19" id="tcy-CD-Tnb"/>
                         </constraints>
                     </view>
@@ -1772,6 +1771,7 @@
                                     <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="73i-tf-4AX"/>
                                     <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="LAz-7D-gig"/>
                                     <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="hWs-N1-Wne"/>
+                                    <action selector="goConnexion:" destination="bid-sZ-fK8" eventType="touchUpInside" id="Pbg-qn-DtS"/>
                                     <action selector="gofinishingSubscription:" destination="scQ-3m-SkW" eventType="touchUpInside" id="2fv-K2-7qm"/>
                                     <segue destination="fin-wV-v1d" kind="modal" identifier="goConnexion" id="3xp-2g-pqs"/>
                                 </connections>
@@ -1931,13 +1931,13 @@
         <image name="people" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yrc-ER-wUV"/>
-        <segue reference="3xp-2g-pqs"/>
-        <segue reference="g3B-fT-6to"/>
         <segue reference="qlm-wK-e8u"/>
-        <segue reference="umG-PA-Sjc"/>
-        <segue reference="l0Y-Ul-ZKq"/>
+        <segue reference="g3B-fT-6to"/>
+        <segue reference="jvv-yS-wPu"/>
         <segue reference="FpQ-69-coo"/>
+        <segue reference="l0Y-Ul-ZKq"/>
+        <segue reference="umG-PA-Sjc"/>
+        <segue reference="yrc-ER-wUV"/>
         <segue reference="CzZ-o2-GSQ"/>
     </inferredMetricsTieBreakers>
 </document>

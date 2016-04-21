@@ -27,7 +27,7 @@ class Api {
         self.requestEnd = false
     }
     
-    internal func insertNewUserInApi(dataUser: User, dataType: AnyObject ,indicator: UIActivityIndicatorView, checkIcon: UIImageView , nextButton: UIButton, completionHandler: (NSDictionary?, NSError?) -> ()) {
+    internal func insertNewUserInApi(dataUser: User, dataType: AnyObject ,indicator: UIActivityIndicatorView, checkIcon: UIImageView , nextButton: UIButton, completionHandler: (NSDictionary?, NSError?) -> ()){
         
         
         var paramUser = [ "nom": dataUser.nom as String!,
@@ -51,19 +51,21 @@ class Api {
         //Loader start
         indicator.startAnimating()
         
-        
-        Alamofire.request(.POST, "http://10.75.3.179:3000/createUser", parameters: paramUser, encoding: .JSON)
+        Alamofire.request(.POST, "http://192.168.1.5:3000/createUser", parameters: paramUser, encoding: .JSON)
             .responseJSON {
                 response in switch response.result {
                 case .Success(let JSON):
                     
                     let response = JSON as! NSDictionary
+                    print(response)
+                    let userResponse = response.valueForKey("user")
                     
-                    if ((response["id"]) != nil && (response["email"]?.isEqual(dataUser.email))!)
+                    if (userResponse!.valueForKey("id_User") != nil && userResponse!.valueForKey("email_User")!.isEqual(dataUser.email))
                     {
                         self.resultData = response
                         completionHandler(response, nil)
                     }
+                    completionHandler(response, nil)
                     indicator.stopAnimating()
                     checkIcon.hidden = false
                     nextButton.hidden = false

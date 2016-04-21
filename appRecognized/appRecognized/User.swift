@@ -98,6 +98,7 @@ class User {
                 data["password"] = personneResult.first?.password
                 data["status"] = personneResult.first?.status
                 
+                print(data)
                 return data
             }else if (personneResult.count == 0){
             
@@ -115,25 +116,25 @@ class User {
 //            })
             
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch user: \(error)")
         }
     }
     
-    
-    internal func insertNewUserInCoreData(dataUser : User){
-        
+//    internal func insertNewUserInCoreData(dataUser : User){
+    internal func insertNewUserInCoreData(data : NSDictionary){
         
         let entityDescritpion = NSEntityDescription.entityForName("Users", inManagedObjectContext: moc)
         
         let user = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
         
 //        let dataUserApi = insertNewUserInApi(dataUser)
-        user.id = Int(dataUser.id!)
-        user.nom = dataUser.nom
-        user.prenom = dataUser.prenom
-        user.email = dataUser.email
-        user.password = dataUser.password
-        user.status = dataUser.status
+        user.id = data.valueForKey("id_User") as? Int
+        user.nom = data.valueForKey("nom_User") as? String
+        user.prenom = data.valueForKey("prenom_User") as? String
+        user.email = data.valueForKey("email_User") as? String
+        user.password = data.valueForKey("password_User") as? String
+        user.status = data.valueForKey("status_User") as? String
+
         
         do{
             try moc.save()
@@ -143,39 +144,17 @@ class User {
         }
     }
     
-//    func insertNewUserInApi(indicator: UIActivityIndicatorView, completionHandler: (NSDictionary?, NSError?) -> ()) {
-//        
-//        let parameters = [ "nom": self.nom as String!,
-//                           "prenom": self.prenom as String!,
-//                           "email": self.email as String!,
-//                           "password": self.password as String!,
-//                           "status": self.status as String!
-//        ]
-//        
-//       indicator.startAnimating()
-//       Alamofire.request(.POST, "http://localhost:3000/createUser", parameters: parameters, encoding: .JSON)
-//            .responseJSON {
-//                response in switch response.result {
-//                case .Success(let JSON):
-////                    print("Success with JSON: \(JSON)")
-//                    
-//                    let response = JSON as! NSDictionary
-//                    
-//                    if ((response["id"]) != nil && (response["email"]?.isEqual(self.email))!)
-//                    {
-//                        completionHandler(JSON as? NSDictionary, nil)
-//                
-//                    }
-//                case .Failure(let error):
-//                    
-////                    print("Request failed with error: \(error)")
-//                    completionHandler(nil, error)
-//
-//                }
-//                indicator.stopAnimating()
-//    
-//        }
-//    }
+    internal func toString(){
+        
+        print("id : \(self.id)")
+        print("nom : \(self.nom)")
+        print("prenom : \(self.prenom)")
+        print("email : \(self.email)")
+        print("password : \(self.password)")
+        print("status : \(self.status)")
+        
+        
+    }
 }
 
 

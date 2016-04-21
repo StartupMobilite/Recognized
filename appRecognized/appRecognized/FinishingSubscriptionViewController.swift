@@ -23,6 +23,11 @@ class FinishingSubscriptionViewController: UIViewController {
     //MARK - Passing Data
     var dataUser = User()
     var dataCreateur = Createur()
+    let api = Api()
+    
+    //MARK - action
+    @IBAction func goConnexion(sender: AnyObject) {
+    }
     
     
     // MARK - Override View
@@ -33,14 +38,27 @@ class FinishingSubscriptionViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        let api = Api()
-        
-        api.insertNewUserInApi(dataUser, dataType: dataCreateur, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton){ responseObject, error in
+        api.insertNewUserInApi(dataUser, dataType: dataCreateur, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton){ (responseObject, error) in
             
-              print(responseObject)
+            let responseUser = responseObject?.valueForKey("user")
+            print(responseUser)
+            self.dataUser.insertNewUserInCoreData(responseUser! as! NSDictionary)
+//              print(responseObject?.allValues)
               print(error)
             
             }
+        
+        
+    }
+    
+     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        if (identifier == "goConnexion"){
+            
+//            dataUser.toString()
+//            print(api.resultData)
+        }
+        return true
     }
     
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		694C2EB74A959EE3320BA0C6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E5D74013D230B7B7F15CF1 /* Pods.framework */; };
+		923582BB1CCADAF500382F5C /* ConstanteFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923582BA1CCADAF500382F5C /* ConstanteFile.swift */; };
 		924C94511CB94DD7009AF4AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C94501CB94DD7009AF4AA /* User.swift */; };
 		924C94541CB96E71009AF4AA /* LogoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C94531CB96E71009AF4AA /* LogoFormViewController.swift */; };
 		92766D191CA9B3A4009A91E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92766D181CA9B3A4009A91E5 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		38E5D74013D230B7B7F15CF1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CFB3E70CF0C7F788966ECCE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7E8BEA48652306A3BD0456A3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		923582BA1CCADAF500382F5C /* ConstanteFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstanteFile.swift; sourceTree = "<group>"; };
 		924C94501CB94DD7009AF4AA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		924C94531CB96E71009AF4AA /* LogoFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoFormViewController.swift; sourceTree = "<group>"; };
 		92766D151CA9B3A4009A91E5 /* appRecognized.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appRecognized.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		92766D171CA9B3A4009A91E5 /* appRecognized */ = {
 			isa = PBXGroup;
 			children = (
+				923582BA1CCADAF500382F5C /* ConstanteFile.swift */,
 				924C94521CB96B1B009AF4AA /* Class */,
 				92A669351CB1EDA8003BE657 /* wrongControllers */,
 				92766D181CA9B3A4009A91E5 /* AppDelegate.swift */,
@@ -370,6 +373,7 @@
 				927A7DA71CBD39B0003CE9EA /* Users+CoreDataProperties.swift in Sources */,
 				DDCF9C3D1CBC713F003844A4 /* Message.swift in Sources */,
 				92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */,
+				923582BB1CCADAF500382F5C /* ConstanteFile.swift in Sources */,
 				92A669141CAF548C003BE657 /* MainVC.swift in Sources */,
 				924C94511CB94DD7009AF4AA /* User.swift in Sources */,
 				927A7DA91CBD39B0003CE9EA /* Clients+CoreDataProperties.swift in Sources */,

@@ -4,7 +4,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="idUser" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="Createurs" representedClassName=".Createur" syncable="YES">
+    <entity name="Createurs" representedClassName=".Createurs" syncable="YES">
         <attribute name="descriptionMarque" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="idAdress" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>

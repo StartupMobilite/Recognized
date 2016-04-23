@@ -18,16 +18,13 @@ class Api {
     
     var resultData : NSDictionary?
     
-    var requestEnd : Bool
-    
     init(){
         self.url = ""
         self.param = []
         self.resultData = NSDictionary()
-        self.requestEnd = false
     }
     
-    internal func insertNewUserInApi(dataUser: User, dataType: AnyObject ,indicator: UIActivityIndicatorView, checkIcon: UIImageView , nextButton: UIButton, completionHandler: (NSDictionary?, NSError?) -> ()){
+    internal func insertNewUserInApi(dataUser: User, dataType: AnyObject ,indicator: UIActivityIndicatorView, checkIcon: UIImageView , nextButton: UIButton, msgIndicator: UITextView, completionHandler: (NSDictionary?, NSError?) -> ()){
         
         
         var paramUser = [ "nom": dataUser.nom as String!,
@@ -51,13 +48,15 @@ class Api {
         //Loader start
         indicator.startAnimating()
         
-        Alamofire.request(.POST, "http://192.168.1.5:3000/createUser", parameters: paramUser, encoding: .JSON)
+        let test = URL_API + "/createUser"
+        print(test)
+        
+        Alamofire.request(.POST, "http://192.168.0.5:3000/createUser", parameters: paramUser, encoding: .JSON)
             .responseJSON {
                 response in switch response.result {
                 case .Success(let JSON):
                     
                     let response = JSON as! NSDictionary
-                    print(response)
                     let userResponse = response.valueForKey("user")
                     
                     if (userResponse!.valueForKey("id_User") != nil && userResponse!.valueForKey("email_User")!.isEqual(dataUser.email))
@@ -65,11 +64,10 @@ class Api {
                         self.resultData = response
                         completionHandler(response, nil)
                     }
-                    completionHandler(response, nil)
                     indicator.stopAnimating()
+                    msgIndicator.text = "Inscription réussi !"
                     checkIcon.hidden = false
                     nextButton.hidden = false
-                    self.requestEnd = true
                     
                 case .Failure(let error):
                     
@@ -78,8 +76,9 @@ class Api {
                     indicator.stopAnimating()
                     checkIcon.image = UIImage(named: "close")
                     checkIcon.hidden = false
+                    nextButton.setTitle("Recommencer", forState: .Normal)
+                    msgIndicator.text = "Oops ! Une erreur s'est produite !"
                     nextButton.hidden = false
-                    self.requestEnd = true
                     
                 }
                 

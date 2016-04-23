@@ -15,6 +15,8 @@ class FinishingSubscriptionViewController: UIViewController {
     
     @IBOutlet weak var loaderIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var msgIndicatorTextView: UITextView!
+    
     @IBOutlet weak var checkImg: UIImageView!
     
     @IBOutlet weak var nextButton: UIButton!
@@ -38,16 +40,21 @@ class FinishingSubscriptionViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        api.insertNewUserInApi(dataUser, dataType: dataCreateur, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton){ (responseObject, error) in
+        api.insertNewUserInApi(dataUser, dataType: dataCreateur, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton, msgIndicator: msgIndicatorTextView){ (responseObject, error) in
             
-            let responseUser = responseObject?.valueForKey("user")
-            print(responseUser)
-            self.dataUser.insertNewUserInCoreData(responseUser! as! NSDictionary)
-//              print(responseObject?.allValues)
+            if (responseObject != nil){
+                
+                let responseUser = responseObject?.valueForKey("user")
+                let responseCreateur = responseObject?.valueForKey("createur")
+                print(responseUser)
+                print(responseCreateur)
+                self.dataUser.insertNewInCoreData(responseUser! as! NSDictionary)
+                self.dataCreateur.insertNewInCoreData(responseCreateur! as! NSDictionary)
+    
+            }else{
               print(error)
-            
             }
-        
+        }
         
     }
     

@@ -67,7 +67,7 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     @IBAction func connexionAction(sender: AnyObject) {
         
         
-        let user = self.userdata.findOneByEmailAndPassword("Users", email: emailTextField.text!, password: passwordTextField.text!)
+        let user = self.userdata.findOneByEmailAndPassword(emailTextField.text!, password: passwordTextField.text!)
         print(user)
 
         if ((user["email"]) != nil){
@@ -93,6 +93,12 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
         
     }
     
+    
+    @IBAction func backStartApp(sender: AnyObject) {
+    }
+    
+    
+    
     //MARK - function 
     func dismissKeyboard() {
         view.endEditing(true)
@@ -109,17 +115,15 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
             
             return true
             
-        }else if ( identifier == "backCreateurForm"){
+        }else if ( identifier == "backStartApp"){
             return true
         }
         
         return false
     }
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+
      }
     
 

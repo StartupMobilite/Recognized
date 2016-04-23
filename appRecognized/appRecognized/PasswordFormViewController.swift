@@ -76,6 +76,10 @@ class PasswordFormViewController: UIViewController {
         shouldPerformSegueWithIdentifier("backNameForm",sender: sender)
     }
     
+    
+    @IBAction func alreadyAccount(sender: AnyObject) {
+    }
+    
     // MARK - Function
     
     func dismissKeyboard() {

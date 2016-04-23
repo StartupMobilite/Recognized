@@ -83,6 +83,8 @@ class EmailFormViewController: UIViewController, UITextFieldDelegate {
         shouldPerformSegueWithIdentifier("backConditionGeneral", sender: sender)
     }
     
+    @IBAction func alreadyAccount(sender: AnyObject) {
+    }
     // MARK - Function
 
     func dismissKeyboard() {

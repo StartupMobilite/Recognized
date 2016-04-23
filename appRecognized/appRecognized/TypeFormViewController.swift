@@ -32,6 +32,8 @@ class TypeFormViewController: UIViewController {
     
     // MARK - Action
     
+    @IBAction func alreadyAccount(sender: AnyObject) {
+    }
     
     // MARK - Function
     

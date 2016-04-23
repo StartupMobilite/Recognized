@@ -762,6 +762,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8M-5K-DzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="kNz-HB-51T">
                     <connections>
+                        <action selector="backStartApp:" destination="fin-wV-v1d" id="ZeI-TH-hlk"/>
                         <segue destination="01Z-UD-G7c" kind="push" identifier="backStartApp" customClass="SegueFromLeft" customModule="appRecognized" customModuleProvider="target" id="g3B-fT-6to"/>
                     </connections>
                 </swipeGestureRecognizer>
@@ -941,6 +942,9 @@
                                         <state key="normal" title="Vous avez déjà un compte">
                                             <color key="titleColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="alreadyAccount:" destination="FHp-Py-w54" eventType="touchUpInside" id="Oe5-rK-eCf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1087,7 +1091,16 @@
                                         <state key="normal" title="Vous avez déjà un compte">
                                             <color key="titleColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="alreadyAccount:" destination="hid-n4-O4q" eventType="touchUpInside" id="wrp-Iw-bAN"/>
+                                        </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Veuillez saisir un nom correct !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWa-l6-uVg">
+                                        <rect key="frame" x="30" y="230" width="261" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -1128,6 +1141,7 @@
                     <navigationItem key="navigationItem" id="UZo-K5-6gb"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="OFW-x9-AkB" id="LVB-OH-LBR"/>
+                        <outlet property="errorLabel" destination="mWa-l6-uVg" id="JxJ-gW-Pr8"/>
                         <outlet property="nextButton" destination="NC1-MG-JM1" id="Wz9-KB-Xik"/>
                         <outlet property="nomTextField" destination="T2P-kH-Tq7" id="UGu-pF-mu9"/>
                         <outlet property="prenomTextField" destination="OFn-9w-9Pb" id="GAJ-7M-LAF"/>
@@ -1201,6 +1215,9 @@
                                         <state key="normal" title="Vous avez déjà un compte">
                                             <color key="titleColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="alreadyAccount:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="yVu-Yy-ion"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mot de passe trop court !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5X-Ts-Sx9" userLabel="Mdp Error">
                                         <rect key="frame" x="30" y="230" width="261" height="21"/>
@@ -1302,7 +1319,7 @@
                                             <constraint firstAttribute="width" constant="41" id="z38-zm-jxF"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Quelle type d'utilisateur êtes-vous ? " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iW-pW-Dtk" userLabel="Titre Text View">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Quelle type d'utilisateur êtes-vous ? " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iW-pW-Dtk" userLabel="Titre Text View">
                                         <rect key="frame" x="30" y="144" width="261" height="68"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="68" id="gfC-qG-zVJ"/>
@@ -1320,17 +1337,10 @@
                                         <state key="normal" title="Vous avez déjà un compte">
                                             <color key="titleColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="alreadyAccount:" destination="bdi-Tj-XUM" eventType="touchUpInside" id="GdW-iR-Il4"/>
+                                        </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="Vous êtes client" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO1-0m-WES" userLabel="Description clientText View">
-                                        <rect key="frame" x="30" y="315" width="123" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="123" id="4uA-DJ-c0q"/>
-                                            <constraint firstAttribute="height" constant="44" id="bXe-UT-y6k"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfn-88-Hz2" userLabel="Createur Button">
                                         <rect key="frame" x="185" y="220" width="87" height="87"/>
                                         <constraints>
@@ -1353,32 +1363,20 @@
                                             <segue destination="SJe-UZ-H0g" kind="push" identifier="goClientForm" id="TXa-se-Ujz"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="Vous êtes créateur" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lav-T4-don" userLabel="Descrption createur Text View">
-                                        <rect key="frame" x="168" y="315" width="123" height="44"/>
-                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="HO1-0m-WES" firstAttribute="leading" secondItem="NXH-cB-LnB" secondAttribute="leading" constant="30" id="0Ro-kj-lqB"/>
                                     <constraint firstItem="wSN-cK-aTv" firstAttribute="bottom" secondItem="NXH-cB-LnB" secondAttribute="bottomMargin" id="4Ym-Oc-WJf"/>
                                     <constraint firstItem="nUs-Tu-1TX" firstAttribute="top" secondItem="5iW-pW-Dtk" secondAttribute="bottom" constant="8" id="594-Hs-Vx0"/>
                                     <constraint firstItem="CJb-JC-gNQ" firstAttribute="centerX" secondItem="wSN-cK-aTv" secondAttribute="centerX" id="D4e-44-Zyh"/>
-                                    <constraint firstAttribute="trailing" secondItem="lav-T4-don" secondAttribute="trailing" constant="29" id="HgS-ma-r99"/>
+                                    <constraint firstItem="nUs-Tu-1TX" firstAttribute="leading" secondItem="NXH-cB-LnB" secondAttribute="leading" constant="54" id="JM1-CP-j6U"/>
                                     <constraint firstItem="Jfn-88-Hz2" firstAttribute="top" secondItem="5iW-pW-Dtk" secondAttribute="bottom" constant="8" id="QE2-DU-euT"/>
                                     <constraint firstItem="5iW-pW-Dtk" firstAttribute="top" secondItem="CJb-JC-gNQ" secondAttribute="bottom" constant="80" id="Rf4-aW-DSA"/>
                                     <constraint firstItem="CJb-JC-gNQ" firstAttribute="centerX" secondItem="5iW-pW-Dtk" secondAttribute="centerX" id="S38-c1-v9N"/>
-                                    <constraint firstItem="nUs-Tu-1TX" firstAttribute="leading" secondItem="NXH-cB-LnB" secondAttribute="leading" constant="54" id="Van-eZ-Giu"/>
-                                    <constraint firstItem="HO1-0m-WES" firstAttribute="top" secondItem="lav-T4-don" secondAttribute="top" id="X9e-6U-FrR"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jfn-88-Hz2" secondAttribute="trailing" constant="48" id="aik-Xf-sLN"/>
+                                    <constraint firstItem="nUs-Tu-1TX" firstAttribute="centerY" secondItem="Jfn-88-Hz2" secondAttribute="centerY" id="afU-Ke-Fr2"/>
                                     <constraint firstItem="CJb-JC-gNQ" firstAttribute="centerX" secondItem="NXH-cB-LnB" secondAttribute="centerX" id="bnf-pc-f1y"/>
-                                    <constraint firstItem="lav-T4-don" firstAttribute="leading" secondItem="HO1-0m-WES" secondAttribute="trailing" constant="15" id="eXb-4U-9jE"/>
-                                    <constraint firstAttribute="bottom" secondItem="HO1-0m-WES" secondAttribute="bottom" constant="209" id="fSt-8A-zWa"/>
-                                    <constraint firstItem="HO1-0m-WES" firstAttribute="leading" secondItem="5iW-pW-Dtk" secondAttribute="leading" id="jPM-2n-SmL"/>
-                                    <constraint firstItem="HO1-0m-WES" firstAttribute="bottom" secondItem="lav-T4-don" secondAttribute="bottom" id="lJi-6Y-pbc"/>
+                                    <constraint firstItem="Jfn-88-Hz2" firstAttribute="leading" secondItem="nUs-Tu-1TX" secondAttribute="trailing" constant="44" id="deS-Qp-sbd"/>
                                     <constraint firstItem="wSN-cK-aTv" firstAttribute="leading" secondItem="NXH-cB-LnB" secondAttribute="leading" id="tUB-ZB-XvL"/>
                                     <constraint firstItem="CJb-JC-gNQ" firstAttribute="top" secondItem="NXH-cB-LnB" secondAttribute="top" constant="21" id="v7J-ap-41G"/>
                                 </constraints>
@@ -1466,6 +1464,9 @@
                                         <state key="normal" title="Vous avez déjà un compte">
                                             <color key="titleColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="alreadyAccount:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="Hgm-vM-G1q"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="7cT-Ol-Q1M" userLabel="Description clientText View">
                                         <rect key="frame" x="30" y="262" width="261" height="64"/>
@@ -1489,12 +1490,6 @@
                                             <action selector="nameMarqueDidEndEditing:" destination="LWJ-Xi-sQn" eventType="editingDidEnd" id="KOv-90-AFw"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YG-uB-4VM">
-                                        <rect key="frame" x="227" y="322" width="22" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="22" id="pTc-bD-YHW"/>
-                                        </constraints>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" editable="NO" text="Les informations de votre marque vous permetterons de vous faire connaitre et de se faire une idée sur vos créations " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zj4-2e-BhT" userLabel="Description clientText View">
                                         <rect key="frame" x="30" y="334" width="261" height="56"/>
                                         <constraints>
@@ -1516,9 +1511,8 @@
                                         </state>
                                         <connections>
                                             <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="qoa-mN-hX6"/>
-                                            <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="d8o-1t-2zN"/>
                                             <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="FdD-u4-lz3"/>
-                                            <segue destination="scQ-3m-SkW" kind="push" identifier="goLogoForm" id="pCC-Eo-jOj"/>
+                                            <segue destination="scQ-3m-SkW" kind="push" identifier="goLogoForm" id="37P-t5-Bhd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1534,8 +1528,6 @@
                                     <constraint firstItem="7cT-Ol-Q1M" firstAttribute="top" secondItem="94Y-ds-Tmz" secondAttribute="bottom" constant="12" id="WrG-AD-eUL"/>
                                     <constraint firstItem="94Y-ds-Tmz" firstAttribute="top" secondItem="tUB-Xt-bhC" secondAttribute="bottom" constant="8" symbolic="YES" id="ZhR-ce-fcE"/>
                                     <constraint firstItem="94Y-ds-Tmz" firstAttribute="leading" secondItem="1Ri-Tq-glq" secondAttribute="leading" constant="30" id="cDL-nQ-iFt"/>
-                                    <constraint firstAttribute="trailing" secondItem="4YG-uB-4VM" secondAttribute="trailing" constant="71" id="epM-zZ-JQ5"/>
-                                    <constraint firstItem="Ee4-hs-wHa" firstAttribute="top" secondItem="4YG-uB-4VM" secondAttribute="bottom" id="fLn-XA-A0d"/>
                                     <constraint firstItem="COi-v6-4qR" firstAttribute="leading" secondItem="1Ri-Tq-glq" secondAttribute="leading" id="fot-Ys-bbQ"/>
                                     <constraint firstItem="zj4-2e-BhT" firstAttribute="trailing" secondItem="7cT-Ol-Q1M" secondAttribute="trailing" id="hM3-db-Z9E"/>
                                     <constraint firstItem="Ee4-hs-wHa" firstAttribute="leading" secondItem="zj4-2e-BhT" secondAttribute="leading" id="htp-Ff-JSv"/>
@@ -1543,7 +1535,6 @@
                                     <constraint firstItem="yUa-Ix-9o1" firstAttribute="centerX" secondItem="tUB-Xt-bhC" secondAttribute="centerX" id="jb1-Xw-k60"/>
                                     <constraint firstItem="tUB-Xt-bhC" firstAttribute="top" secondItem="yUa-Ix-9o1" secondAttribute="bottom" constant="80" id="kC6-in-frM"/>
                                     <constraint firstItem="yUa-Ix-9o1" firstAttribute="centerX" secondItem="COi-v6-4qR" secondAttribute="centerX" id="ora-0I-ORj"/>
-                                    <constraint firstItem="4YG-uB-4VM" firstAttribute="top" secondItem="94Y-ds-Tmz" secondAttribute="bottom" constant="72" id="pQF-Pp-uKV"/>
                                     <constraint firstItem="94Y-ds-Tmz" firstAttribute="leading" secondItem="tUB-Xt-bhC" secondAttribute="leading" id="qzl-nG-JlT"/>
                                     <constraint firstItem="zj4-2e-BhT" firstAttribute="leading" secondItem="7cT-Ol-Q1M" secondAttribute="leading" id="uu7-AR-h9M"/>
                                     <constraint firstItem="94Y-ds-Tmz" firstAttribute="trailing" secondItem="zj4-2e-BhT" secondAttribute="trailing" id="vsN-yK-GdD"/>
@@ -1564,11 +1555,10 @@
                         <outlet property="DescriptionMarqueTextView" destination="7cT-Ol-Q1M" id="AOd-go-tn4"/>
                         <outlet property="DescriptionTextView" destination="zj4-2e-BhT" id="94u-6z-SeC"/>
                         <outlet property="NameMarqueTextTield" destination="94Y-ds-Tmz" id="6xc-fx-X8K"/>
-                        <outlet property="NextButton" destination="Ee4-hs-wHa" id="AAO-zd-Dmc"/>
                         <outlet property="descriptionMarqueTextView" destination="7cT-Ol-Q1M" id="q06-mf-9d5"/>
                         <outlet property="descriptionTextView" destination="zj4-2e-BhT" id="VSL-Ex-oQI"/>
                         <outlet property="nameMarqueTextTield" destination="94Y-ds-Tmz" id="p1m-oD-b8d"/>
-                        <outlet property="nextButton" destination="Ee4-hs-wHa" id="DVf-wN-CCc"/>
+                        <outlet property="nextButton" destination="Ee4-hs-wHa" id="M0P-JR-ONV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1G-tX-yfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1621,6 +1611,9 @@
                                         <state key="normal" title="Vous avez déjà un compte">
                                             <color key="titleColor" red="0.52549019610000003" green="0.043137254899999998" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="alreadyAccount:" destination="scQ-3m-SkW" eventType="touchUpInside" id="HDs-I1-OVr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Re-Pe-Odo" userLabel="Upload Button">
                                         <rect key="frame" x="97" y="303" width="126" height="36"/>
@@ -1634,7 +1627,6 @@
                                         </state>
                                         <connections>
                                             <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="mdp-dp-yzW"/>
-                                            <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="vEz-Gi-n5q"/>
                                             <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="SaC-AD-wgm"/>
                                             <action selector="uploadButtonTap:" destination="scQ-3m-SkW" eventType="touchUpInside" id="VhS-ow-TJR"/>
                                         </connections>
@@ -1658,7 +1650,6 @@
                                         </state>
                                         <connections>
                                             <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="0Ls-3X-Zgd"/>
-                                            <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="dN1-40-swb"/>
                                             <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="ggs-m8-r7F"/>
                                             <action selector="gofinishingSubscription:" destination="scQ-3m-SkW" eventType="touchUpInside" id="Q1M-ts-ieB"/>
                                             <segue destination="bid-sZ-fK8" kind="push" identifier="goFinishSubscription" id="Z3i-6v-QFI"/>
@@ -1769,7 +1760,6 @@
                                 </state>
                                 <connections>
                                     <action selector="checkFullName:" destination="hid-n4-O4q" eventType="touchUpInside" id="73i-tf-4AX"/>
-                                    <action selector="checkMarqueAndGoNect:" destination="LWJ-Xi-sQn" eventType="touchUpInside" id="LAz-7D-gig"/>
                                     <action selector="checkPassword:" destination="FcL-Z6-OKe" eventType="touchUpInside" id="hWs-N1-Wne"/>
                                     <action selector="goConnexion:" destination="bid-sZ-fK8" eventType="touchUpInside" id="Pbg-qn-DtS"/>
                                     <action selector="gofinishingSubscription:" destination="scQ-3m-SkW" eventType="touchUpInside" id="2fv-K2-7qm"/>
@@ -1796,6 +1786,7 @@
                     <connections>
                         <outlet property="checkImg" destination="ToR-au-I23" id="cCC-9r-nbq"/>
                         <outlet property="loaderIndicator" destination="pNJ-KF-9RL" id="1Az-Cm-jr3"/>
+                        <outlet property="msgIndicatorTextView" destination="V4E-0b-q1p" id="rxH-l4-luq"/>
                         <outlet property="nextButton" destination="nUo-dC-Muy" id="T8S-e8-cPH"/>
                     </connections>
                 </viewController>
@@ -1931,13 +1922,13 @@
         <image name="people" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qlm-wK-e8u"/>
-        <segue reference="g3B-fT-6to"/>
-        <segue reference="jvv-yS-wPu"/>
-        <segue reference="FpQ-69-coo"/>
-        <segue reference="l0Y-Ul-ZKq"/>
+        <segue reference="3xp-2g-pqs"/>
+        <segue reference="nya-xk-yPr"/>
         <segue reference="umG-PA-Sjc"/>
-        <segue reference="yrc-ER-wUV"/>
-        <segue reference="CzZ-o2-GSQ"/>
+        <segue reference="l0Y-Ul-ZKq"/>
+        <segue reference="PbF-74-dBl"/>
+        <segue reference="Mik-cs-EYl"/>
+        <segue reference="smJ-5V-1Qx"/>
+        <segue reference="g3B-fT-6to"/>
     </inferredMetricsTieBreakers>
 </document>

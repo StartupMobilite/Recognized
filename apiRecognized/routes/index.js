@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var AuthController = require('../controllers/AuthenticateControllers.js');
+var article = require('../controllers/Article.js');
 var router = express.Router();
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -23,6 +24,14 @@ router.post('/createUserAdmin', AuthController.createUserAdmin );
 router.post('/createUser', AuthController.createUser );
 
 
-router.get('/allUsers', AuthController.findAll );
+router.post('/addCommentaire', AuthController.addCommentaire );
+
+router.post('/createConversation', AuthController.createaddConversation );
+
+
+router.get('/findAll', AuthController.findAll );
+
+router.get('/findAllArticle', Article.allArticle);
+
 
 module.exports = router;

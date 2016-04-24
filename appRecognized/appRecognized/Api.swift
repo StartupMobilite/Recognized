@@ -27,7 +27,7 @@ class Api {
     internal func insertNewUserInApi(dataUser: User, dataType: AnyObject ,indicator: UIActivityIndicatorView, checkIcon: UIImageView , nextButton: UIButton, msgIndicator: UITextView, completionHandler: (NSDictionary?, NSError?) -> ()){
         
         
-        var paramUser = [ "nom": dataUser.nom as String!,
+        var paramUser:[String: AnyObject] = [ "nom": dataUser.nom as String!,
                            "prenom": dataUser.prenom as String!,
                            "email": dataUser.email as String!,
                            "password": dataUser.password as String!,
@@ -36,22 +36,23 @@ class Api {
         
         if (dataType is Createur){
             let dataCreateur = dataType as? Createur
+            
              paramUser["marque"] = dataCreateur?.nomMarque
              paramUser["description"] = dataCreateur?.description
-             paramUser["logo"] = String(dataCreateur?.logo)
+             paramUser["logo"] = dataCreateur?.logo
         }else{
             
-//            let dataClient = dataType as? Client
-//            paramUser["interest"] = dataClient?.interest
+            let dataClient = dataType as? Client
+            paramUser["preference"] = dataClient?.universStyle
         }
         
         //Loader start
         indicator.startAnimating()
         
-        let test = URL_API + "/createUser"
-        print(test)
+//        let test = URL_API + "/createUser"
+        print(paramUser)
         
-        Alamofire.request(.POST, "http://192.168.0.5:3000/createUser", parameters: paramUser, encoding: .JSON)
+        Alamofire.request(.POST, URL_API + "/createUser", parameters: paramUser, encoding: .JSON)
             .responseJSON {
                 response in switch response.result {
                 case .Success(let JSON):

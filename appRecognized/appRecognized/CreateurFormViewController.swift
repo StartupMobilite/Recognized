@@ -76,6 +76,8 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func swipeTypeForm(sender: AnyObject) {
+        
+        shouldPerformSegueWithIdentifier("backTypeForm", sender: sender)
     }
     
     @IBAction func alreadyAccount(sender: AnyObject) {
@@ -114,6 +116,21 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     }
 
     // MARK: - Navigation
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+        
+        if (identifier == "goLogoForm"){
+            return true
+            
+            
+        }else if (identifier == "backTypeForm"){
+            print("backTypeForm")
+            return true
+        }
+        
+        return false
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

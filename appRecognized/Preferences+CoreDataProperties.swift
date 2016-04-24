@@ -1,8 +1,8 @@
 //
-//  Client+CoreDataProperties.swift
+//  Preferences+CoreDataProperties.swift
 //  appRecognized
 //
-//  Created by Karine Ould on 12/04/2016.
+//  Created by Karine Ould on 24/04/2016.
 //  Copyright © 2016 Karine Ould. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,9 +12,9 @@
 import Foundation
 import CoreData
 
-extension Clients {
+extension Preferences {
 
     @NSManaged var idClient: NSNumber?
-    @NSManaged var idUser: NSNumber?
-    
+    @NSManaged var idUnivers: NSNumber?
+
 }

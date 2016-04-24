@@ -11,6 +11,6 @@ import UIKit
 
 
 
-let URL_API = "http://192.168.0.5:3000"
+let URL_API = "http://172.20.10.10:3000"
 
 

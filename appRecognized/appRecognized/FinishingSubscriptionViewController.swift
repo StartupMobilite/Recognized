@@ -25,6 +25,7 @@ class FinishingSubscriptionViewController: UIViewController {
     //MARK - Passing Data
     var dataUser = User()
     var dataCreateur = Createur()
+    var dataClient = Client()
     let api = Api()
     
     //MARK - action
@@ -35,26 +36,45 @@ class FinishingSubscriptionViewController: UIViewController {
     // MARK - Override View
     
     override func viewWillAppear(animated: Bool) {
-//            print(dataUser)
+            print(dataUser)
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        api.insertNewUserInApi(dataUser, dataType: dataCreateur, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton, msgIndicator: msgIndicatorTextView){ (responseObject, error) in
-            
-            if (responseObject != nil){
+        //Check the type of the user to insert the right dataType
+        let dataType = (dataUser.status == "createur" ? dataCreateur : dataClient)
+        print(dataType)
+        
+//        if (dataUser.status == "createur") {
+            //insert user into api : User , Createur/Client
+            api.insertNewUserInApi(dataUser, dataType: dataType, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton, msgIndicator: msgIndicatorTextView){ (responseObject, error) in
                 
-                let responseUser = responseObject?.valueForKey("user")
-                let responseCreateur = responseObject?.valueForKey("createur")
-                print(responseUser)
-                print(responseCreateur)
-                self.dataUser.insertNewInCoreData(responseUser! as! NSDictionary)
-                self.dataCreateur.insertNewInCoreData(responseCreateur! as! NSDictionary)
-    
-            }else{
-              print(error)
+                if (responseObject != nil){
+                    
+                    let responseUser = responseObject?.valueForKey("user")
+                    self.dataUser.insertInCoreData(responseUser! as! NSDictionary)
+                    print(responseUser)
+                    
+                    if (responseUser!["status_User"] as! String! == "createur"){
+                        
+                        let responseCreateur = responseObject?.valueForKey("createur")
+                        self.dataCreateur.insertInCoreData(responseCreateur! as! NSDictionary)
+                        print(responseCreateur)
+                        
+                    }else{
+                    
+                        let responseClient = responseObject?.valueForKey("client")
+                        print(responseClient)
+                    }
+                    
+                }else{
+                    print(error)
+                }
             }
-        }
+//        }else{
+//            print(dataClient.universStyle)
+//        }
+        
         
     }
     

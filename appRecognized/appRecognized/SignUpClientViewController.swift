@@ -59,10 +59,10 @@ class SignUpClientViewController: UIViewController, NSFetchedResultsControllerDe
         
         let personne = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
         
-        personne.nom = personneNom.text
-        personne.prenom = personnePrenom.text
-        personne.email = personneEmail.text
-        personne.password = personnePassword.text
+//        personne.nom = personneNom.text
+//        personne.prenom = personnePrenom.text
+//        personne.email = personneEmail.text
+//        personne.password = personnePassword.text
         
         
         do{

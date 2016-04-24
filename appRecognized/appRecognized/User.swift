@@ -81,7 +81,7 @@ class User {
         return predicateTest
     }
     
-    internal func findOneByEmailAndPassword (email: String, password: String)-> NSDictionary{//->  NSFetchedResultsController
+    internal func findOneByEmailAndPassword (email: String, password: String)-> NSDictionary{
         
         var data = Dictionary<String, AnyObject>()
         
@@ -124,26 +124,14 @@ class User {
         }
     }
     
-    internal func insertNewInCoreData(data : NSDictionary){
+    internal func insertInCoreData(data : NSDictionary){
         
         let entityDescritpion = NSEntityDescription.entityForName("Users", inManagedObjectContext: moc)
         
         let user = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
-        
-        user.id = data.valueForKey("id_User") as? Int
-        user.nom = data.valueForKey("nom_User") as? String
-        user.prenom = data.valueForKey("prenom_User") as? String
-        user.email = data.valueForKey("email_User") as? String
-        user.password = data.valueForKey("password_User") as? String
-        user.status = data.valueForKey("status_User") as? String
 
-        
-        do{
-            try moc.save()
-            
-        }catch{
-            return
-        }
+        user.insertNewUser(data, entityDescription: entityDescritpion!, moc: moc)
+
     }
     
     internal func toString(){
@@ -167,9 +155,6 @@ class Createur : User {
     var address : String?
     var telephone : String?
     var logo : NSData?
-    
-//    // Retreive the managedObjectContext from AppDelegate
-//    let mocCreateur = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     init(id: String,
          nom: String,
@@ -216,25 +201,13 @@ class Createur : User {
 //        return userData
 //    }
     
-    internal override func insertNewInCoreData(data : NSDictionary){
+    internal override func insertInCoreData(data : NSDictionary){
         
         let entityDescritpions = NSEntityDescription.entityForName("Createurs", inManagedObjectContext: moc)
         
         let createur = Createurs(entity: entityDescritpions!, insertIntoManagedObjectContext: moc)
         
-        createur.id = data.valueForKey("id_Createur") as? Int
-        createur.idUser = data.valueForKey("id_User") as? Int
-        createur.nomMarque = data.valueForKey("nom_Marque") as? String
-        createur.descriptionMarque = data.valueForKey("description_Marque") as? String
-//        createur.logoMarque = data.valueForKey("logo_Marque") as? String
-       
-        
-        do{
-            try moc.save()
-            
-        }catch{
-            return
-        }
+        createur.insertNewCreateur(data, entityDescription: entityDescritpions!, moc: moc)
     }
 
     
@@ -298,7 +271,7 @@ class Createur : User {
 
 class Client: User {
 
-    var interest: NSArray
+    var universStyle: NSArray?
     
     init(id: String,
          nom: String,
@@ -306,14 +279,19 @@ class Client: User {
          email: String,
          password: String,
          status: String,
-         interest: NSArray) {
-        self.interest = interest
+         universStyle: NSArray) {
+        self.universStyle = universStyle
         super.init(id: id, nom: nom, prenom: prenom, email: email, password: password, status: status)
     }
     
     init(userData: User) {
-        self.interest = NSArray()
+        self.universStyle = NSArray()
         super.init(user : userData)
+    }
+    
+    override init() {
+        super.init()
+        self.universStyle = NSArray()
     }
     
     override func className()->String{

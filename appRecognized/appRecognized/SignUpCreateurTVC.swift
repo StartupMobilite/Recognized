@@ -105,14 +105,7 @@ class SignUpCreateurTVC: UITableViewController, NSFetchedResultsControllerDelega
 //        return label
 //    }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if (section == 0){
-            return 4
-        }
     
-        return 3
-    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

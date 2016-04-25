@@ -88,39 +88,37 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
                 
             }else if((user["status"]) as! String == "client"){
                 
-                //            let dataClient = Client()
-                
+                let dataClient = Client()
+                let test2 = dataClient.findOneByIdUser(user["id"] as! NSNumber)
+                print("dataClient.findOneByUser \(test2)")
                 
             }else{
-                // create the alert
-                let alert = UIAlertController(title: "Login failed", message: "Email ou password incorrect!", preferredStyle: UIAlertControllerStyle.Alert)
                 
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                
-                // show the alert
-                self.presentViewController(alert, animated: true, completion: nil)
+                displayAlert("Login Failes", message: "Email ou password incorrect !", titleAction: "OK")
             }
+            
         }else{
-            // create the alert
-            let alert = UIAlertController(title: "Login failed", message: "Email ou password incorrect!", preferredStyle: UIAlertControllerStyle.Alert)
             
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            
-            // show the alert
-            self.presentViewController(alert, animated: true, completion: nil)
+           displayAlert("Login Failes", message: "Email ou password incorrect !", titleAction: "OK")
         }
-
-
-        
-        
     }
     
+    
+    func displayAlert(title: String, message: String, titleAction: String){
+        
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: titleAction, style: UIAlertActionStyle.Default, handler: nil))
+        
+        // show the alert
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
     
     
-    //MARK - function 
+    //MARK - function
     func dismissKeyboard() {
         view.endEditing(true)
     }

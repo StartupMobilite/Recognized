@@ -78,8 +78,7 @@ class FinishingSubscriptionViewController: UIViewController {
                     
                     var responseClient:[String: AnyObject] = responseObject?.valueForKey("client") as! [String : AnyObject]
                     responseClient["universStyle"] = self.dataClient.universStyle
-                    
-//                    self.dataClient.insertInCoreData(responseClient)
+                    self.dataClient.insertInCoreData(responseClient)
                     
                     print("CLIENT INSERT --> \(responseClient)")
 

@@ -245,7 +245,7 @@ class Createur : User {
                 data["idUser"] = (createurResult.first?.idUser)! as NSNumber
                 data["nomMarque"] = createurResult.first?.nomMarque
                 data["descriptionMarque"] = createurResult.first?.descriptionMarque
-//              data["logoMarque"] = createurResult.first?.logoMarque
+                data["logoMarque"] = createurResult.first?.logoMarque
                 
                 return data
             }else if (createurResult.count == 0){
@@ -306,8 +306,61 @@ class Client: User {
     }
     
     
+    func fetchRequest(entityName: String, idUser: NSNumber) -> NSFetchRequest {
+        
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        let sortDescriptor = NSSortDescriptor(key: "idClient", ascending: true)
+        fetchRequest.predicate = predicateByidUser(idUser)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
     
-    
+    func predicateByidUser(idUser: NSNumber) -> NSPredicate{
+        let predicateTest = NSPredicate(format: "idUser == %@", idUser)
+        
+        return predicateTest
+    }
+
+    internal func findOneByIdUser (idUser: NSNumber)-> NSDictionary{
+        
+        var data = Dictionary<String, AnyObject>()
+        
+        do {
+            let clientResult = try moc.executeFetchRequest(fetchRequest("Clients", idUser: idUser)) as! [Clients]
+            
+            print("Result : \(clientResult.count)")
+            
+            clientResult.forEach({ (name) in
+                print(name.idClient)
+                print(name.idUser)
+                print(name.universStyle)
+                
+            })
+            
+            if (clientResult.count == 1){
+                data["idClient"] = (clientResult.first?.idClient)! as NSNumber
+                data["idUser"] = (clientResult.first?.idUser)! as NSNumber
+                data["universStyle"] = clientResult.first?.universStyle as! NSArray
+               
+                
+                return data
+                
+            }else if (clientResult.count == 0){
+                
+                data["error"] = "no result"
+                
+                return data
+            }else {
+                data["error"] = "duplicate result \(clientResult.count)"
+                
+                return data
+            }
+            
+        } catch {
+            fatalError("Failed to fetch client: \(error)")
+        }
+    }
+
     
     
     

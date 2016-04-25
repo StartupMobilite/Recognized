@@ -147,3 +147,5 @@ exports.findAll = function(req, res, next) {
         //res.send(users.array(models.User));
     });
 }
+
+

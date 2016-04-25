@@ -81,101 +81,70 @@ class User {
         return predicateTest
     }
     
-    internal func findOneByEmailAndPassword (entityName: String, email: String, password: String)-> NSDictionary{//->  NSFetchedResultsController
+    internal func findOneByEmailAndPassword (email: String, password: String)-> NSDictionary{
         
         var data = Dictionary<String, AnyObject>()
         
         do {
-            let personneResult = try moc.executeFetchRequest(fetchRequest(entityName, email: email, password: password)) as! [Users]
+            let userResult = try moc.executeFetchRequest(fetchRequest("Users", email: email, password: password)) as! [Users]
             
-            print("Result : \(personneResult.count)")
+            print("Result : \(userResult.count)")
+            print(userResult.description)
             
-            if (personneResult.count == 1){
-                data["id"] = (personneResult.first?.id)! as NSNumber
-                data["nom"] = personneResult.first?.nom
-                data["prenom"] = personneResult.first?.prenom
-                data["email"] = personneResult.first?.email
-                data["password"] = personneResult.first?.password
-                data["status"] = personneResult.first?.status
+            userResult.forEach({ (name) in
+                print(name.id)
+                print(name.email)
+                print(name.password)
+            })
+            
+            if (userResult.count == 1){
+                data["id"] = (userResult.first?.id)! as NSNumber
+                data["nom"] = userResult.first?.nom
+                data["prenom"] = userResult.first?.prenom
+                data["email"] = userResult.first?.email
+                data["password"] = userResult.first?.password
+                data["status"] = userResult.first?.status
                 
+                print(data)
                 return data
-            }else if (personneResult.count == 0){
+            }else if (userResult.count == 0){
             
                 data["error"] = "no result"
                 
                 return data
             }else {
-                data["error"] = "duplicate result \(personneResult.count)"
+                data["error"] = "duplicate result \(userResult.count)"
                 
                 return data
             }
-//            personneResult.forEach({ (name) in
-//                print(name.email)
-//                print(name.password)
-//            })
+           
             
         } catch {
-            fatalError("Failed to fetch employees: \(error)")
+            fatalError("Failed to fetch user: \(error)")
         }
     }
     
-    
-    internal func insertNewUserInCoreData(dataUser : User){
-        
+    internal func insertInCoreData(data : NSDictionary){
         
         let entityDescritpion = NSEntityDescription.entityForName("Users", inManagedObjectContext: moc)
         
         let user = Users(entity: entityDescritpion!, insertIntoManagedObjectContext: moc)
-        
-//        let dataUserApi = insertNewUserInApi(dataUser)
-        user.id = Int(dataUser.id!)
-        user.nom = dataUser.nom
-        user.prenom = dataUser.prenom
-        user.email = dataUser.email
-        user.password = dataUser.password
-        user.status = dataUser.status
-        
-        do{
-            try moc.save()
-            
-        }catch{
-            return
-        }
+
+        user.insertNewUser(data, entityDescription: entityDescritpion!, moc: moc)
+
     }
     
-//    func insertNewUserInApi(indicator: UIActivityIndicatorView, completionHandler: (NSDictionary?, NSError?) -> ()) {
-//        
-//        let parameters = [ "nom": self.nom as String!,
-//                           "prenom": self.prenom as String!,
-//                           "email": self.email as String!,
-//                           "password": self.password as String!,
-//                           "status": self.status as String!
-//        ]
-//        
-//       indicator.startAnimating()
-//       Alamofire.request(.POST, "http://localhost:3000/createUser", parameters: parameters, encoding: .JSON)
-//            .responseJSON {
-//                response in switch response.result {
-//                case .Success(let JSON):
-////                    print("Success with JSON: \(JSON)")
-//                    
-//                    let response = JSON as! NSDictionary
-//                    
-//                    if ((response["id"]) != nil && (response["email"]?.isEqual(self.email))!)
-//                    {
-//                        completionHandler(JSON as? NSDictionary, nil)
-//                
-//                    }
-//                case .Failure(let error):
-//                    
-////                    print("Request failed with error: \(error)")
-//                    completionHandler(nil, error)
-//
-//                }
-//                indicator.stopAnimating()
-//    
-//        }
-//    }
+    internal func toString(){
+        
+        print("id : \(self.id)")
+        print("nom : \(self.nom)")
+        print("prenom : \(self.prenom)")
+        print("email : \(self.email)")
+        print("password : \(self.password)")
+        print("status : \(self.status)")
+        
+        
+    }
 }
 
 
@@ -185,7 +154,7 @@ class Createur : User {
     var description: String?
     var address : String?
     var telephone : String?
-    var logo : NSData?
+    var logo : UIImage?
     
     init(id: String,
          nom: String,
@@ -197,7 +166,7 @@ class Createur : User {
          description: String,
          address : String,
          telephone : String,
-         logo : NSData) {
+         logo : UIImage) {
         
         super.init(id: id, nom: nom, prenom: prenom, email: email, password: password, status: status)
         self.nomMarque = nomMarque
@@ -213,7 +182,7 @@ class Createur : User {
         self.description = String()
         self.address = String()
         self.telephone = String()
-        self.logo = NSData()
+        self.logo = UIImage()
     }
     
      init(userData: User) {
@@ -228,14 +197,79 @@ class Createur : User {
     override func className()->String{
         return "Createur"
     }
-//    func loadUser(userData: User) -> User{
-//        return userData
-//    }
+
+    
+    internal override func insertInCoreData(data : NSDictionary){
+        
+        let entityDescritpions = NSEntityDescription.entityForName("Createurs", inManagedObjectContext: moc)
+        
+        let createur = Createurs(entity: entityDescritpions!, insertIntoManagedObjectContext: moc)
+        
+        createur.insertNewCreateur(data, entityDescription: entityDescritpions!, moc: moc)
+    }
+
+    
+    func fetchRequest(entityName: String, idUser: NSNumber) -> NSFetchRequest {
+        
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.predicate = predicateByidUser(idUser)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+    
+    func predicateByidUser(idUser: NSNumber) -> NSPredicate{
+        let predicateTest = NSPredicate(format: "idUser == %@", idUser)
+        
+        return predicateTest
+    }
+    
+    internal func findOneByIdUser (idUser: NSNumber)-> NSDictionary{//->  NSFetchedResultsController
+        
+        var data = Dictionary<String, AnyObject>()
+        
+        do {
+            let createurResult = try moc.executeFetchRequest(fetchRequest("Createurs", idUser: idUser)) as! [Createurs]
+            
+            print("Result : \(createurResult.count)")
+            
+            createurResult.forEach({ (name) in
+                print(name.id)
+                print(name.idUser)
+                print(name.nomMarque)
+                
+            })
+            
+            if (createurResult.count == 1){
+                data["id"] = (createurResult.first?.id)! as NSNumber
+                data["idUser"] = (createurResult.first?.idUser)! as NSNumber
+                data["nomMarque"] = createurResult.first?.nomMarque
+                data["descriptionMarque"] = createurResult.first?.descriptionMarque
+//              data["logoMarque"] = createurResult.first?.logoMarque
+                
+                return data
+            }else if (createurResult.count == 0){
+                
+                data["error"] = "no result"
+                
+                return data
+            }else {
+                data["error"] = "duplicate result \(createurResult.count)"
+                
+                return data
+            }
+            
+        } catch {
+            fatalError("Failed to fetch user: \(error)")
+        }
+    }
+
+    
 }
 
 class Client: User {
 
-    var interest: NSArray
+    var universStyle: NSArray?
     
     init(id: String,
          nom: String,
@@ -243,18 +277,52 @@ class Client: User {
          email: String,
          password: String,
          status: String,
-         interest: NSArray) {
-        self.interest = interest
+         universStyle: NSArray) {
+        self.universStyle = universStyle
         super.init(id: id, nom: nom, prenom: prenom, email: email, password: password, status: status)
     }
     
     init(userData: User) {
-        self.interest = NSArray()
+        self.universStyle = NSArray()
         super.init(user : userData)
+    }
+    
+    override init() {
+        super.init()
+        self.universStyle = NSArray()
     }
     
     override func className()->String{
         return "Client"
     }
+    
+    internal override func insertInCoreData(data : NSDictionary){
+        
+        let entityDescritpions = NSEntityDescription.entityForName("Clients", inManagedObjectContext: moc)
+        
+        let client = Clients(entity: entityDescritpions!, insertIntoManagedObjectContext: moc)
+        
+        client.insertNewClient(data, entityDescription: entityDescritpions!, moc: moc)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 

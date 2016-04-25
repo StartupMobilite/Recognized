@@ -25,3 +25,5 @@ exports.addTaille = function(req, res, next) {
 exports.findAllTaille = function(req, res, next) {
 
     return res.end(JSON.stringify(taille));
+
+}

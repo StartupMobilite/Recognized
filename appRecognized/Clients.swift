@@ -11,7 +11,25 @@ import CoreData
 
 
 class Clients: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+    
+    
+    internal func insertNewClient(data : NSDictionary, entityDescription: NSEntityDescription, moc: NSManagedObjectContext){
+        
+        //
+        let client = Clients(entity: entityDescription, insertIntoManagedObjectContext: moc)
+        
+        client.idClient = data.valueForKey("id_Client") as? Int
+        client.idUser = data.valueForKey("id_User") as? Int
+        client.universStyle = data.valueForKey("universStyle") as? NSArray
+        
+        do{
+            try moc.save()
+            
+        }catch{
+            return
+        }
+        
+    }
+    
+    
 }

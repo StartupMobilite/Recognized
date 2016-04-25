@@ -33,6 +33,22 @@ exports.findAllArticle = function(req, res, next) {
 
 exports.findArticleByIdCreateur = function(req, res, next) {
 
-    
+    models.Article.findAll({
+        where: {
+            id_Createur: req.query.createur
+        }
+    }).then(function(articles){
+        console.log(articles);
+        return res.end(JSON.stringify(articles));
+    });
+
+}
+
+exports.findArticleById = function(req, res, next) {
+
+    models.Article.findById(req.query.article).then(function(article){
+        console.log(article);
+        return res.end(JSON.stringify(article));
+    });
 
 }

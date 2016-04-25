@@ -4,6 +4,7 @@ var conversation = require('../controllers/Conversation.js');
 var coupDeCoeur = require('../controllers/CoupdeCoeur.js');
 var message = require('../controllers/Message.js');
 var AuthController = require('../controllers/AuthenticateControllers.js');
+var article = require('../controllers/Article.js');
 var router = express.Router();
 
 /* GET users listing. */
@@ -20,5 +21,10 @@ router.post('/createConversation', conversation.createConversation);
 router.post('/addCoupDeCoeur', coupDeCoeur.addCoupDeCoeur);
 
 router.post('/createMessage', message.createMessage);
+
+router.get('/findArticleByIdCreateur', article.findArticleByIdCreateur);
+
+router.get('/findArticleById', article.findArticleById);
+
 
 module.exports = router;

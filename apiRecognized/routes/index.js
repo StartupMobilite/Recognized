@@ -1,6 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var AuthController = require('../controllers/AuthenticateControllers.js');
+var commentaire = require('../controllers/Commentaire.js');
+var conversation = require('../controllers/Conversation.js');
+var coupDeCoeur = require('../controllers/CoupdeCoeur.js');
+var message = require('../controllers/Message.js');
 var article = require('../controllers/Article.js');
 var router = express.Router();
 
@@ -13,7 +17,6 @@ router.get('/', function(req, res, next) {
     res.send('connected');
 });
 
-//router.get('/allUser', AuthController.findAllUser);
 
 
 /* Create main user Admin. */
@@ -24,14 +27,14 @@ router.post('/createUserAdmin', AuthController.createUserAdmin );
 router.post('/createUser', AuthController.createUser );
 
 
-router.post('/addCommentaire', AuthController.addCommentaire );
+router.post('/addCommentaire', commentaire.addCommentaire );
 
-router.post('/createConversation', AuthController.createaddConversation );
+router.post('/createConversation', conversation.createConversation );
 
 
 router.get('/findAll', AuthController.findAll );
 
-router.get('/findAllArticle', Article.allArticle);
+router.get('/findAllArticle', article.findAllArticle);
 
 
 module.exports = router;

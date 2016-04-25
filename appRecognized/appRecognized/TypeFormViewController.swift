@@ -32,6 +32,8 @@ class TypeFormViewController: UIViewController {
     
     // MARK - Action
     
+    @IBAction func alreadyAccount(sender: AnyObject) {
+    }
     
     // MARK - Function
     
@@ -53,7 +55,7 @@ class TypeFormViewController: UIViewController {
             let destViewController : ClientFormViewController = segue.destinationViewController as! ClientFormViewController
             
             dataUser.status = "client"
-//            destViewController.dataUser = dataUser
+            destViewController.dataUser = dataUser
            
             
         }else if (segue.identifier == "goBackPasswordForm"){

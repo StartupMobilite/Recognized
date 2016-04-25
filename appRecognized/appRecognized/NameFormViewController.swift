@@ -22,10 +22,6 @@ class NameFormViewController: UIViewController {
 
     //MARK - Passing Data
     var dataUser = User()
-//    var email = String()
-//    var nom = String()
-//    var prenom = String()
-//    var password = String()
     
     
     // MARK - IBOutlet
@@ -35,6 +31,8 @@ class NameFormViewController: UIViewController {
     @IBOutlet weak var nomTextField: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -52,8 +50,6 @@ class NameFormViewController: UIViewController {
         // Corner Raduis Img
         nextButton.layer.cornerRadius = 7.0
         nextButton.clipsToBounds = true
-        
-        print(dataUser.email)
         
     }
     
@@ -85,6 +81,10 @@ class NameFormViewController: UIViewController {
         
     }
     
+    @IBAction func alreadyAccount(sender: AnyObject) {
+    }
+    
+    
     @IBAction func prenomDidEndEditing(sender: AnyObject) {
         toggleButtonNext()
     }
@@ -107,6 +107,7 @@ class NameFormViewController: UIViewController {
         }else{
             nextButton.hidden = false
             descriptionTextView.hidden = true
+            errorLabel.hidden = true
         }
     }
     
@@ -124,6 +125,7 @@ class NameFormViewController: UIViewController {
             }else{
                 nextButton.hidden = true
                 descriptionTextView.hidden = true
+                errorLabel.hidden = false
             }
             
         }else if (identifier == "backEmailForm"){

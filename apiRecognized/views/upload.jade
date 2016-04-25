@@ -1,0 +1,13 @@
+//
+   Created by Janany on 25/04/2016.
+
+extends layout
+
+block upload
+    form(ref='uploadForm',id='uploadForm',action='http://localhost:3000/upload',method="post",enctype="multipart/form-data")
+        p
+            input(type="text",name="title",placeholder="title")
+        p
+            input(type="file",name="img")
+        p
+            input(type="submit")

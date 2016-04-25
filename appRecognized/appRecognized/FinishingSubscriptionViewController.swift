@@ -30,63 +30,76 @@ class FinishingSubscriptionViewController: UIViewController {
     
     //MARK - action
     @IBAction func goConnexion(sender: AnyObject) {
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+//        let connexionViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ConnexionViewController")
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = connexionViewController
     }
     
     
     // MARK - Override View
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Corner Raduis Img
+        nextButton.layer.cornerRadius = 7.0
+        nextButton.clipsToBounds = true
+        
+    }
     
     override func viewWillAppear(animated: Bool) {
-            print(dataUser)
+//            print(dataUser)
     }
     
     override func viewDidAppear(animated: Bool) {
         
         //Check the type of the user to insert the right dataType
         let dataType = (dataUser.status == "createur" ? dataCreateur : dataClient)
-        print(dataType)
-        
-//        if (dataUser.status == "createur") {
-            //insert user into api : User , Createur/Client
-            api.insertNewUserInApi(dataUser, dataType: dataType, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton, msgIndicator: msgIndicatorTextView){ (responseObject, error) in
+
+        //insert user into api : User , Createur/Client
+        api.insertNewUserInApi(dataUser, dataType: dataType, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton, msgIndicator: msgIndicatorTextView){ (responseObject, error) in
                 
-                if (responseObject != nil){
+            if (responseObject != nil && responseObject?.valueForKey("user") != nil){
                     
-                    let responseUser = responseObject?.valueForKey("user")
-                    self.dataUser.insertInCoreData(responseUser! as! NSDictionary)
-                    print(responseUser)
+                print("RESPONSE --> \(responseObject)")
+                
+                let responseUser = responseObject?.valueForKey("user")
+                self.dataUser.insertInCoreData(responseUser! as! NSDictionary)
+                print("USER INSERT --> \(responseUser)")
+                
+                if (responseUser!["status_User"] as! String! == "createur"){
                     
-                    if (responseUser!["status_User"] as! String! == "createur"){
-                        
-                        let responseCreateur = responseObject?.valueForKey("createur")
-                        self.dataCreateur.insertInCoreData(responseCreateur! as! NSDictionary)
-                        print(responseCreateur)
-                        
-                    }else{
-                    
-                        let responseClient = responseObject?.valueForKey("client")
-                        print(responseClient)
-                    }
+                    let responseCreateur = responseObject?.valueForKey("createur")
+                    self.dataCreateur.insertInCoreData(responseCreateur! as! NSDictionary)
+                    print("CREATEUR INSERT --> \(responseCreateur)")
                     
                 }else{
-                    print(error)
+                    
+                    var responseClient:[String: AnyObject] = responseObject?.valueForKey("client") as! [String : AnyObject]
+                    responseClient["universStyle"] = self.dataClient.universStyle
+                    
+//                    self.dataClient.insertInCoreData(responseClient)
+                    
+                    print("CLIENT INSERT --> \(responseClient)")
+
                 }
+                    
+            }else{
+                print(error)
             }
-//        }else{
-//            print(dataClient.universStyle)
-//        }
-        
-        
+        }
     }
     
-     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        
-        if (identifier == "goConnexion"){
-            
-//            dataUser.toString()
-//            print(api.resultData)
-        }
-        return true
-    }
+//     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+//        
+//        if (identifier == "goConnexion"){
+//            
+////            dataUser.toString()
+////            print(api.resultData)
+//        }
+//        return true
+//    }
     
 
 }

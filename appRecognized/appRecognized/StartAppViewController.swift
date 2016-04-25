@@ -9,6 +9,9 @@
 import UIKit
 
 class StartAppViewController: UIViewController {
+    
+    
+    var test = ""
 
     @IBOutlet weak var inscriptionButton: UIButton!
     

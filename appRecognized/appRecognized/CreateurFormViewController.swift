@@ -119,7 +119,7 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         
-        if (identifier == "goLogoForm"){
+        if (identifier == "goFinishSubscription"){
             return true
             
             
@@ -135,13 +135,13 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         
-        if ( segue.identifier == "goLogoForm"){
-            let destViewController : LogoFormViewController = segue.destinationViewController as! LogoFormViewController
+        if ( segue.identifier == "goFinishSubscription"){
+            let destViewController : FinishingSubscriptionViewController = segue.destinationViewController as! FinishingSubscriptionViewController
             
             dataUserCreateur.nomMarque = nameMarqueTextTield.text!
             dataUserCreateur.description = descriptionMarqueTextView.text!
             destViewController.dataUser = dataUser
-            destViewController.dataUserCreateur = dataUserCreateur
+            destViewController.dataCreateur = dataUserCreateur
             
         }else if (segue.identifier == "backTypeForm"){
             let destViewController : TypeFormViewController = segue.destinationViewController as! TypeFormViewController

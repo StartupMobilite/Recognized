@@ -33,8 +33,8 @@ class ClientFormViewController: UIViewController {
         super.viewDidLoad()
         
         // Corner Raduis Img
-//    nextButton.layer.cornerRadius = 7.0
-//    nextButton.clipsToBounds = true
+    nextButton.layer.cornerRadius = 7.0
+    nextButton.clipsToBounds = true
     
     }
     
@@ -50,11 +50,8 @@ class ClientFormViewController: UIViewController {
     }
     
     // MARK - Action
+
     
-    @IBAction func goFinishSubscription(sender: AnyObject) {
-        
-        
-    }
     
     
     // MARK - Function

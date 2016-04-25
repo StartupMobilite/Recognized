@@ -17,6 +17,7 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var homeButton: UIButton!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -64,21 +65,42 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     }
     
     // MARK - Action
+    
     @IBAction func connexionAction(sender: AnyObject) {
         
         
         let user = self.userdata.findOneByEmailAndPassword(emailTextField.text!, password: passwordTextField.text!)
         print(user)
-
-        if ((user["email"]) != nil){
+        if (user.valueForKey("error") == nil){
             
-            print(user)
-            let tabBarCreateur = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarCreateur") as! UITabBarController
-            
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.window?.rootViewController = tabBarCreateur
-
-            
+            if ((user["status"]) as! String == "createur"){
+                
+                let dataCreateur = Createur()
+                let test = dataCreateur.findOneByIdUser(user["id"] as! NSNumber)
+                print("dataCreateur.findOneByIdUser --> \(test)")
+                
+                
+                //            let tabBarCreateur = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarCreateur") as! UITabBarController
+                //
+                //            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                //            appDelegate.window?.rootViewController = tabBarCreateur
+                
+                
+            }else if((user["status"]) as! String == "client"){
+                
+                //            let dataClient = Client()
+                
+                
+            }else{
+                // create the alert
+                let alert = UIAlertController(title: "Login failed", message: "Email ou password incorrect!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                
+                // show the alert
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         }else{
             // create the alert
             let alert = UIAlertController(title: "Login failed", message: "Email ou password incorrect!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -89,14 +111,13 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
             // show the alert
             self.presentViewController(alert, animated: true, completion: nil)
         }
+
+
         
         
     }
     
-    
-    @IBAction func backStartApp(sender: AnyObject) {
-    }
-    
+
     
     
     //MARK - function 
@@ -109,21 +130,29 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
    
      // MARK: - Navigation
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+//    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+//        
+//        if (identifier == "goConnexion"){
+//            print("goConnexion")
+//            return true
+//            
+//        }else if ( identifier == "backStartApp"){
+//            print("backStartApp")
+//            return true
+//        }
+//        
+//        return true
+//    }
+//
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (identifier == "goConnexion"){
+        if (segue.identifier == "backStartApp"){
+            let destController: StartAppViewController = segue.destinationViewController as! StartAppViewController
             
-            return true
-            
-        }else if ( identifier == "backStartApp"){
-            return true
+            destController.test = "perform segue";
+            print(segue.identifier)
         }
         
-        return false
-    }
-
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
      }
     
 

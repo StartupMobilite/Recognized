@@ -3,6 +3,7 @@
  */
 
 var models  = require('../models');
+var fs = require("fs");
 
 exports.createUserAdmin = function(req, res, next){
 
@@ -36,6 +37,8 @@ exports.createUserAdmin = function(req, res, next){
 exports.createUser = function(req, res, next) {
     console.log(req.body);
 
+    console.log(req.file);
+
     var newUser = {
         nom_User: req.body.nom,
         prenom_User: req.body.prenom,
@@ -51,20 +54,20 @@ exports.createUser = function(req, res, next) {
         var result = { 'error' : false };
 
         result["user"] = user.get('id_User') ? user.get() : false;
-        
+
         if(result["user"]["status_User"] == "createur"){
 
             console.log('Creation de créateur');
-
+            
             var newCreateur = {
                 id_User: result["user"]["id_User"],
                 nom_Marque: req.body.marque,
                 description_Marque: req.body.description,
-                logo_Marque: req.body.logo
+                // logo_Marque: req.body.logo
             };
 
             models.Createur.create(newCreateur).then(function(createur) {
-                
+
                 if (createur.get('id_Createur')) {
 
                     result["createur"] = createur.get();
@@ -86,7 +89,7 @@ exports.createUser = function(req, res, next) {
 
             models.Client.create(newClient).then(function(client) {
 
-                if (client.get('id_User')) {
+                if (client.get('id_Client')) {
 
                     result["client"] = client.get();
 
@@ -95,50 +98,44 @@ exports.createUser = function(req, res, next) {
                     console.log(req.body.preference);
                     univers = req.body.preference;
 
-                    console.log(Array.isArray(univers));
-                    
-                    var value;
-                    for (value in univers) {
-                        console.log(value);
+                    if (Array.isArray(univers)){
+
+                        var idUniver;
+
+                        for ( idUniver in univers) {
+
+                            console.log(univers[idUniver] != '');
+                            if (univers[idUniver] != ''){
+
+                                var newPreference = {
+                                    id_Client: result["client"]["id_Client"],
+                                    id_Univers: univers[idUniver]
+                                };
+
+                                console.log(newPreference);
+                                models.Preference.create(newPreference).then(function(pref){
+
+                                    if (pref.get('id')) {
+                                        result["preference"] = true;
+                                    }else {
+                                        result['error'] = 'error insert preference';
+                                    }
+
+                                    console.log(result);
+                                    res.send(result);
+                                });
+                            }
+                        }
+                    }else {
+                        result['error'] = 'error insert preference (isArray)';
                     }
-
-                    var newPreference = {
-                        id_Client: result["client"]["id_Client"],
-                        id_Univers: "test"
-                    };
-
-                    console.log(newPreference);
-
-                    // models.Preference.create(newPreference).then(function(pref){
-                    //
-                    //     if (pref.get('id_User')) {
-                    //
-                    //         result["preference"] = pref.get();
-                    //
-                    //     }else {
-                    //         result['error'] = 'error insert preference';
-                    //
-                    //     }
-                    // });
-
                 } else {
                     result['error'] = 'error insert client';
                 }
-                res.send(result);
             });
         }else {
-
-            result['error'] = 'type not defind'
+            result['error'] = 'type not defined'
         }
-
-        // res.send(result);
-        //if (user.get('id_User')) {
-        //    result = user.get();
-        //} else {
-        //    result = 'error insert user';
-        //}
-        //
-        //res.send(result);
     });
 };
 

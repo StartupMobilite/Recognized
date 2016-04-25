@@ -154,7 +154,7 @@ class Createur : User {
     var description: String?
     var address : String?
     var telephone : String?
-    var logo : NSData?
+    var logo : UIImage?
     
     init(id: String,
          nom: String,
@@ -166,7 +166,7 @@ class Createur : User {
          description: String,
          address : String,
          telephone : String,
-         logo : NSData) {
+         logo : UIImage) {
         
         super.init(id: id, nom: nom, prenom: prenom, email: email, password: password, status: status)
         self.nomMarque = nomMarque
@@ -182,7 +182,7 @@ class Createur : User {
         self.description = String()
         self.address = String()
         self.telephone = String()
-        self.logo = NSData()
+        self.logo = UIImage()
     }
     
      init(userData: User) {
@@ -197,9 +197,7 @@ class Createur : User {
     override func className()->String{
         return "Createur"
     }
-//    func loadUser(userData: User) -> User{
-//        return userData
-//    }
+
     
     internal override func insertInCoreData(data : NSDictionary){
         
@@ -211,22 +209,22 @@ class Createur : User {
     }
 
     
-    func fetchRequest(entityName: String, idUser: Int) -> NSFetchRequest {
+    func fetchRequest(entityName: String, idUser: NSNumber) -> NSFetchRequest {
         
         let fetchRequest = NSFetchRequest(entityName: entityName)
-        let sortDescriptor = NSSortDescriptor(key: "nom", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.predicate = predicateByidUser(idUser)
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
     }
     
-    func predicateByidUser(idUser: Int) -> NSPredicate{
+    func predicateByidUser(idUser: NSNumber) -> NSPredicate{
         let predicateTest = NSPredicate(format: "idUser == %@", idUser)
         
         return predicateTest
     }
     
-    internal func findOneByIdUser (idUser: Int)-> NSDictionary{//->  NSFetchedResultsController
+    internal func findOneByIdUser (idUser: NSNumber)-> NSDictionary{//->  NSFetchedResultsController
         
         var data = Dictionary<String, AnyObject>()
         
@@ -247,7 +245,7 @@ class Createur : User {
                 data["idUser"] = (createurResult.first?.idUser)! as NSNumber
                 data["nomMarque"] = createurResult.first?.nomMarque
                 data["descriptionMarque"] = createurResult.first?.descriptionMarque
-//                data["logoMarque"] = createurResult.first?.logoMarque
+//              data["logoMarque"] = createurResult.first?.logoMarque
                 
                 return data
             }else if (createurResult.count == 0){
@@ -297,5 +295,34 @@ class Client: User {
     override func className()->String{
         return "Client"
     }
+    
+    internal override func insertInCoreData(data : NSDictionary){
+        
+        let entityDescritpions = NSEntityDescription.entityForName("Clients", inManagedObjectContext: moc)
+        
+        let client = Clients(entity: entityDescritpions!, insertIntoManagedObjectContext: moc)
+        
+        client.insertNewClient(data, entityDescription: entityDescritpions!, moc: moc)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 

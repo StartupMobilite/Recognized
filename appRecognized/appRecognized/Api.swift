@@ -37,20 +37,29 @@ class Api {
         if (dataType is Createur){
             let dataCreateur = dataType as? Createur
             
-             paramUser["marque"] = dataCreateur?.nomMarque
-             paramUser["description"] = dataCreateur?.description
-             paramUser["logo"] = dataCreateur?.logo
+             paramUser["marque"] = dataCreateur?.nomMarque as String!
+             paramUser["description"] = dataCreateur?.description as String!
+
+//             let imageData =
+//             paramUser["logo"] = UIImageJPEGRepresentation((dataCreateur?.logo)!, 100)
+//                imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)) // encode the imagedataCreateur?.logo as NSData!
         }else{
             
             let dataClient = dataType as? Client
             paramUser["preference"] = dataClient?.universStyle
         }
         
+        print("paramUser --> \(paramUser)")
+        
         //Loader start
         indicator.startAnimating()
         
-//        let test = URL_API + "/createUser"
-        print(paramUser)
+//        let imagePathUrl = NSURL(fileURLWithPath: paramUser["logo"]! as! String)
+        
+//        Alamofire.request(.POST, URL_API + "/createUser", multipartFormData: { multipartFormData in
+//            multipartFormData.appendBodyPart(fileURL: imagePathUrl, name: "logo")},
+//                
+//            )
         
         Alamofire.request(.POST, URL_API + "/createUser", parameters: paramUser, encoding: .JSON)
             .responseJSON {
@@ -66,7 +75,6 @@ class Api {
                         completionHandler(response, nil)
                     }
                     indicator.stopAnimating()
-                    msgIndicator.text = "Inscription réussi !"
                     checkIcon.hidden = false
                     nextButton.hidden = false
                     
@@ -78,7 +86,6 @@ class Api {
                     checkIcon.image = UIImage(named: "close")
                     checkIcon.hidden = false
                     nextButton.setTitle("Recommencer", forState: .Normal)
-                    msgIndicator.text = "Oops ! Une erreur s'est produite !"
                     nextButton.hidden = false
                     
                 }

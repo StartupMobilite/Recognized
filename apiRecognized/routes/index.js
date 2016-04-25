@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var AuthController = require('../controllers/AuthenticateControllers.js');
 var router = express.Router();
+var multer = require('multer');
+var upload = multer({dest : '../public/images/'});
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
@@ -19,7 +21,7 @@ router.post('/createUserAdmin', AuthController.createUserAdmin );
 
 
 /* Create an user client or createur. */
-router.post('/createUser', AuthController.createUser );
+router.post('/createUser', upload.single('logo'), AuthController.createUser );
 
 
 router.get('/allUsers', AuthController.findAll );

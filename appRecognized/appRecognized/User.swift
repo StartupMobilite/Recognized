@@ -10,6 +10,16 @@ import UIKit
 import CoreData
 import Alamofire
 
+extension String {
+    
+    func sha1() -> String {
+        let data = self.dataUsingEncoding(NSUTF8StringEncoding)!
+        var digest = [UInt8](count:Int(CC_SHA1_DIGEST_LENGTH), repeatedValue: 0)
+        CC_SHA1(data.bytes, CC_LONG(data.length), &digest)
+        let hexBytes = digest.map { String(format: "%02hhx", $0) }
+        return hexBytes.joinWithSeparator("")
+    }
+}
 class User {
     
     // Retreive the managedObjectContext from AppDelegate
@@ -64,6 +74,29 @@ class User {
     
     func className()->String{
         return "User"
+    }
+    
+    internal func checkEmailUnicity (email: String) -> Bool {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Users")
+        fetchRequest.predicate = NSPredicate(format: "email == %@",email)
+        
+        do {
+            let userResult = try moc.executeFetchRequest(fetchRequest) as! [Users]
+            
+            print("checkEmailUnicity Result : \(userResult.count)")
+            
+            if (userResult.count != 0){
+                return false
+            }
+            
+            return true
+            
+        }catch {
+            
+            fatalError("Failed to fetch user: \(error)")
+        }
+        
     }
     
     func fetchRequest(entityName: String, email: String, password: String) -> NSFetchRequest {

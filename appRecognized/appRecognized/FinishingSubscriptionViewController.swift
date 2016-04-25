@@ -57,6 +57,8 @@ class FinishingSubscriptionViewController: UIViewController {
         //Check the type of the user to insert the right dataType
         let dataType = (dataUser.status == "createur" ? dataCreateur : dataClient)
 
+//        dataUser.password?.sha1()
+        
         //insert user into api : User , Createur/Client
         api.insertNewUserInApi(dataUser, dataType: dataType, indicator: loaderIndicator, checkIcon : checkImg, nextButton : nextButton, msgIndicator: msgIndicatorTextView){ (responseObject, error) in
                 

@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 
+
 class Article {
 
     var id: String?

@@ -69,6 +69,7 @@
 		927A7DAB1CBDBE07003CE9EA /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishingSubscriptionViewController.swift; sourceTree = "<group>"; };
 		928C58E81CCEB60900F5AF9B /* ProfilCreateurTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilCreateurTabViewController.swift; sourceTree = "<group>"; };
+		928C58EC1CCEE20000F5AF9B /* appRecognized-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "appRecognized-Bridging-Header.h"; sourceTree = "<group>"; };
 		92A6690B1CAF42F3003BE657 /* SignUpClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpClientViewController.swift; sourceTree = "<group>"; };
 		92A669131CAF548C003BE657 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		92A669181CAFE2EF003BE657 /* TestTVTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTVTab.swift; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 				92766D2E1CA9B637009A91E5 /* Assets.xcassets */,
 				92766D271CA9B3A4009A91E5 /* Info.plist */,
 				92766D381CA9C628009A91E5 /* coreData */,
+				928C58EC1CCEE20000F5AF9B /* appRecognized-Bridging-Header.h */,
 			);
 			path = appRecognized;
 			sourceTree = "<group>";
@@ -517,6 +519,7 @@
 			baseConfigurationReference = 7CFB3E70CF0C7F788966ECCE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = appRecognized/Info.plist;
@@ -525,6 +528,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Projet.appRecognized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "appRecognized/appRecognized-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
@@ -533,6 +539,7 @@
 			baseConfigurationReference = 7E8BEA48652306A3BD0456A3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = appRecognized/Info.plist;
@@ -541,6 +548,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Projet.appRecognized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "appRecognized/appRecognized-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};

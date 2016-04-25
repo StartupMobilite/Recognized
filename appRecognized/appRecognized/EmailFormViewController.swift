@@ -17,7 +17,6 @@ extension String {
         return regex.firstMatchInString(self, options:[],
                                         range: NSMakeRange(0, utf16.count)) != nil
     }
-
 }
 
 class EmailFormViewController: UIViewController, UITextFieldDelegate {
@@ -112,7 +111,7 @@ class EmailFormViewController: UIViewController, UITextFieldDelegate {
             
             // Validation Email 
             
-            if ((emailTextField.text!.isEmail()) != false){
+            if ((emailTextField.text!.isEmail()) != false && dataUser.checkEmailUnicity(emailTextField.text!)){
                 return true
             }else{
                 nextButton.hidden = true

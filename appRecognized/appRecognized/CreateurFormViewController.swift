@@ -76,10 +76,13 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func swipeTypeForm(sender: AnyObject) {
+        
+        shouldPerformSegueWithIdentifier("backTypeForm", sender: sender)
     }
     
-    @IBAction func checkMarqueAndGoNect(sender: AnyObject) {
+    @IBAction func alreadyAccount(sender: AnyObject) {
     }
+    
     // MARK - Function
     
     func dismissKeyboard() {
@@ -114,6 +117,21 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
 
     // MARK: - Navigation
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+        
+        if (identifier == "goLogoForm"){
+            return true
+            
+            
+        }else if (identifier == "backTypeForm"){
+            print("backTypeForm")
+            return true
+        }
+        
+        return false
+    }
+
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         
@@ -124,20 +142,12 @@ class CreateurFormViewController: UIViewController, UITextViewDelegate {
             dataUserCreateur.description = descriptionMarqueTextView.text!
             destViewController.dataUser = dataUser
             destViewController.dataUserCreateur = dataUserCreateur
-
-//            destViewController.nameMarque = nameMarqueTextTield.text!
-//            destViewController.descriptionMarque = descriptionMarqueTextView.text!
-            
-            
             
         }else if (segue.identifier == "backTypeForm"){
             let destViewController : TypeFormViewController = segue.destinationViewController as! TypeFormViewController
             
             destViewController.dataUser = dataUser
-//            destViewController.nameMarque = nameMarqueTextTield.text!
-//            destViewController.descriptionMarque = descriptionMarqueTextView.text!
-            
-            
+
         }
         
         

@@ -84,6 +84,10 @@ class LogoFormViewController: UIViewController, UIImagePickerControllerDelegate,
         shouldPerformSegueWithIdentifier("backCreateurForm", sender: sender)
     }
     
+    @IBAction func alreadyAccount(sender: AnyObject) {
+    }
+    
+    
     // MARK - Function
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

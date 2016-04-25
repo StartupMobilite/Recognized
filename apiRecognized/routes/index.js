@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var AuthController = require('../controllers/AuthenticateControllers.js');
-var article = require('../controllers/Article.js');
 var router = express.Router();
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -13,7 +12,6 @@ router.get('/', function(req, res, next) {
     res.send('connected');
 });
 
-//router.get('/allUser', AuthController.findAllUser);
 
 
 /* Create main user Admin. */
@@ -24,14 +22,6 @@ router.post('/createUserAdmin', AuthController.createUserAdmin );
 router.post('/createUser', AuthController.createUser );
 
 
-router.post('/addCommentaire', AuthController.addCommentaire );
-
-router.post('/createConversation', AuthController.createaddConversation );
-
-
-router.get('/findAll', AuthController.findAll );
-
-router.get('/findAllArticle', Article.allArticle);
-
+router.get('/allUsers', AuthController.findAll );
 
 module.exports = router;

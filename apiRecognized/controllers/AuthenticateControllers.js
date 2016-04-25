@@ -44,8 +44,9 @@ exports.createUser = function(req, res, next) {
         status_User: req.body.status,
     };
 
-    models.User.create(newUser).then(function(User) {
-        var result = false;
+    console.log(newUser);
+
+    models.User.create(newUser).then(function(user) {
 
         var result = { 'error' : false };
 
@@ -84,9 +85,41 @@ exports.createUser = function(req, res, next) {
             };
 
             models.Client.create(newClient).then(function(client) {
+
                 if (client.get('id_User')) {
 
                     result["client"] = client.get();
+
+                    console.log('Creation des préférences');
+
+                    console.log(req.body.preference);
+                    univers = req.body.preference;
+
+                    console.log(Array.isArray(univers));
+                    
+                    var value;
+                    for (value in univers) {
+                        console.log(value);
+                    }
+
+                    var newPreference = {
+                        id_Client: result["client"]["id_Client"],
+                        id_Univers: "test"
+                    };
+
+                    console.log(newPreference);
+
+                    // models.Preference.create(newPreference).then(function(pref){
+                    //
+                    //     if (pref.get('id_User')) {
+                    //
+                    //         result["preference"] = pref.get();
+                    //
+                    //     }else {
+                    //         result['error'] = 'error insert preference';
+                    //
+                    //     }
+                    // });
 
                 } else {
                     result['error'] = 'error insert client';
@@ -108,7 +141,6 @@ exports.createUser = function(req, res, next) {
         //res.send(result);
     });
 };
-
 
 
 exports.findAll = function(req, res, next) {

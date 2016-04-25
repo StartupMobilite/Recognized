@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         id_Createur: DataTypes.INTEGER,
         titre_Article: DataTypes.STRING,
-        image_Article: DataTypes.BLOB,
         description_Article: DataTypes.STRING,
         id_Produit: DataTypes.INTEGER
     });

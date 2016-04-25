@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
-        id_User: DataTypes.INTEGER
+        id_User: DataTypes.INTEGER,
+        id_Univers: DataTypes.INTEGER
     });
     return Client;
 };

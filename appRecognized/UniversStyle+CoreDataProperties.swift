@@ -1,5 +1,5 @@
 //
-//  Users+CoreDataProperties.swift
+//  UniversStyle+CoreDataProperties.swift
 //  appRecognized
 //
 //  Created by Karine Ould on 23/04/2016.
@@ -12,13 +12,9 @@
 import Foundation
 import CoreData
 
-extension Users {
+extension UniversStyle {
 
-    @NSManaged var email: String?
-    @NSManaged var id: NSNumber?
-    @NSManaged var nom: String?
-    @NSManaged var password: String?
-    @NSManaged var prenom: String?
-    @NSManaged var status: String?
+    @NSManaged var idUnivers: NSNumber?
+    @NSManaged var valueUnivers: String?
 
 }

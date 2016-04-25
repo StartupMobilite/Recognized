@@ -30,3 +30,9 @@ exports.findAllArticle = function(req, res, next) {
     return res.end(JSON.stringify(article));
 
 }
+
+exports.findArticleByIdCreateur = function(req, res, next) {
+
+    
+
+}

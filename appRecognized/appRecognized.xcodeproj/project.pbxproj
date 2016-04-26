@@ -278,7 +278,7 @@
 				TargetAttributes = {
 					92766D141CA9B3A4009A91E5 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HK8R6METL6;
+						DevelopmentTeam = 6ZD728MTF5;
 					};
 				};
 			};
@@ -518,7 +518,7 @@
 				INFOPLIST_FILE = appRecognized/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Projet.appRecognized;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Projets.appRecognized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -534,7 +534,7 @@
 				INFOPLIST_FILE = appRecognized/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Projet.appRecognized;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Projets.appRecognized;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

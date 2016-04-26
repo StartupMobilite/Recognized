@@ -6,7 +6,7 @@ var multer = require('multer');
 var fileUpload = require('express-fileupload');
 var app = express();
 var upload = multer({
-    dest: 'uploads/',
+    dest: 'tmp/',
 });
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -25,12 +25,12 @@ router.get('/index', function(req, res){
 
 
 router.get('/upload',function(req, res){
-    res.render('upload', { title: 'Express' });
+    res.render('upload');
 });
 
-router.post('/upload', upload.single('img'), function(req, res) {
+router.post('/upload', upload.single('img'), AuthController.addCreateurLogo );
 
-});
+router.get('/createurLogo', AuthController.getCreateurLogo);
 
 
 /* Create main user Admin. */
@@ -44,12 +44,5 @@ router.post('/createUser', upload.single('logo'), AuthController.createUser );
 router.get('/allUsers', AuthController.findAll );
 
 
-
-
-//router.post('/upload', function(req, res) {
-//    console.log(req.body); //form fields
-//    console.log(req.file); //form files
-//    res.status(204).end();
-//});
 
 module.exports = router;

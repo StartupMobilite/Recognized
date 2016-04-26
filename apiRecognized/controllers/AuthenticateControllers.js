@@ -3,7 +3,8 @@
  */
 
 var models  = require('../models');
-var fs = require("fs");
+var fs = require("fs-extra");
+
 
 exports.createUserAdmin = function(req, res, next){
 
@@ -144,8 +145,63 @@ exports.findAll = function(req, res, next) {
     models.User.findAll().then(function(users){
         console.log(users);
         return res.end(JSON.stringify(users));
+        //sendJsonResponse(users);
         //res.send(users.array(models.User));
     });
 }
 
+exports.addCreateurLogo = function(req,res,next) {
+    console.log(req.file);
+    //console.log(req.query);
 
+    fs.readFile(req.file.path, function (err, data) {
+        var imageName = req.file.filename
+        if(!imageName){
+            console.log("There was an error")
+            res.redirect("/");
+            res.end();
+        } else {
+            models.Createur.find({
+                where : {
+                    id_Createur : req.body.createur
+                }
+            }).then(function(createur){
+                if (createur){
+                    var path_temp = req.file.path;
+                    var currentFolder = process.cwd();
+                    console.log(currentFolder);
+                    var filename = '/uploads/' +'logo_createurId_' + createur.get('id_Createur') +'.jpeg'
+                    fs.move(path_temp,  currentFolder + filename, function(err) {
+                        if (err) return console.error(err)
+                        console.log("file uploaded!")
+                    });
+                    createur.updateAttributes({
+                        logo_Marque: filename
+                    });
+                }
+            });
+
+        }
+    });
+}
+
+exports.getCreateurLogo = function(req,res,next){
+
+    models.Createur.find({
+        where : {
+            id_Createur : req.query.createur
+            //id_Createur : 1
+        }
+    }).then(function(createur){
+        if (createur){
+            var currentFolder = process.cwd();
+            console.log(currentFolder);
+            //res.redirect(currentFolder + createur.get('logo_Marque'));
+            var logo = fs.readFileSync(currentFolder + createur.get('logo_Marque'));
+            //console.log(currentFolder + createur.get('logo_Marque'));
+            res.writeHead(200, {'Content-Type': 'image/jpeg' });
+            res.write(logo);
+            res.end('binary');
+        }
+    })
+}

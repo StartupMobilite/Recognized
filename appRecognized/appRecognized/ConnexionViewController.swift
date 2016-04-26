@@ -75,25 +75,36 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
             
             if ((user["status"]) as! String == "createur"){
                 
+                session.setObject(user as NSDictionary, forKey: "user")
+                
                 let dataCreateur = Createur()
-                let test = dataCreateur.findOneByIdUser(user["id"] as! NSNumber)
-                print("dataCreateur.findOneByIdUser --> \(test)")
+                let createur = dataCreateur.findOneByIdUser(user["id"] as! NSNumber)
+                print("dataCreateur.findOneByIdUser --> \(createur)")
                 
+                if (createur["id"] != nil) {
+                    session.setObject(createur as NSDictionary, forKey: "createur")
+                    session.synchronize()
+                }
                 
-                //            let tabBarCreateur = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarCreateur") as! UITabBarController
-                //
-                //            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                //            appDelegate.window?.rootViewController = tabBarCreateur
+                let tabBarCreateur = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarCreateur") as! UITabBarController
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                appDelegate.window?.rootViewController = tabBarCreateur
                 
                 
             }else if((user["status"]) as! String == "client"){
                 
                 let dataClient = Client()
-                let test2 = dataClient.findOneByIdUser(user["id"] as! NSNumber)
-                print("dataClient.findOneByUser \(test2)")
+                let client = dataClient.findOneByIdUser(user["id"] as! NSNumber)
+                print("dataClient.findOneByUser \(client)")
+                
+                if ( client["idClient"] != nil){
+                    session.setObject(client as NSDictionary, forKey: "createur")
+                    session.synchronize()
+                }
                 
             }else{
-                
                 displayAlert("Login Failes", message: "Email ou password incorrect !", titleAction: "OK")
             }
             

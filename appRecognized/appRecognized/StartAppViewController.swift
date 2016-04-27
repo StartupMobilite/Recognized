@@ -28,6 +28,7 @@ class StartAppViewController: UIViewController {
 
         //Cacher la navBar
         self.navigationController?.navigationBarHidden = true
+//        self.navigationController?.popToRootViewControllerAnimated(true)
         
         // Corner Raduis Img
         inscriptionButton.layer.cornerRadius = 8.0

@@ -559,7 +559,7 @@
         <!--StartApp-->
         <scene sceneID="Pft-3F-EdC">
             <objects>
-                <viewController title="StartApp" id="01Z-UD-G7c" customClass="StartAppViewController" customModule="appRecognized" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startApp" title="StartApp" id="01Z-UD-G7c" customClass="StartAppViewController" customModule="appRecognized" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t9W-Xc-OTJ"/>
                         <viewControllerLayoutGuide type="bottom" id="A8O-w1-xus"/>
@@ -2095,7 +2095,7 @@
                                                 <constraint firstItem="ZQs-J8-WD4" firstAttribute="top" secondItem="qlT-HL-w5x" secondAttribute="bottom" constant="3" id="rcy-nt-WXw"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="-1" indentationWidth="10" reuseIdentifier="favoris" id="sCM-n5-GBs">
@@ -2252,12 +2252,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Déconnexion " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujI-yd-ECt">
-                                                    <rect key="frame" x="92" y="11" width="136" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.24970511209999999" blue="0.23510424069999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vL-8n-8wp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                    <state key="normal" title="Déconnexion ">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="logout:" destination="Oyi-AB-sxd" eventType="touchUpInside" id="sLh-26-aMM"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2270,6 +2273,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profil" image="people" id="Qpl-3c-u9y"/>
+                    <connections>
+                        <outlet property="userMenuCell" destination="oXL-jH-5bk" id="KUf-rh-M9o"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itx-N8-h4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

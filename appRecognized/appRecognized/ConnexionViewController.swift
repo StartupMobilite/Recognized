@@ -35,6 +35,7 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ConnexionViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -103,6 +104,12 @@ class ConnexionViewController: UIViewController, NSFetchedResultsControllerDeleg
                     session.setObject(client as NSDictionary, forKey: "createur")
                     session.synchronize()
                 }
+                
+                let tabBarCreateur = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarCreateur") as! UITabBarController
+                
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                appDelegate.window?.rootViewController = tabBarCreateur
                 
             }else{
                 displayAlert("Login Failes", message: "Email ou password incorrect !", titleAction: "OK")

@@ -24,11 +24,9 @@
 		927A7DA61CBD39B0003CE9EA /* Createurs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DA01CBD39B0003CE9EA /* Createurs.swift */; };
 		927A7DAC1CBDBE07003CE9EA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DAB1CBDBE07003CE9EA /* Api.swift */; };
 		927A7DAE1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */; };
+		928C23781CD0D0CC006FA3C0 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C23771CD0D0CC006FA3C0 /* ArticlesViewController.swift */; };
+		928C237A1CD0D18A006FA3C0 /* articleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C23791CD0D18A006FA3C0 /* articleCollectionViewCell.swift */; };
 		928C58E91CCEB60900F5AF9B /* ProfilCreateurTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C58E81CCEB60900F5AF9B /* ProfilCreateurTabViewController.swift */; };
-		92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6690B1CAF42F3003BE657 /* SignUpClientViewController.swift */; };
-		92A669141CAF548C003BE657 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669131CAF548C003BE657 /* MainVC.swift */; };
-		92A669191CAFE2EF003BE657 /* TestTVTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669181CAFE2EF003BE657 /* TestTVTab.swift */; };
-		92A669231CB06C8E003BE657 /* SignUpCreateurTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669221CB06C8E003BE657 /* SignUpCreateurTVC.swift */; };
 		92A669251CB19AC6003BE657 /* StartAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669241CB19AC6003BE657 /* StartAppViewController.swift */; };
 		92A669291CB1C015003BE657 /* EmailFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669281CB1C015003BE657 /* EmailFormViewController.swift */; };
 		92A669311CB1D874003BE657 /* ConditionGenraleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A669301CB1D874003BE657 /* ConditionGenraleViewController.swift */; };
@@ -68,12 +66,10 @@
 		927A7DA01CBD39B0003CE9EA /* Createurs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Createurs.swift; sourceTree = "<group>"; };
 		927A7DAB1CBDBE07003CE9EA /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishingSubscriptionViewController.swift; sourceTree = "<group>"; };
+		928C23771CD0D0CC006FA3C0 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		928C23791CD0D18A006FA3C0 /* articleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articleCollectionViewCell.swift; sourceTree = "<group>"; };
 		928C58E81CCEB60900F5AF9B /* ProfilCreateurTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilCreateurTabViewController.swift; sourceTree = "<group>"; };
 		928C58EC1CCEE20000F5AF9B /* appRecognized-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "appRecognized-Bridging-Header.h"; sourceTree = "<group>"; };
-		92A6690B1CAF42F3003BE657 /* SignUpClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpClientViewController.swift; sourceTree = "<group>"; };
-		92A669131CAF548C003BE657 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		92A669181CAFE2EF003BE657 /* TestTVTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTVTab.swift; sourceTree = "<group>"; };
-		92A669221CB06C8E003BE657 /* SignUpCreateurTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCreateurTVC.swift; sourceTree = "<group>"; };
 		92A669241CB19AC6003BE657 /* StartAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartAppViewController.swift; sourceTree = "<group>"; };
 		92A669281CB1C015003BE657 /* EmailFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFormViewController.swift; sourceTree = "<group>"; };
 		92A669301CB1D874003BE657 /* ConditionGenraleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionGenraleViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +161,6 @@
 			children = (
 				923582BA1CCADAF500382F5C /* ConstanteFile.swift */,
 				924C94521CB96B1B009AF4AA /* Class */,
-				92A669351CB1EDA8003BE657 /* wrongControllers */,
 				92766D181CA9B3A4009A91E5 /* AppDelegate.swift */,
 				92A669451CB31617003BE657 /* CustomClass */,
 				92A669261CB19ACE003BE657 /* Controllers */,
@@ -212,6 +207,7 @@
 		92A669261CB19ACE003BE657 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				928C23771CD0D0CC006FA3C0 /* ArticlesViewController.swift */,
 				928C58E81CCEB60900F5AF9B /* ProfilCreateurTabViewController.swift */,
 				927A7DAD1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift */,
 				924C94531CB96E71009AF4AA /* LogoFormViewController.swift */,
@@ -228,20 +224,10 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		92A669351CB1EDA8003BE657 /* wrongControllers */ = {
-			isa = PBXGroup;
-			children = (
-				92A669221CB06C8E003BE657 /* SignUpCreateurTVC.swift */,
-				92A669181CAFE2EF003BE657 /* TestTVTab.swift */,
-				92A669131CAF548C003BE657 /* MainVC.swift */,
-				92A6690B1CAF42F3003BE657 /* SignUpClientViewController.swift */,
-			);
-			name = wrongControllers;
-			sourceTree = "<group>";
-		};
 		92A669451CB31617003BE657 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
+				928C23791CD0D18A006FA3C0 /* articleCollectionViewCell.swift */,
 				92A669591CB5A9BF003BE657 /* Checkbox.swift */,
 				92A669431CB31431003BE657 /* SegueFromLeft.swift */,
 			);
@@ -372,7 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCF9C3B1CBC5FDB003844A4 /* Article.swift in Sources */,
-				92A669231CB06C8E003BE657 /* SignUpCreateurTVC.swift in Sources */,
+				928C23781CD0D0CC006FA3C0 /* ArticlesViewController.swift in Sources */,
 				92A669291CB1C015003BE657 /* EmailFormViewController.swift in Sources */,
 				92A6695A1CB5A9BF003BE657 /* Checkbox.swift in Sources */,
 				92A6694E1CB5A08A003BE657 /* CreateurFormViewController.swift in Sources */,
@@ -382,7 +368,6 @@
 				928C58E91CCEB60900F5AF9B /* ProfilCreateurTabViewController.swift in Sources */,
 				927A7DA51CBD39B0003CE9EA /* Createurs+CoreDataProperties.swift in Sources */,
 				92ED88251CCD6EAB00D7A11B /* Clients+CoreDataProperties.swift in Sources */,
-				92A669191CAFE2EF003BE657 /* TestTVTab.swift in Sources */,
 				923582C61CCC223A00382F5C /* UniversStyle+CoreDataProperties.swift in Sources */,
 				92A669561CB5A0F3003BE657 /* ClientFormViewController.swift in Sources */,
 				923582CA1CCC231300382F5C /* Users+CoreDataProperties.swift in Sources */,
@@ -394,12 +379,11 @@
 				927A7DA61CBD39B0003CE9EA /* Createurs.swift in Sources */,
 				92766D191CA9B3A4009A91E5 /* AppDelegate.swift in Sources */,
 				DDCF9C3D1CBC713F003844A4 /* Message.swift in Sources */,
-				92A6690C1CAF42F3003BE657 /* SignUpClientViewController.swift in Sources */,
 				923582BB1CCADAF500382F5C /* ConstanteFile.swift in Sources */,
 				923582CB1CCC231300382F5C /* Users.swift in Sources */,
-				92A669141CAF548C003BE657 /* MainVC.swift in Sources */,
 				924C94511CB94DD7009AF4AA /* User.swift in Sources */,
 				92BBAC701CBAF9DC00F30728 /* ConnexionViewController.swift in Sources */,
+				928C237A1CD0D18A006FA3C0 /* articleCollectionViewCell.swift in Sources */,
 				92A669421CB2F6DB003BE657 /* PasswordFormViewController.swift in Sources */,
 				927A7DAE1CBDC2BE003CE9EA /* FinishingSubscriptionViewController.swift in Sources */,
 				92ED88261CCD6EAB00D7A11B /* Clients.swift in Sources */,

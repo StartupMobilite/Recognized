@@ -15,14 +15,32 @@ class ProfilCreateurTabViewController: UITableViewController {
     
     @IBOutlet weak var userMenuCell: UITableViewCell!
     
+    @IBOutlet weak var imgMenu: UIImageView!
+    
+    @IBOutlet weak var marqueNameMenu: UILabel!
+    
+    @IBOutlet weak var nameMenu: UILabel!
+    
     //MARK - override views
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        userMenuCell.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "MainBackground")!)
+        userMenuCell.backgroundColor = UIColor(patternImage: UIImage(named: "userBackMenu")!)
+        imgMenu.layer.cornerRadius = 45.0
+        imgMenu.clipsToBounds = true
         
         self.user = session.dictionaryForKey("user")!
         self.createur = session.dictionaryForKey("createur")!
+        
+//        imgMenu.
+        nameMenu.text = (self.user["prenom"] as! String) + " " + (self.user["nom"]!.uppercaseString as String)
+        nameMenu.textColor = UIColor.whiteColor()
+        
+        if self.user["status"] as! String == "createur" {
+            marqueNameMenu.text = (self.createur["nomMarque"] as! String)
+            marqueNameMenu.textColor = UIColor.whiteColor()
+
+        }
 
     }
     
@@ -40,6 +58,8 @@ class ProfilCreateurTabViewController: UITableViewController {
         
         session.removeObjectForKey("user")
         session.removeObjectForKey("createur")
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
         
 //        let viewStart = self.storyboard?.instantiateViewControllerWithIdentifier("startApp") as? UIViewController!
 //        

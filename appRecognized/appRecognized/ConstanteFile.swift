@@ -13,6 +13,6 @@ import UIKit
 //172.20.10.10
 // 192.168.1.5
 
-let URL_API = "http://172.20.10.10:3000"
+let URL_API = "http://10.75.3.179:3000"
 
 let session = NSUserDefaults.standardUserDefaults()
